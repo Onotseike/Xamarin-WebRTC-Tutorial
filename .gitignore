@@ -2,3 +2,6 @@
 WebRTC.Android.Bindings/WebRTC.Android.Bindings/obj/
 WebRTC.Android.Bindings/WebRTC.Android.Bindings/bin/
 WebRTC.Android.Bindings/.vs/
+WebRTC.iOS.Bindings/WebRTC.iOS.Bindings/bin/
+WebRTC.iOS.Bindings/WebRTC.iOS.Bindings/obj/
+WebRTC.iOS.Bindings/.vs/
