@@ -1971,460 +1971,7 @@ namespace WebRTC.iOS.Bindings
 
     #endregion
 
-
-
-
-    // @protocol RTCCodecSpecificInfo <NSObject>
-    [Protocol, Model]
-    [BaseType(typeof(NSObject))]
-    interface RTCCodecSpecificInfo
-    {
-    }
-
-
-    // @interface RTCEncodedImage : NSObject
-    [BaseType(typeof(NSObject))]
-    interface RTCEncodedImage
-    {
-        // @property (nonatomic, strong) NSData * _Nonnull buffer;
-        [Export("buffer", ArgumentSemantic.Strong)]
-        NSData Buffer { get; set; }
-
-        // @property (assign, nonatomic) int32_t encodedWidth;
-        [Export("encodedWidth")]
-        int EncodedWidth { get; set; }
-
-        // @property (assign, nonatomic) int32_t encodedHeight;
-        [Export("encodedHeight")]
-        int EncodedHeight { get; set; }
-
-        // @property (assign, nonatomic) uint32_t timeStamp;
-        [Export("timeStamp")]
-        uint TimeStamp { get; set; }
-
-        // @property (assign, nonatomic) int64_t captureTimeMs;
-        [Export("captureTimeMs")]
-        long CaptureTimeMs { get; set; }
-
-        // @property (assign, nonatomic) int64_t ntpTimeMs;
-        [Export("ntpTimeMs")]
-        long NtpTimeMs { get; set; }
-
-        // @property (assign, nonatomic) uint8_t flags;
-        [Export("flags")]
-        byte Flags { get; set; }
-
-        // @property (assign, nonatomic) int64_t encodeStartMs;
-        [Export("encodeStartMs")]
-        long EncodeStartMs { get; set; }
-
-        // @property (assign, nonatomic) int64_t encodeFinishMs;
-        [Export("encodeFinishMs")]
-        long EncodeFinishMs { get; set; }
-
-        // @property (assign, nonatomic) RTCFrameType frameType;
-        [Export("frameType", ArgumentSemantic.Assign)]
-        RTCFrameType FrameType { get; set; }
-
-        // @property (assign, nonatomic) RTCVideoRotation rotation;
-        [Export("rotation", ArgumentSemantic.Assign)]
-        RTCVideoRotation Rotation { get; set; }
-
-        // @property (assign, nonatomic) BOOL completeFrame;
-        [Export("completeFrame")]
-        bool CompleteFrame { get; set; }
-
-        // @property (nonatomic, strong) NSNumber * _Nonnull qp;
-        [Export("qp", ArgumentSemantic.Strong)]
-        NSNumber Qp { get; set; }
-
-        // @property (assign, nonatomic) RTCVideoContentType contentType;
-        [Export("contentType", ArgumentSemantic.Assign)]
-        RTCVideoContentType ContentType { get; set; }
-    }
-
-
-
-
-
-
-
-    // @protocol RTCMutableYUVPlanarBuffer <RTCYUVPlanarBuffer>
-    [Protocol, Model]
-    interface RTCMutableYUVPlanarBuffer : RTCYUVPlanarBuffer
-    {
-        // @required @property (readonly, nonatomic) uint8_t * _Nonnull mutableDataY;
-        [Abstract]
-        [Export("mutableDataY")]
-        unsafe IntPtr MutableDataY { get; }
-
-        // @required @property (readonly, nonatomic) uint8_t * _Nonnull mutableDataU;
-        [Abstract]
-        [Export("mutableDataU")]
-        unsafe IntPtr MutableDataU { get; }
-
-        // @required @property (readonly, nonatomic) uint8_t * _Nonnull mutableDataV;
-        [Abstract]
-        [Export("mutableDataV")]
-        unsafe IntPtr MutableDataV { get; }
-    }
-
-    // @protocol RTCMutableI420Buffer <RTCI420Buffer, RTCMutableYUVPlanarBuffer>
-    [Protocol, Model]
-    interface RTCMutableI420Buffer : RTCI420Buffer, RTCMutableYUVPlanarBuffer
-    {
-    }
-
-    // @interface RTCRtpFragmentationHeader : NSObject
-    [BaseType(typeof(NSObject))]
-    interface RTCRtpFragmentationHeader
-    {
-        // @property (nonatomic, strong) NSArray<NSNumber *> * _Nonnull fragmentationOffset;
-        [Export("fragmentationOffset", ArgumentSemantic.Strong)]
-        NSNumber[] FragmentationOffset { get; set; }
-
-        // @property (nonatomic, strong) NSArray<NSNumber *> * _Nonnull fragmentationLength;
-        [Export("fragmentationLength", ArgumentSemantic.Strong)]
-        NSNumber[] FragmentationLength { get; set; }
-
-        // @property (nonatomic, strong) NSArray<NSNumber *> * _Nonnull fragmentationTimeDiff;
-        [Export("fragmentationTimeDiff", ArgumentSemantic.Strong)]
-        NSNumber[] FragmentationTimeDiff { get; set; }
-
-        // @property (nonatomic, strong) NSArray<NSNumber *> * _Nonnull fragmentationPlType;
-        [Export("fragmentationPlType", ArgumentSemantic.Strong)]
-        NSNumber[] FragmentationPlType { get; set; }
-    }
-
-
-
-
-    [Static]
-    partial interface Constants
-    {
-        // extern NSString *const _Nonnull kRTCAudioSessionErrorDomain;
-        [Field("kRTCAudioSessionErrorDomain", "__Internal")]
-        NSString kRTCAudioSessionErrorDomain { get; }
-
-        // extern const NSInteger kRTCAudioSessionErrorLockRequired;
-        [Field("kRTCAudioSessionErrorLockRequired", "__Internal")]
-        nint kRTCAudioSessionErrorLockRequired { get; }
-
-        // extern const NSInteger kRTCAudioSessionErrorConfiguration;
-        [Field("kRTCAudioSessionErrorConfiguration", "__Internal")]
-        nint kRTCAudioSessionErrorConfiguration { get; }
-    }
-
-
-
-
-
-
-
-    partial interface Constants
-    {
-        // extern const int kRTCAudioSessionPreferredNumberOfChannels __attribute__((visibility("default")));
-        [Field("kRTCAudioSessionPreferredNumberOfChannels", "__Internal")]
-        int kRTCAudioSessionPreferredNumberOfChannels { get; }
-
-        // extern const double kRTCAudioSessionHighPerformanceSampleRate __attribute__((visibility("default")));
-        [Field("kRTCAudioSessionHighPerformanceSampleRate", "__Internal")]
-        double kRTCAudioSessionHighPerformanceSampleRate { get; }
-
-        // extern const double kRTCAudioSessionLowComplexitySampleRate __attribute__((visibility("default")));
-        [Field("kRTCAudioSessionLowComplexitySampleRate", "__Internal")]
-        double kRTCAudioSessionLowComplexitySampleRate { get; }
-
-        // extern const double kRTCAudioSessionHighPerformanceIOBufferDuration __attribute__((visibility("default")));
-        [Field("kRTCAudioSessionHighPerformanceIOBufferDuration", "__Internal")]
-        double kRTCAudioSessionHighPerformanceIOBufferDuration { get; }
-
-        // extern const double kRTCAudioSessionLowComplexityIOBufferDuration __attribute__((visibility("default")));
-        [Field("kRTCAudioSessionLowComplexityIOBufferDuration", "__Internal")]
-        double kRTCAudioSessionLowComplexityIOBufferDuration { get; }
-    }
-
-
-
-
-
-    // @interface RTCNetworkMonitor : NSObject
-    [BaseType(typeof(NSObject))]
-    [DisableDefaultCtor]
-    interface RTCNetworkMonitor
-    {
-    }
-
-    // @interface RTCMTLVideoView : UIView <RTCVideoRenderer>
-    //[iOS(9, 0)]
-    [Introduced(PlatformName.iOS, PlatformArchitecture.Arch32)]
-    [BaseType(typeof(UIView))]
-    interface RTCMTLVideoView : RTCVideoRenderer
-    {
-        [Wrap("WeakDelegate")]
-        [NullAllowed]
-        RTCVideoViewDelegate Delegate { get; set; }
-
-        // @property (nonatomic, weak) id<RTCVideoViewDelegate> _Nullable delegate;
-        [NullAllowed, Export("delegate", ArgumentSemantic.Weak)]
-        NSObject WeakDelegate { get; set; }
-
-        // @property (nonatomic) UIViewContentMode videoContentMode;
-        [Export("videoContentMode", ArgumentSemantic.Assign)]
-        UIViewContentMode VideoContentMode { get; set; }
-
-        // @property (getter = isEnabled, nonatomic) BOOL enabled;
-        [Export("enabled")]
-        bool Enabled { [Bind("isEnabled")] get; set; }
-
-        // @property (nonatomic) NSValue * _Nullable rotationOverride;
-        [NullAllowed, Export("rotationOverride", ArgumentSemantic.Assign)]
-        NSValue RotationOverride { get; set; }
-    }
-
-
-
-
-    // @interface RTCCodecSpecificInfoH264 : NSObject <RTCCodecSpecificInfo>
-    [BaseType(typeof(NSObject))]
-    interface RTCCodecSpecificInfoH264 : RTCCodecSpecificInfo
-    {
-        // @property (assign, nonatomic) RTCH264PacketizationMode packetizationMode;
-        [Export("packetizationMode", ArgumentSemantic.Assign)]
-        RTCH264PacketizationMode PacketizationMode { get; set; }
-    }
-
-
-    partial interface Constants
-    {
-        // extern NSString *const kRTCVideoCodecH264Name __attribute__((visibility("default")));
-        [Field("kRTCVideoCodecH264Name", "__Internal")]
-        NSString kRTCVideoCodecH264Name { get; }
-
-        // extern NSString *const kRTCLevel31ConstrainedHigh __attribute__((visibility("default")));
-        [Field("kRTCLevel31ConstrainedHigh", "__Internal")]
-        NSString kRTCLevel31ConstrainedHigh { get; }
-
-        // extern NSString *const kRTCLevel31ConstrainedBaseline __attribute__((visibility("default")));
-        [Field("kRTCLevel31ConstrainedBaseline", "__Internal")]
-        NSString kRTCLevel31ConstrainedBaseline { get; }
-
-        // extern NSString *const kRTCMaxSupportedH264ProfileLevelConstrainedHigh __attribute__((visibility("default")));
-        [Field("kRTCMaxSupportedH264ProfileLevelConstrainedHigh", "__Internal")]
-        NSString kRTCMaxSupportedH264ProfileLevelConstrainedHigh { get; }
-
-        // extern NSString *const kRTCMaxSupportedH264ProfileLevelConstrainedBaseline __attribute__((visibility("default")));
-        [Field("kRTCMaxSupportedH264ProfileLevelConstrainedBaseline", "__Internal")]
-        NSString kRTCMaxSupportedH264ProfileLevelConstrainedBaseline { get; }
-    }
-
-
-
-    // @interface RTCVideoDecoderFactoryH264 : NSObject <RTCVideoDecoderFactory>
-    [BaseType(typeof(NSObject))]
-    interface RTCVideoDecoderFactoryH264 : RTCVideoDecoderFactory
-    {
-    }
-
-    // @interface RTCVideoDecoderH264 : NSObject <RTCVideoDecoder>
-    [BaseType(typeof(NSObject))]
-    interface RTCVideoDecoderH264 : RTCVideoDecoder
-    {
-    }
-
-    // @interface RTCVideoEncoderFactoryH264 : NSObject <RTCVideoEncoderFactory>
-    [BaseType(typeof(NSObject))]
-    interface RTCVideoEncoderFactoryH264 : RTCVideoEncoderFactory
-    {
-    }
-
-    // @interface RTCVideoEncoderH264 : NSObject <RTCVideoEncoder>
-    [BaseType(typeof(NSObject))]
-    interface RTCVideoEncoderH264 : RTCVideoEncoder
-    {
-        // -(instancetype)initWithCodecInfo:(RTCVideoCodecInfo *)codecInfo;
-        [Export("initWithCodecInfo:")]
-        IntPtr Constructor(RTCVideoCodecInfo codecInfo);
-    }
-
-
-
-
-    // @interface RTCDispatcher : NSObject
-    [BaseType(typeof(NSObject))]
-    [DisableDefaultCtor]
-    interface RTCDispatcher
-    {
-        // +(void)dispatchAsyncOnType:(RTCDispatcherQueueType)dispatchType block:(dispatch_block_t)block;
-        [Static]
-        [Export("dispatchAsyncOnType:block:")]
-        void DispatchAsyncOnType(RTCDispatcherQueueType dispatchType, Action block);
-
-        // +(BOOL)isOnQueueForType:(RTCDispatcherQueueType)dispatchType;
-        [Static]
-        [Export("isOnQueueForType:")]
-        bool IsOnQueueForType(RTCDispatcherQueueType dispatchType);
-    }
-
-    // @interface RTCDevice (UIDevice)
-    [Category]
-    [BaseType(typeof(UIDevice))]
-    interface UIDevice_RTCDevice
-    {
-        // +(RTCDeviceType)deviceType;
-        [Static]
-        [Export("deviceType")]
-        RTCDeviceType DeviceType { get; }
-
-        // +(BOOL)isIOS11OrLater;
-        [Static]
-        [Export("isIOS11OrLater")]
-        bool IsIOS11OrLater { get; }
-    }
-
-
-
-
-    partial interface Constants
-    {
-        // extern NSString *const _Nonnull kRTCMediaStreamTrackKindAudio __attribute__((visibility("default")));
-        [Field("kRTCMediaStreamTrackKindAudio", "__Internal")]
-        NSString kRTCMediaStreamTrackKindAudio { get; }
-
-        // extern NSString *const _Nonnull kRTCMediaStreamTrackKindVideo __attribute__((visibility("default")));
-        [Field("kRTCMediaStreamTrackKindVideo", "__Internal")]
-        NSString kRTCMediaStreamTrackKindVideo { get; }
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-    partial interface Constants
-    {
-        // extern NSString *const kRTCFieldTrialAudioSendSideBweKey __attribute__((visibility("default")));
-        [Field("kRTCFieldTrialAudioSendSideBweKey", "__Internal")]
-        NSString kRTCFieldTrialAudioSendSideBweKey { get; }
-
-        // extern NSString *const kRTCFieldTrialAudioForceNoTWCCKey __attribute__((visibility("default")));
-        [Field("kRTCFieldTrialAudioForceNoTWCCKey", "__Internal")]
-        NSString kRTCFieldTrialAudioForceNoTWCCKey { get; }
-
-        // extern NSString *const kRTCFieldTrialAudioForceABWENoTWCCKey __attribute__((visibility("default")));
-        [Field("kRTCFieldTrialAudioForceABWENoTWCCKey", "__Internal")]
-        NSString kRTCFieldTrialAudioForceABWENoTWCCKey { get; }
-
-        // extern NSString *const kRTCFieldTrialSendSideBweWithOverheadKey __attribute__((visibility("default")));
-        [Field("kRTCFieldTrialSendSideBweWithOverheadKey", "__Internal")]
-        NSString kRTCFieldTrialSendSideBweWithOverheadKey { get; }
-
-        // extern NSString *const kRTCFieldTrialFlexFec03AdvertisedKey __attribute__((visibility("default")));
-        [Field("kRTCFieldTrialFlexFec03AdvertisedKey", "__Internal")]
-        NSString kRTCFieldTrialFlexFec03AdvertisedKey { get; }
-
-        // extern NSString *const kRTCFieldTrialFlexFec03Key __attribute__((visibility("default")));
-        [Field("kRTCFieldTrialFlexFec03Key", "__Internal")]
-        NSString kRTCFieldTrialFlexFec03Key { get; }
-
-        // extern NSString *const kRTCFieldTrialH264HighProfileKey __attribute__((visibility("default")));
-        [Field("kRTCFieldTrialH264HighProfileKey", "__Internal")]
-        NSString kRTCFieldTrialH264HighProfileKey { get; }
-
-        // extern NSString *const kRTCFieldTrialMinimizeResamplingOnMobileKey __attribute__((visibility("default")));
-        [Field("kRTCFieldTrialMinimizeResamplingOnMobileKey", "__Internal")]
-        NSString kRTCFieldTrialMinimizeResamplingOnMobileKey { get; }
-
-        // extern NSString *const kRTCFieldTrialUseNWPathMonitor __attribute__((visibility("default")));
-        [Field("kRTCFieldTrialUseNWPathMonitor", "__Internal")]
-        NSString kRTCFieldTrialUseNWPathMonitor { get; }
-
-        // extern NSString *const kRTCFieldTrialEnabledValue __attribute__((visibility("default")));
-        [Field("kRTCFieldTrialEnabledValue", "__Internal")]
-        NSString kRTCFieldTrialEnabledValue { get; }
-    }
-
-
-
-
-    partial interface Constants
-    {
-        // extern NSString *const _Nonnull kRTCMediaConstraintsAudioNetworkAdaptorConfig __attribute__((visibility("default")));
-        [Field("kRTCMediaConstraintsAudioNetworkAdaptorConfig", "__Internal")]
-        NSString kRTCMediaConstraintsAudioNetworkAdaptorConfig { get; }
-
-        // extern NSString *const _Nonnull kRTCMediaConstraintsIceRestart __attribute__((visibility("default")));
-        [Field("kRTCMediaConstraintsIceRestart", "__Internal")]
-        NSString kRTCMediaConstraintsIceRestart { get; }
-
-        // extern NSString *const _Nonnull kRTCMediaConstraintsOfferToReceiveAudio __attribute__((visibility("default")));
-        [Field("kRTCMediaConstraintsOfferToReceiveAudio", "__Internal")]
-        NSString kRTCMediaConstraintsOfferToReceiveAudio { get; }
-
-        // extern NSString *const _Nonnull kRTCMediaConstraintsOfferToReceiveVideo __attribute__((visibility("default")));
-        [Field("kRTCMediaConstraintsOfferToReceiveVideo", "__Internal")]
-        NSString kRTCMediaConstraintsOfferToReceiveVideo { get; }
-
-        // extern NSString *const _Nonnull kRTCMediaConstraintsVoiceActivityDetection __attribute__((visibility("default")));
-        [Field("kRTCMediaConstraintsVoiceActivityDetection", "__Internal")]
-        NSString kRTCMediaConstraintsVoiceActivityDetection { get; }
-
-        // extern NSString *const _Nonnull kRTCMediaConstraintsValueTrue __attribute__((visibility("default")));
-        [Field("kRTCMediaConstraintsValueTrue", "__Internal")]
-        NSString kRTCMediaConstraintsValueTrue { get; }
-
-        // extern NSString *const _Nonnull kRTCMediaConstraintsValueFalse __attribute__((visibility("default")));
-        [Field("kRTCMediaConstraintsValueFalse", "__Internal")]
-        NSString kRTCMediaConstraintsValueFalse { get; }
-    }
-
-
-
-
-
-    partial interface Constants
-    {
-        // extern NSString *const _Nonnull kRTCPeerConnectionErrorDomain;
-        [Field("kRTCPeerConnectionErrorDomain", "__Internal")]
-        NSString kRTCPeerConnectionErrorDomain { get; }
-
-        // extern const int kRTCSessionDescriptionErrorCode;
-        [Field("kRTCSessionDescriptionErrorCode", "__Internal")]
-        int kRTCSessionDescriptionErrorCode { get; }
-    }
-
-
-
-    // @interface Media (RTCPeerConnection)
-    [Category]
-    [BaseType(typeof(RTCPeerConnection))]
-    interface RTCPeerConnection_Media
-    {
-        // -(RTCRtpSender * _Nonnull)senderWithKind:(NSString * _Nonnull)kind streamId:(NSString * _Nonnull)streamId;
-        [Export("senderWithKind:streamId:")]
-        RTCRtpSender SenderWithKind(string kind, string streamId);
-    }
-
-    // @interface DataChannel (RTCPeerConnection)
-    [Category]
-    [BaseType(typeof(RTCPeerConnection))]
-    interface RTCPeerConnection_DataChannel
-    {
-        // -(RTCDataChannel * _Nullable)dataChannelForLabel:(NSString * _Nonnull)label configuration:(RTCDataChannelConfiguration * _Nonnull)configuration;
-        [Export("dataChannelForLabel:configuration:")]
-        [return: NullAllowed]
-        RTCDataChannel DataChannelForLabel(string label, RTCDataChannelConfiguration configuration);
-    }
-
-    // typedef void (^RTCStatisticsCompletionHandler)(RTCStatisticsReport * _Nonnull);
-    delegate void RTCStatisticsCompletionHandler(RTCStatisticsReport arg0);
+    #region PeerConnectionFactory
 
     // @interface Stats (RTCPeerConnection)
     [Category]
@@ -2529,7 +2076,411 @@ namespace WebRTC.iOS.Bindings
         [Export("ignoreEthernetNetworkAdapter")]
         bool IgnoreEthernetNetworkAdapter { get; set; }
     }
+    
+    // @interface Media (RTCPeerConnection)
+    [Category]
+    [BaseType(typeof(RTCPeerConnection))]
+    interface RTCPeerConnection_Media
+    {
+        // -(RTCRtpSender * _Nonnull)senderWithKind:(NSString * _Nonnull)kind streamId:(NSString * _Nonnull)streamId;
+        [Export("senderWithKind:streamId:")]
+        RTCRtpSender SenderWithKind(string kind, string streamId);
+    }
 
+    // @interface DataChannel (RTCPeerConnection)
+    [Category]
+    [BaseType(typeof(RTCPeerConnection))]
+    interface RTCPeerConnection_DataChannel
+    {
+        // -(RTCDataChannel * _Nullable)dataChannelForLabel:(NSString * _Nonnull)label configuration:(RTCDataChannelConfiguration * _Nonnull)configuration;
+        [Export("dataChannelForLabel:configuration:")]
+        [return: NullAllowed]
+        RTCDataChannel DataChannelForLabel(string label, RTCDataChannelConfiguration configuration);
+    }
+
+    // typedef void (^RTCStatisticsCompletionHandler)(RTCStatisticsReport * _Nonnull);
+    delegate void RTCStatisticsCompletionHandler(RTCStatisticsReport arg0);
+
+    #endregion
+
+
+
+    // @protocol RTCCodecSpecificInfo <NSObject>
+    [Protocol, Model]
+    [BaseType(typeof(NSObject))]
+    interface RTCCodecSpecificInfo
+    {
+    }
+
+
+    // @interface RTCEncodedImage : NSObject
+    [BaseType(typeof(NSObject))]
+    interface RTCEncodedImage
+    {
+        // @property (nonatomic, strong) NSData * _Nonnull buffer;
+        [Export("buffer", ArgumentSemantic.Strong)]
+        NSData Buffer { get; set; }
+
+        // @property (assign, nonatomic) int32_t encodedWidth;
+        [Export("encodedWidth")]
+        int EncodedWidth { get; set; }
+
+        // @property (assign, nonatomic) int32_t encodedHeight;
+        [Export("encodedHeight")]
+        int EncodedHeight { get; set; }
+
+        // @property (assign, nonatomic) uint32_t timeStamp;
+        [Export("timeStamp")]
+        uint TimeStamp { get; set; }
+
+        // @property (assign, nonatomic) int64_t captureTimeMs;
+        [Export("captureTimeMs")]
+        long CaptureTimeMs { get; set; }
+
+        // @property (assign, nonatomic) int64_t ntpTimeMs;
+        [Export("ntpTimeMs")]
+        long NtpTimeMs { get; set; }
+
+        // @property (assign, nonatomic) uint8_t flags;
+        [Export("flags")]
+        byte Flags { get; set; }
+
+        // @property (assign, nonatomic) int64_t encodeStartMs;
+        [Export("encodeStartMs")]
+        long EncodeStartMs { get; set; }
+
+        // @property (assign, nonatomic) int64_t encodeFinishMs;
+        [Export("encodeFinishMs")]
+        long EncodeFinishMs { get; set; }
+
+        // @property (assign, nonatomic) RTCFrameType frameType;
+        [Export("frameType", ArgumentSemantic.Assign)]
+        RTCFrameType FrameType { get; set; }
+
+        // @property (assign, nonatomic) RTCVideoRotation rotation;
+        [Export("rotation", ArgumentSemantic.Assign)]
+        RTCVideoRotation Rotation { get; set; }
+
+        // @property (assign, nonatomic) BOOL completeFrame;
+        [Export("completeFrame")]
+        bool CompleteFrame { get; set; }
+
+        // @property (nonatomic, strong) NSNumber * _Nonnull qp;
+        [Export("qp", ArgumentSemantic.Strong)]
+        NSNumber Qp { get; set; }
+
+        // @property (assign, nonatomic) RTCVideoContentType contentType;
+        [Export("contentType", ArgumentSemantic.Assign)]
+        RTCVideoContentType ContentType { get; set; }
+    }
+
+    // @protocol RTCMutableYUVPlanarBuffer <RTCYUVPlanarBuffer>
+    [Protocol, Model]
+    interface RTCMutableYUVPlanarBuffer : RTCYUVPlanarBuffer
+    {
+        // @required @property (readonly, nonatomic) uint8_t * _Nonnull mutableDataY;
+        [Abstract]
+        [Export("mutableDataY")]
+        unsafe IntPtr MutableDataY { get; }
+
+        // @required @property (readonly, nonatomic) uint8_t * _Nonnull mutableDataU;
+        [Abstract]
+        [Export("mutableDataU")]
+        unsafe IntPtr MutableDataU { get; }
+
+        // @required @property (readonly, nonatomic) uint8_t * _Nonnull mutableDataV;
+        [Abstract]
+        [Export("mutableDataV")]
+        unsafe IntPtr MutableDataV { get; }
+    }
+
+    // @protocol RTCMutableI420Buffer <RTCI420Buffer, RTCMutableYUVPlanarBuffer>
+    [Protocol, Model]
+    interface RTCMutableI420Buffer : RTCI420Buffer, RTCMutableYUVPlanarBuffer
+    {
+    }
+
+    // @interface RTCRtpFragmentationHeader : NSObject
+    [BaseType(typeof(NSObject))]
+    interface RTCRtpFragmentationHeader
+    {
+        // @property (nonatomic, strong) NSArray<NSNumber *> * _Nonnull fragmentationOffset;
+        [Export("fragmentationOffset", ArgumentSemantic.Strong)]
+        NSNumber[] FragmentationOffset { get; set; }
+
+        // @property (nonatomic, strong) NSArray<NSNumber *> * _Nonnull fragmentationLength;
+        [Export("fragmentationLength", ArgumentSemantic.Strong)]
+        NSNumber[] FragmentationLength { get; set; }
+
+        // @property (nonatomic, strong) NSArray<NSNumber *> * _Nonnull fragmentationTimeDiff;
+        [Export("fragmentationTimeDiff", ArgumentSemantic.Strong)]
+        NSNumber[] FragmentationTimeDiff { get; set; }
+
+        // @property (nonatomic, strong) NSArray<NSNumber *> * _Nonnull fragmentationPlType;
+        [Export("fragmentationPlType", ArgumentSemantic.Strong)]
+        NSNumber[] FragmentationPlType { get; set; }
+    }
+
+    [Static]
+    partial interface Constants
+    {
+        // extern NSString *const _Nonnull kRTCAudioSessionErrorDomain;
+        [Field("kRTCAudioSessionErrorDomain", "__Internal")]
+        NSString kRTCAudioSessionErrorDomain { get; }
+
+        // extern const NSInteger kRTCAudioSessionErrorLockRequired;
+        [Field("kRTCAudioSessionErrorLockRequired", "__Internal")]
+        nint kRTCAudioSessionErrorLockRequired { get; }
+
+        // extern const NSInteger kRTCAudioSessionErrorConfiguration;
+        [Field("kRTCAudioSessionErrorConfiguration", "__Internal")]
+        nint kRTCAudioSessionErrorConfiguration { get; }
+    }
+
+    partial interface Constants
+    {
+        // extern const int kRTCAudioSessionPreferredNumberOfChannels __attribute__((visibility("default")));
+        [Field("kRTCAudioSessionPreferredNumberOfChannels", "__Internal")]
+        int kRTCAudioSessionPreferredNumberOfChannels { get; }
+
+        // extern const double kRTCAudioSessionHighPerformanceSampleRate __attribute__((visibility("default")));
+        [Field("kRTCAudioSessionHighPerformanceSampleRate", "__Internal")]
+        double kRTCAudioSessionHighPerformanceSampleRate { get; }
+
+        // extern const double kRTCAudioSessionLowComplexitySampleRate __attribute__((visibility("default")));
+        [Field("kRTCAudioSessionLowComplexitySampleRate", "__Internal")]
+        double kRTCAudioSessionLowComplexitySampleRate { get; }
+
+        // extern const double kRTCAudioSessionHighPerformanceIOBufferDuration __attribute__((visibility("default")));
+        [Field("kRTCAudioSessionHighPerformanceIOBufferDuration", "__Internal")]
+        double kRTCAudioSessionHighPerformanceIOBufferDuration { get; }
+
+        // extern const double kRTCAudioSessionLowComplexityIOBufferDuration __attribute__((visibility("default")));
+        [Field("kRTCAudioSessionLowComplexityIOBufferDuration", "__Internal")]
+        double kRTCAudioSessionLowComplexityIOBufferDuration { get; }
+    }
+
+    // @interface RTCNetworkMonitor : NSObject
+    [BaseType(typeof(NSObject))]
+    [DisableDefaultCtor]
+    interface RTCNetworkMonitor
+    {
+    }
+
+    // @interface RTCMTLVideoView : UIView <RTCVideoRenderer>
+    //[iOS(9, 0)]
+    [Introduced(PlatformName.iOS, PlatformArchitecture.Arch32)]
+    [BaseType(typeof(UIView))]
+    interface RTCMTLVideoView : RTCVideoRenderer
+    {
+        [Wrap("WeakDelegate")]
+        [NullAllowed]
+        RTCVideoViewDelegate Delegate { get; set; }
+
+        // @property (nonatomic, weak) id<RTCVideoViewDelegate> _Nullable delegate;
+        [NullAllowed, Export("delegate", ArgumentSemantic.Weak)]
+        NSObject WeakDelegate { get; set; }
+
+        // @property (nonatomic) UIViewContentMode videoContentMode;
+        [Export("videoContentMode", ArgumentSemantic.Assign)]
+        UIViewContentMode VideoContentMode { get; set; }
+
+        // @property (getter = isEnabled, nonatomic) BOOL enabled;
+        [Export("enabled")]
+        bool Enabled { [Bind("isEnabled")] get; set; }
+
+        // @property (nonatomic) NSValue * _Nullable rotationOverride;
+        [NullAllowed, Export("rotationOverride", ArgumentSemantic.Assign)]
+        NSValue RotationOverride { get; set; }
+    }
+
+    // @interface RTCCodecSpecificInfoH264 : NSObject <RTCCodecSpecificInfo>
+    [BaseType(typeof(NSObject))]
+    interface RTCCodecSpecificInfoH264 : RTCCodecSpecificInfo
+    {
+        // @property (assign, nonatomic) RTCH264PacketizationMode packetizationMode;
+        [Export("packetizationMode", ArgumentSemantic.Assign)]
+        RTCH264PacketizationMode PacketizationMode { get; set; }
+    }
+
+    partial interface Constants
+    {
+        // extern NSString *const kRTCVideoCodecH264Name __attribute__((visibility("default")));
+        [Field("kRTCVideoCodecH264Name", "__Internal")]
+        NSString kRTCVideoCodecH264Name { get; }
+
+        // extern NSString *const kRTCLevel31ConstrainedHigh __attribute__((visibility("default")));
+        [Field("kRTCLevel31ConstrainedHigh", "__Internal")]
+        NSString kRTCLevel31ConstrainedHigh { get; }
+
+        // extern NSString *const kRTCLevel31ConstrainedBaseline __attribute__((visibility("default")));
+        [Field("kRTCLevel31ConstrainedBaseline", "__Internal")]
+        NSString kRTCLevel31ConstrainedBaseline { get; }
+
+        // extern NSString *const kRTCMaxSupportedH264ProfileLevelConstrainedHigh __attribute__((visibility("default")));
+        [Field("kRTCMaxSupportedH264ProfileLevelConstrainedHigh", "__Internal")]
+        NSString kRTCMaxSupportedH264ProfileLevelConstrainedHigh { get; }
+
+        // extern NSString *const kRTCMaxSupportedH264ProfileLevelConstrainedBaseline __attribute__((visibility("default")));
+        [Field("kRTCMaxSupportedH264ProfileLevelConstrainedBaseline", "__Internal")]
+        NSString kRTCMaxSupportedH264ProfileLevelConstrainedBaseline { get; }
+    }
+
+    // @interface RTCVideoDecoderFactoryH264 : NSObject <RTCVideoDecoderFactory>
+    [BaseType(typeof(NSObject))]
+    interface RTCVideoDecoderFactoryH264 : RTCVideoDecoderFactory
+    {
+    }
+
+    // @interface RTCVideoDecoderH264 : NSObject <RTCVideoDecoder>
+    [BaseType(typeof(NSObject))]
+    interface RTCVideoDecoderH264 : RTCVideoDecoder
+    {
+    }
+
+    // @interface RTCVideoEncoderFactoryH264 : NSObject <RTCVideoEncoderFactory>
+    [BaseType(typeof(NSObject))]
+    interface RTCVideoEncoderFactoryH264 : RTCVideoEncoderFactory
+    {
+    }
+
+    // @interface RTCVideoEncoderH264 : NSObject <RTCVideoEncoder>
+    [BaseType(typeof(NSObject))]
+    interface RTCVideoEncoderH264 : RTCVideoEncoder
+    {
+        // -(instancetype)initWithCodecInfo:(RTCVideoCodecInfo *)codecInfo;
+        [Export("initWithCodecInfo:")]
+        IntPtr Constructor(RTCVideoCodecInfo codecInfo);
+    }
+
+    // @interface RTCDispatcher : NSObject
+    [BaseType(typeof(NSObject))]
+    [DisableDefaultCtor]
+    interface RTCDispatcher
+    {
+        // +(void)dispatchAsyncOnType:(RTCDispatcherQueueType)dispatchType block:(dispatch_block_t)block;
+        [Static]
+        [Export("dispatchAsyncOnType:block:")]
+        void DispatchAsyncOnType(RTCDispatcherQueueType dispatchType, Action block);
+
+        // +(BOOL)isOnQueueForType:(RTCDispatcherQueueType)dispatchType;
+        [Static]
+        [Export("isOnQueueForType:")]
+        bool IsOnQueueForType(RTCDispatcherQueueType dispatchType);
+    }
+
+    // @interface RTCDevice (UIDevice)
+    [Category]
+    [BaseType(typeof(UIDevice))]
+    interface UIDevice_RTCDevice
+    {
+        // +(RTCDeviceType)deviceType;
+        [Static]
+        [Export("deviceType")]
+        RTCDeviceType DeviceType { get; }
+
+        // +(BOOL)isIOS11OrLater;
+        [Static]
+        [Export("isIOS11OrLater")]
+        bool IsIOS11OrLater { get; }
+    }
+
+    partial interface Constants
+    {
+        // extern NSString *const _Nonnull kRTCMediaStreamTrackKindAudio __attribute__((visibility("default")));
+        [Field("kRTCMediaStreamTrackKindAudio", "__Internal")]
+        NSString kRTCMediaStreamTrackKindAudio { get; }
+
+        // extern NSString *const _Nonnull kRTCMediaStreamTrackKindVideo __attribute__((visibility("default")));
+        [Field("kRTCMediaStreamTrackKindVideo", "__Internal")]
+        NSString kRTCMediaStreamTrackKindVideo { get; }
+    }
+
+    partial interface Constants
+    {
+        // extern NSString *const kRTCFieldTrialAudioSendSideBweKey __attribute__((visibility("default")));
+        [Field("kRTCFieldTrialAudioSendSideBweKey", "__Internal")]
+        NSString kRTCFieldTrialAudioSendSideBweKey { get; }
+
+        // extern NSString *const kRTCFieldTrialAudioForceNoTWCCKey __attribute__((visibility("default")));
+        [Field("kRTCFieldTrialAudioForceNoTWCCKey", "__Internal")]
+        NSString kRTCFieldTrialAudioForceNoTWCCKey { get; }
+
+        // extern NSString *const kRTCFieldTrialAudioForceABWENoTWCCKey __attribute__((visibility("default")));
+        [Field("kRTCFieldTrialAudioForceABWENoTWCCKey", "__Internal")]
+        NSString kRTCFieldTrialAudioForceABWENoTWCCKey { get; }
+
+        // extern NSString *const kRTCFieldTrialSendSideBweWithOverheadKey __attribute__((visibility("default")));
+        [Field("kRTCFieldTrialSendSideBweWithOverheadKey", "__Internal")]
+        NSString kRTCFieldTrialSendSideBweWithOverheadKey { get; }
+
+        // extern NSString *const kRTCFieldTrialFlexFec03AdvertisedKey __attribute__((visibility("default")));
+        [Field("kRTCFieldTrialFlexFec03AdvertisedKey", "__Internal")]
+        NSString kRTCFieldTrialFlexFec03AdvertisedKey { get; }
+
+        // extern NSString *const kRTCFieldTrialFlexFec03Key __attribute__((visibility("default")));
+        [Field("kRTCFieldTrialFlexFec03Key", "__Internal")]
+        NSString kRTCFieldTrialFlexFec03Key { get; }
+
+        // extern NSString *const kRTCFieldTrialH264HighProfileKey __attribute__((visibility("default")));
+        [Field("kRTCFieldTrialH264HighProfileKey", "__Internal")]
+        NSString kRTCFieldTrialH264HighProfileKey { get; }
+
+        // extern NSString *const kRTCFieldTrialMinimizeResamplingOnMobileKey __attribute__((visibility("default")));
+        [Field("kRTCFieldTrialMinimizeResamplingOnMobileKey", "__Internal")]
+        NSString kRTCFieldTrialMinimizeResamplingOnMobileKey { get; }
+
+        // extern NSString *const kRTCFieldTrialUseNWPathMonitor __attribute__((visibility("default")));
+        [Field("kRTCFieldTrialUseNWPathMonitor", "__Internal")]
+        NSString kRTCFieldTrialUseNWPathMonitor { get; }
+
+        // extern NSString *const kRTCFieldTrialEnabledValue __attribute__((visibility("default")));
+        [Field("kRTCFieldTrialEnabledValue", "__Internal")]
+        NSString kRTCFieldTrialEnabledValue { get; }
+    }
+
+    partial interface Constants
+    {
+        // extern NSString *const _Nonnull kRTCMediaConstraintsAudioNetworkAdaptorConfig __attribute__((visibility("default")));
+        [Field("kRTCMediaConstraintsAudioNetworkAdaptorConfig", "__Internal")]
+        NSString kRTCMediaConstraintsAudioNetworkAdaptorConfig { get; }
+
+        // extern NSString *const _Nonnull kRTCMediaConstraintsIceRestart __attribute__((visibility("default")));
+        [Field("kRTCMediaConstraintsIceRestart", "__Internal")]
+        NSString kRTCMediaConstraintsIceRestart { get; }
+
+        // extern NSString *const _Nonnull kRTCMediaConstraintsOfferToReceiveAudio __attribute__((visibility("default")));
+        [Field("kRTCMediaConstraintsOfferToReceiveAudio", "__Internal")]
+        NSString kRTCMediaConstraintsOfferToReceiveAudio { get; }
+
+        // extern NSString *const _Nonnull kRTCMediaConstraintsOfferToReceiveVideo __attribute__((visibility("default")));
+        [Field("kRTCMediaConstraintsOfferToReceiveVideo", "__Internal")]
+        NSString kRTCMediaConstraintsOfferToReceiveVideo { get; }
+
+        // extern NSString *const _Nonnull kRTCMediaConstraintsVoiceActivityDetection __attribute__((visibility("default")));
+        [Field("kRTCMediaConstraintsVoiceActivityDetection", "__Internal")]
+        NSString kRTCMediaConstraintsVoiceActivityDetection { get; }
+
+        // extern NSString *const _Nonnull kRTCMediaConstraintsValueTrue __attribute__((visibility("default")));
+        [Field("kRTCMediaConstraintsValueTrue", "__Internal")]
+        NSString kRTCMediaConstraintsValueTrue { get; }
+
+        // extern NSString *const _Nonnull kRTCMediaConstraintsValueFalse __attribute__((visibility("default")));
+        [Field("kRTCMediaConstraintsValueFalse", "__Internal")]
+        NSString kRTCMediaConstraintsValueFalse { get; }
+    }
+
+    partial interface Constants
+    {
+        // extern NSString *const _Nonnull kRTCPeerConnectionErrorDomain;
+        [Field("kRTCPeerConnectionErrorDomain", "__Internal")]
+        NSString kRTCPeerConnectionErrorDomain { get; }
+
+        // extern const int kRTCSessionDescriptionErrorCode;
+        [Field("kRTCSessionDescriptionErrorCode", "__Internal")]
+        int kRTCSessionDescriptionErrorCode { get; }
+    }
+    
     // @interface RTCRtcpParameters : NSObject
     [BaseType(typeof(NSObject))]
     interface RTCRtcpParameters
@@ -2836,7 +2787,6 @@ namespace WebRTC.iOS.Bindings
         [NullAllowed, Export("dtmfSender")]
         RTCDtmfSender DtmfSender { get; }
     }
-
 
     partial interface Constants
     {
