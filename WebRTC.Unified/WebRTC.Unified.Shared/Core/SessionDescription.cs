@@ -3,7 +3,7 @@ using System;
 
 using Newtonsoft.Json;
 
-using Web.Unified.Enums;
+using WebRTC.Unified.Enums;
 
 namespace WebRTC.Unified.Core
 {

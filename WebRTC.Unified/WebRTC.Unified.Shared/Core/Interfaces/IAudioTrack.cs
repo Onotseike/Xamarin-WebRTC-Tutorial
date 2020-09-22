@@ -4,6 +4,6 @@ namespace WebRTC.Unified.Core.Interfaces
 {
     public interface IAudioTrack : IMediaStreamTrack
     {
-        IAudioSource Source { get; }
+        // IAudioSource Source { get; }
     }
 }

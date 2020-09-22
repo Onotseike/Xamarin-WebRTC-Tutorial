@@ -1,13 +1,13 @@
 ﻿// onotseike@hotmail.comPaula Aliu
 using Newtonsoft.Json;
 
-using Web.Unified.Enums;
 
 using WebRTC.Unified.Core;
+using WebRTC.Unified.Enums;
 
-namespace Web.Unified.Core
+namespace WebRTC.Unified.Core
 {
-    public class Configuration
+    public class RTCConfiguration
     {
         #region Properties
 
@@ -15,7 +15,7 @@ namespace Web.Unified.Core
         public bool EnableDscp { get; set; }
 
         [JsonProperty("iceServers")]
-        public IceServer IceServers { get; set; }
+        public IceServer[] IceServers { get; set; }
 
         [JsonProperty("certificate")]
         public RTCCertificate Certificate { get; set; }
@@ -27,7 +27,7 @@ namespace Web.Unified.Core
         public BundlePolicy BundlePolicy { get; set; }
 
         [JsonProperty("rtcpMuxPolicy")]
-        public RtcpMuxPolicy pMuxPolicy { get; set; }
+        public RtcpMuxPolicy RtcpMuxPolicy { get; set; }
 
         [JsonProperty("tcpCandidatePolicy")]
         public TcpCandidatePolicy TcpCandidatePolicy { get; set; }
@@ -78,7 +78,7 @@ namespace Web.Unified.Core
         public bool ShouldSurfaceIceCandidatesOnIceTransportTypeChanged { get; set; }
 
         [JsonProperty("iceCheckMinInterval")]
-        public int IceCheckMinInterval { get; set; }
+        public int? IceCheckMinInterval { get; set; }
 
         [JsonProperty("sdpSemantics")]
         public SdpSemantics SdpSemantics { get; set; }
@@ -97,6 +97,10 @@ namespace Web.Unified.Core
 
         [JsonProperty("rtcpVideoReportIntervalMs")]
         public int pVideoReportIntervalMs { get; set; }
+
+        public bool UseMediaTransport { get; internal set; }
+        public bool UseMediaTransportForDataChannels { get; internal set; }
+        public bool EnableDtlsSrtp { get; internal set; }
 
         #endregion
     }

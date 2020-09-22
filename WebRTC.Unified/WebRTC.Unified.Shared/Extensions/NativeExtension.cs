@@ -10,6 +10,6 @@ namespace WebRTC.Unified.Extensions
     /// </summary>
     public static class NativeExtension
     {
-        public static T ToNative<T>(this INativeObject nativeObject) => (T)nativeObject.NativeObject;
+        public static T ToPlatformNative<T>(this INativeObject nativePort) => (T)nativePort.NativeObject;
     }
 }

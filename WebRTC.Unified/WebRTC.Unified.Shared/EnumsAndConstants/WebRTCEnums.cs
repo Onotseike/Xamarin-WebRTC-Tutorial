@@ -363,5 +363,10 @@ namespace WebRTC.Unified.Enums
         Error
     }
 
-
+    public enum ScalingType
+    {
+        AspectFit,
+        AspectFill,
+        AspectBalanced
+    }
 }

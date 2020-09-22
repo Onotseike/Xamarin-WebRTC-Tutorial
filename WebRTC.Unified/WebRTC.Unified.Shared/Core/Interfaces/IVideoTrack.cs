@@ -4,7 +4,7 @@ namespace WebRTC.Unified.Core.Interfaces
 {
     public interface IVideoTrack : IMediaStreamTrack
     {
-        IVideoSource Source { get; }
+        // IVideoSource Source { get; }
 
         void AddRenderer(IVideoRenderer videoRenderer);
         void RemoveVideoRenderer(IVideoRenderer videoRenderer);

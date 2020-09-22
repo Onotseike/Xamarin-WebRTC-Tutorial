@@ -2,14 +2,14 @@
   <MonoDevelop.Ide.ItemProperties.WebRTC.Unified.iOS HideGettingStarted="True" />
   <MonoDevelop.Ide.ItemProperties.WebRTC.Unified.Shared FirstBuild="True" HideGettingStarted="True" />
   <MonoDevelop.Ide.ItemProperties.WebRTC.Unified.Android PreferredExecutionTarget="Android.pixel_2_pie_9_0_-_api_28" HideGettingStarted="True" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="WebRTC.Unified.Shared/EnumsAndConstants/WebRTCConstants.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WebRTC.Unified.Android/PlatformAudioTrack.cs">
     <Files>
-      <File FileName="WebRTC.Unified.Shared/Core/Interfaces/IDataChannel.cs" Line="38" Column="6" />
-      <File FileName="WebRTC.Unified.Shared/Core/DataChannel.cs" Line="6" Column="6" />
-      <File FileName="WebRTC.Unified.Android/Extensions/CoreExtensions.cs" Line="43" Column="48" />
-      <File FileName="WebRTC.Unified.Android/Extensions/EnumExtensions.cs" Line="11" Column="68" />
-      <File FileName="WebRTC.Unified.Shared/EnumsAndConstants/WebRTCEnums.cs" Line="2" Column="1" />
-      <File FileName="WebRTC.Unified.Shared/EnumsAndConstants/WebRTCConstants.cs" Line="3" Column="26" />
+      <File FileName="WebRTC.Unified.Android/AudioTrack.cs" Line="16" Column="38" />
+      <File FileName="WebRTC.Unified.Android/VideoTrack.cs" Line="11" Column="13" />
+      <File FileName="WebRTC.Unified.Android/MediaSource.cs" Line="14" Column="1" />
+      <File FileName="WebRTC.Unified.Android/PlatformMediaStreamTrack.cs" Line="29" Column="99" />
+      <File FileName="WebRTC.Unified.Shared/Core/Interfaces/IAudioTrack.cs" Line="7" Column="11" />
+      <File FileName="WebRTC.Unified.Shared/Core/Interfaces/IVideoTrack.cs" Line="7" Column="11" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,12 +17,13 @@
           <Node name="WebRTC.Unified" expanded="True">
             <Node name="WebRTC.Unified.Android" expanded="True">
               <Node name="Extensions" expanded="True" />
+              <Node name="PlatformAudioTrack.cs" selected="True" />
             </Node>
             <Node name="WebRTC.Unified.Shared" expanded="True">
-              <Node name="Core" expanded="True" />
-              <Node name="EnumsAndConstants" expanded="True">
-                <Node name="WebRTCConstants.cs" selected="True" />
+              <Node name="Core" expanded="True">
+                <Node name="Interfaces" expanded="True" />
               </Node>
+              <Node name="Extensions" expanded="True" />
             </Node>
           </Node>
         </State>

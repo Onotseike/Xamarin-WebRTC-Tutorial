@@ -20,71 +20,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6cc6b254-cc49-4cd0-af1d-5eebc724413b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/WebRTC.Android.Bindings/WebRTC.Android.Bindings/.vs/WebRTC.Android.Bindings/xs/UserPrefs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Android.Bindings/WebRTC.Android.Bindings/.vs/WebRTC.Android.Bindings/xs/project-cache/WebRTC.Android.Bindings-Debug.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Android.Bindings/WebRTC.Android.Bindings/WebRTC.Android.Bindings.sln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Android.Bindings/WebRTC.Android.Bindings/mono_crash.11a6748113.0.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Android/Extensions/CoreExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Android/Extensions/EnumExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Android/obj/Debug/lp/0.stamp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Android/obj/Debug/lp/0/jl/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Android/obj/Debug/lp/0/jl/bin/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Android/obj/Debug/lp/0/jl/bin/classes.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Android/obj/Debug/lp/0/jl/jni/arm64-v8a/libjingle_peerconnection_so.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Android/obj/Debug/lp/0/jl/jni/armeabi-v7a/libjingle_peerconnection_so.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Android/obj/Debug/lp/0/jl/jni/x86/libjingle_peerconnection_so.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Android/obj/Debug/lp/0/jl/jni/x86_64/libjingle_peerconnection_so.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Android/obj/Debug/lp/map.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Android/obj/Release/WebRTC.Unified.Android.csprojAssemblyReference.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/Core/CryptoOptions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/Core/IceServer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/Core/Interfaces/IVideoEncoderFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/Core/NativeFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/Core/NativePlatformBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/Core/PeerConnectionFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.iOS/obj/Release/WebRTC.Unified.iOS.csprojAssemblyReference.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/packages/Newtonsoft.Json.12.0.3/.signature.p7s" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/packages/Newtonsoft.Json.12.0.3/LICENSE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/packages/Newtonsoft.Json.12.0.3/Newtonsoft.Json.12.0.3.nupkg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/packages/Newtonsoft.Json.12.0.3/lib/net20/Newtonsoft.Json.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/packages/Newtonsoft.Json.12.0.3/lib/net20/Newtonsoft.Json.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/packages/Newtonsoft.Json.12.0.3/lib/net35/Newtonsoft.Json.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/packages/Newtonsoft.Json.12.0.3/lib/net35/Newtonsoft.Json.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/packages/Newtonsoft.Json.12.0.3/lib/net40/Newtonsoft.Json.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/packages/Newtonsoft.Json.12.0.3/lib/net40/Newtonsoft.Json.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/packages/Newtonsoft.Json.12.0.3/lib/net45/Newtonsoft.Json.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/packages/Newtonsoft.Json.12.0.3/lib/net45/Newtonsoft.Json.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/packages/Newtonsoft.Json.12.0.3/lib/netstandard1.0/Newtonsoft.Json.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/packages/Newtonsoft.Json.12.0.3/lib/netstandard1.0/Newtonsoft.Json.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/packages/Newtonsoft.Json.12.0.3/lib/netstandard1.3/Newtonsoft.Json.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/packages/Newtonsoft.Json.12.0.3/lib/netstandard1.3/Newtonsoft.Json.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/packages/Newtonsoft.Json.12.0.3/lib/netstandard2.0/Newtonsoft.Json.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/packages/Newtonsoft.Json.12.0.3/lib/netstandard2.0/Newtonsoft.Json.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/packages/Newtonsoft.Json.12.0.3/lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/packages/Newtonsoft.Json.12.0.3/lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/packages/Newtonsoft.Json.12.0.3/lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/packages/Newtonsoft.Json.12.0.3/lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/packages/Newtonsoft.Json.12.0.3/packageIcon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRTC.Android.Bindings/.vs/WebRTC.Android.Bindings/xs/UserPrefs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WebRTC.Android.Bindings/.vs/WebRTC.Android.Bindings/xs/UserPrefs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Android/PlatformAudioTrack.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Android/PlatformMediaSource.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Android/PlatformMediaStreamTrack.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Android/PlatformVideoTrack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Xamarin-WebRTC-Tutorial.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Xamarin-WebRTC-Tutorial.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebRTC.Unified/.vs/WebRTC.Unified/xs/UserPrefs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WebRTC.Unified/.vs/WebRTC.Unified/xs/UserPrefs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebRTC.Unified/.vs/WebRTC.Unified/xs/project-cache/WebRTC.Unified.Android-Debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebRTC.Unified/.vs/WebRTC.Unified/xs/project-cache/WebRTC.Unified.Android-Debug.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRTC.Unified/.vs/WebRTC.Unified/xs/project-cache/WebRTC.Unified.iOS-Debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebRTC.Unified/.vs/WebRTC.Unified/xs/project-cache/WebRTC.Unified.iOS-Debug.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Android/Extensions/CoreExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Android/Extensions/CoreExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Android/Extensions/EnumExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Android/Extensions/EnumExtensions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Android/WebRTC.Unified.Android.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Android/WebRTC.Unified.Android.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Android/obj/Debug/designtime/build.props" beforeDir="false" afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Android/obj/Debug/designtime/build.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Android/packages.config" beforeDir="false" afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Android/packages.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.NuGet/WebRTC.Unified.NuGet.nuproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.NuGet/WebRTC.Unified.NuGet.nuproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/Core/DataChannel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/Core/DataChannel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/Core/IceCandidate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/Core/IceCandidate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/Core/Interfaces/IDataChannel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/Core/Interfaces/IDataChannel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/Core/Interfaces/INativeFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/Core/Interfaces/INativeFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/Core/Interfaces/IPeerConnectionFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/Core/Interfaces/IPeerConnectionFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/Core/MediaConstraints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/Core/MediaConstraints.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/Core/RTCCertificate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/Core/RTCCertificate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Android/obj/Debug/WebRTC.Unified.Android.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Android/obj/Debug/WebRTC.Unified.Android.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/Core/Interfaces/IAudioTrack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/Core/Interfaces/IAudioTrack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/Core/Interfaces/IMediaSource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/Core/Interfaces/IMediaSource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/Core/Interfaces/IMediaStreamTrack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/Core/Interfaces/IMediaStreamTrack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/Core/Interfaces/IVideoTrack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/Core/Interfaces/IVideoTrack.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/Core/RTCConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/Core/RTCConfiguration.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/Core/SessionDescription.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/Core/SessionDescription.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/WebRTC.Unified.Shared.projitems" beforeDir="false" afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/WebRTC.Unified.Shared.projitems" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/EnumsAndConstants/WebRTCEnums.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/EnumsAndConstants/WebRTCEnums.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/Extensions/NativeExtension.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.Shared/Extensions/NativeExtension.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.iOS/WebRTC.Unified.iOS.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.iOS/WebRTC.Unified.iOS.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.iOS/packages.config" beforeDir="false" afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.iOS/packages.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.iOS/obj/Debug/WebRTC.Unified.iOS.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebRTC.Unified/WebRTC.Unified.iOS/obj/Debug/WebRTC.Unified.iOS.csprojAssemblyReference.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +90,7 @@
       <updated>1600685015449</updated>
       <workItem from="1600685027547" duration="10235000" />
       <workItem from="1600770603166" duration="555000" />
-      <workItem from="1600771296328" duration="5326000" />
+      <workItem from="1600771296328" duration="7726000" />
     </task>
     <servers />
   </component>
