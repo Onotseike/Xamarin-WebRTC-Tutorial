@@ -45,6 +45,9 @@
     <Reference Include="WebRTC.iOS.Bindings">
       <HintPath>..\..\WebRTC.iOS.Bindings\WebRTC.iOS.Bindings\bin\Debug\WebRTC.iOS.Bindings.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

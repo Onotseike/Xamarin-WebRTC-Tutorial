@@ -1,0 +1,3 @@
+/Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.Unified/WebRTC.Unified.iOS/obj/Debug/optimized/
+/Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.Unified/WebRTC.Unified.iOS/obj/Debug/WebRTC.Unified.iOS.csprojAssemblyReference.cache
+/Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.Unified/WebRTC.Unified.iOS/obj/Debug/WebRTC.Unified.iOS.csproj.CoreCompileInputs.cache

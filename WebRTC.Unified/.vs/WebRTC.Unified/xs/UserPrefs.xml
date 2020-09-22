@@ -2,26 +2,27 @@
   <MonoDevelop.Ide.ItemProperties.WebRTC.Unified.iOS HideGettingStarted="True" />
   <MonoDevelop.Ide.ItemProperties.WebRTC.Unified.Shared FirstBuild="True" HideGettingStarted="True" />
   <MonoDevelop.Ide.ItemProperties.WebRTC.Unified.Android PreferredExecutionTarget="Android.pixel_2_pie_9_0_-_api_28" HideGettingStarted="True" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="WebRTC.Unified.Shared/Core/DataChannel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WebRTC.Unified.Shared/EnumsAndConstants/WebRTCConstants.cs">
     <Files>
-      <File FileName="WebRTC.Unified.Shared/Core/SessionDescription.cs" Line="1" Column="1" />
-      <File FileName="WebRTC.Unified.Shared/Core/RTCConfiguration.cs" Line="1" Column="1" />
-      <File FileName="WebRTC.Unified.Shared/Core/IceCandidate.cs" Line="1" Column="1" />
-      <File FileName="WebRTC.Unified.Shared/Core/MediaConstraints.cs" Line="1" Column="1" />
-      <File FileName="WebRTC.Unified.Shared/Core/RTCCertificate.cs" Line="7" Column="19" />
-      <File FileName="WebRTC.Unified.Shared/Core/Interfaces/IDataChannel.cs" Line="35" Column="1" />
-      <File FileName="WebRTC.Unified.Shared/Core/DataChannel.cs" Line="1" Column="1" />
+      <File FileName="WebRTC.Unified.Shared/Core/Interfaces/IDataChannel.cs" Line="38" Column="6" />
+      <File FileName="WebRTC.Unified.Shared/Core/DataChannel.cs" Line="6" Column="6" />
+      <File FileName="WebRTC.Unified.Android/Extensions/CoreExtensions.cs" Line="43" Column="48" />
+      <File FileName="WebRTC.Unified.Android/Extensions/EnumExtensions.cs" Line="11" Column="68" />
+      <File FileName="WebRTC.Unified.Shared/EnumsAndConstants/WebRTCEnums.cs" Line="2" Column="1" />
+      <File FileName="WebRTC.Unified.Shared/EnumsAndConstants/WebRTCConstants.cs" Line="3" Column="26" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="WebRTC.Unified" expanded="True">
-            <Node name="WebRTC.Unified.Android" expanded="True" />
-            <Node name="WebRTC.Unified.Shared" expanded="True">
-              <Node name="Core" expanded="True">
-                <Node name="DataChannel.cs" selected="True" />
-              </Node>
+            <Node name="WebRTC.Unified.Android" expanded="True">
               <Node name="Extensions" expanded="True" />
+            </Node>
+            <Node name="WebRTC.Unified.Shared" expanded="True">
+              <Node name="Core" expanded="True" />
+              <Node name="EnumsAndConstants" expanded="True">
+                <Node name="WebRTCConstants.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>

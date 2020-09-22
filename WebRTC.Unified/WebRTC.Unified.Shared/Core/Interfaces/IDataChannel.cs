@@ -36,23 +36,4 @@ namespace WebRTC.Unified.Core.Interfaces
 
         bool SendData(DataBuffer data);
     }
-
-    public interface IDataChannelConfiguration : INativeObject
-    {
-        bool IsOrdered { get; set; }
-
-        int MaxRetransmitTimeMs { get; set; }
-
-        int MaxPacketLifeTime { get; set; }
-
-        int MaxRetransmits { get; set; }
-
-        bool IsNegotiated { get; set; }
-
-        int StreamId { get; set; }
-
-        int ChannelId { get; set; }
-
-        string Protocol { get; set; }
-    }
 }

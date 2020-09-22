@@ -1,6 +1,6 @@
 ﻿// onotseike@hotmail.comPaula Aliu
 using System;
-namespace WebRTC.Unified.EnumsAndConstants
+namespace WebRTC.Unified.Constants
 {
     public static class WebRTCConstants
     {

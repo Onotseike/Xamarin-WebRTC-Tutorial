@@ -12,7 +12,7 @@ namespace WebRTC.Unified.Core.Interfaces
 
         IVideoSource VideoSource { get; }
 
-        IVideoTrack VideoTrackWithSource(IVideoSource videoSource, string trackid);
+        IVideoTrack VideoTrackWithSource(IVideoSource videoSource, string trackId);
 
         IMediaStream MediaStreamWithStreamId(string streamId);
 

@@ -1,6 +1,5 @@
 ﻿// onotseike@hotmail.comPaula Aliu
-using System.Runtime.Serialization;
-namespace Web.Unified.Enums
+namespace WebRTC.Unified.Enums
 {
 
     public enum VideoRotation : long

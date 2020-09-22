@@ -9,7 +9,7 @@ namespace WebRTC.Unified.Core.Interfaces
     {
         IPeerConnectionFactory CreatePeerConnectionFactory();
 
-        RTCCertificate GenerateCertificate(EncryptionKeyType encryptionKeyType, long expiries);
+        RTCCertificate CreateCertificate(EncryptionKeyType encryptionKeyType, long expiries);
 
         void StopInternalTracingCapture();
         void ShutDownInternalTracer();

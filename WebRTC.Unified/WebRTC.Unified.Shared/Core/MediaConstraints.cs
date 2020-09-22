@@ -1,11 +1,20 @@
 ﻿// onotseike@hotmail.comPaula Aliu
 using System;
+using System.Collections.Generic;
+
+using Java.Util;
+
 namespace WebRTC.Unified.Core
 {
     public class MediaConstraints
     {
-        public MediaConstraints()
+        public Dictionary<string, string> Mandatory { get; set; }
+        public Dictionary<string, string> Optional { get; set; }
+
+        public MediaConstraints(Dictionary<string, string> mandatory = null, Dictionary<string, string> optional = null)
         {
+            Mandatory = mandatory;
+            Optional = optional;
         }
     }
 }

@@ -44,6 +44,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)Core\Interfaces\IVideoRenderer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\RTCCertificate.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\DataChannel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\IceServer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\NativeFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\NativePlatformBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\PeerConnectionFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Interfaces\IVideoEncoderFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\CryptoOptions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)EnumsAndConstants\" />

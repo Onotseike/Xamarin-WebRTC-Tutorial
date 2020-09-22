@@ -6,11 +6,9 @@
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="WebRTC.Android.Bindings" expanded="True">
+          <Node name="WebRTC.Android.Bindings" expanded="True" selected="True">
             <Node name="WebRTC.Android.Bindings" expanded="True">
-              <Node name="Jars" expanded="True">
-                <Node name="AboutJars.txt" selected="True" />
-              </Node>
+              <Node name="Jars" expanded="True" />
               <Node name="Transforms" expanded="True" />
             </Node>
           </Node>
