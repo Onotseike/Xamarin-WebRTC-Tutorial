@@ -1,7 +1,7 @@
 ﻿// onotseike@hotmail.comPaula Aliu
 using System;
 
-using Web.Unified.Enums;
+using WebRTC.Unified.Enums;
 
 using WebRTC.Unified.Core.Interfaces;
 
@@ -37,11 +37,11 @@ namespace WebRTC.Unified.Core
             IsNativeFactoryInitialized();
             _nativeFactory.ShutDownInternalTracer();
         }
-        internal static void SetupInternalTracer()
-        {
-            IsNativeFactoryInitialized();
-            _nativeFactory.SetupInternalTracer();
-        }
+        //internal static void SetupInternalTracer()
+        //{
+        //    IsNativeFactoryInitialized();
+        //    _nativeFactory.SetupInternalTracer();
+        //}
         internal static bool StartInternalCapture(string filePath)
         {
             IsNativeFactoryInitialized();

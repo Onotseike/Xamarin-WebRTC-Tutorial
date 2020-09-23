@@ -2,11 +2,11 @@
 using System;
 namespace WebRTC.Unified.Core.Interfaces
 {
-    public interface IDtmfSender : INativeObject
+    public interface IDtmfSender : IDisposable
     {
         bool CanInsertDtmf { get; }
 
-        bool GetDuration(string tones, double duration, double interToneGap);
+        bool InsertDtmf(string tones, double duration, double interToneGap);
 
         string RemainingTones { get; }
 

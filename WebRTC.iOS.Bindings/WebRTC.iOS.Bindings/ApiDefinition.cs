@@ -1483,7 +1483,7 @@ namespace WebRTC.iOS.Bindings
 
         [Wrap("WeakDelegate")]
         [NullAllowed]
-        RTCDataChannelDelegate Delegate { get; set; }
+        IRTCDataChannelDelegate Delegate { get; set; }
 
         // @property (nonatomic, weak) id<RTCDataChannelDelegate> _Nullable delegate;
         [NullAllowed, Export("delegate", ArgumentSemantic.Weak)]
@@ -2787,7 +2787,7 @@ namespace WebRTC.iOS.Bindings
         // @required -(BOOL)insertDtmf:(NSString * _Nonnull)tones duration:(NSTimeInterval)duration interToneGap:(NSTimeInterval)interToneGap;
         [Abstract]
         [Export("insertDtmf:duration:interToneGap:")]
-        bool GetDuration(string tones, double duration, double interToneGap);
+        bool InsertDtmf(string tones, double duration, double interToneGap);
 
         // @required -(NSString * _Nonnull)remainingTones;
         [Abstract]

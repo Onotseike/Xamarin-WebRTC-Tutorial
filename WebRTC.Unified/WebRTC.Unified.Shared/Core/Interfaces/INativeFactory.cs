@@ -1,7 +1,7 @@
 ﻿// onotseike@hotmail.comPaula Aliu
 using System;
 
-using Web.Unified.Enums;
+using WebRTC.Unified.Enums;
 
 namespace WebRTC.Unified.Core.Interfaces
 {
@@ -13,7 +13,7 @@ namespace WebRTC.Unified.Core.Interfaces
 
         void StopInternalTracingCapture();
         void ShutDownInternalTracer();
-        void SetupInternalTracer();
+        //void SetupInternalTracer();
         bool StartInternalCapture(string filePath);
 
     }

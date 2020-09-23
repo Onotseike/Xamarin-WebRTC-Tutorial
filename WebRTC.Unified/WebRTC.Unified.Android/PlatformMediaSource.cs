@@ -14,9 +14,6 @@ namespace WebRTC.Unified.Android
 
         public SourceState State => _mediaSource.InvokeState().ToNativePort();
 
-        public PlatformMediaSource(MediaSource mediaSource) : base(mediaSource)
-        {
-
-        }
+        public PlatformMediaSource(MediaSource mediaSource) : base(mediaSource) => _mediaSource = mediaSource;
     }
 }

@@ -20,7 +20,7 @@ namespace WebRTC.Unified.Extensions
 {
     internal static class DataChannelConfigurationExtension
     {
-        public static DataChannel.Init ToPlatformNative(this Core.DataChannelConfiguration nativePort)
+        public static DataChannel.Init ToPlatformNative(this Core.DataChannel.DataChannelConfiguration nativePort)
         {
             return new DataChannel.Init
             {
@@ -40,6 +40,9 @@ namespace WebRTC.Unified.Extensions
         public static IceCandidate ToPlatformNative(this Core.IceCandidate nativePort) => new IceCandidate(nativePort.SdpMid, nativePort.SdpMLineIndex, nativePort.Sdp);
 
         public static Core.IceCandidate ToNativePort(this IceCandidate platformNative) => new Core.IceCandidate(platformNative.SdpMid, platformNative.SdpMLineIndex, platformNative.Sdp);
+
+        public static IEnumerable<IceCandidate> ToPlatformNative(this IEnumerable<Core.IceCandidate> nativePort) => nativePort.Select(ToPlatformNative);
+        public static IEnumerable<Core.IceCandidate> ToNativePort(this IEnumerable<IceCandidate> platformNative) => platformNative.Select(ToNativePort);
     }
 
     internal static class IceServerExtension

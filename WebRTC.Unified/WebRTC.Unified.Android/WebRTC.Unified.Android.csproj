@@ -53,6 +53,22 @@
     <Compile Include="PlatformVideoTrack.cs" />
     <Compile Include="PlatformMediaSource.cs" />
     <Compile Include="PlatformMediaStreamTrack.cs" />
+    <Compile Include="PlatformAudioSource.cs" />
+    <Compile Include="PlatformDataChannel.cs" />
+    <Compile Include="PlatformCameraVideoCapturer.cs" />
+    <Compile Include="PlatformVideoCapturer.cs" />
+    <Compile Include="PlatformEglBase.cs" />
+    <Compile Include="PlatformFileVideoCapturer.cs" />
+    <Compile Include="PlatformDtmfSender.cs" />
+    <Compile Include="PlatformMediaStream.cs" />
+    <Compile Include="PlatformFactory.cs" />
+    <Compile Include="PlatformPeerConnectionFactory.cs" />
+    <Compile Include="PlatformVideoSource.cs" />
+    <Compile Include="PlatformPeerConnectionDelegate.cs" />
+    <Compile Include="PlatformPeerConnection.cs" />
+    <Compile Include="PlatformRtpReceiver.cs" />
+    <Compile Include="PlatformRtpSender.cs" />
+    <Compile Include="PlatformRtpTransceiver.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

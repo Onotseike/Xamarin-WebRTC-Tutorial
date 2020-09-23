@@ -37,7 +37,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Core\Interfaces\IVideoSource.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Interfaces\IPeerConnectionDelegate.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Interfaces\IStatisticsReport.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Core\Interfaces\IDataChannel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Interfaces\IRtpParameters.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Interfaces\IDtmfSender.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Interfaces\IVideoFrame.cs" />

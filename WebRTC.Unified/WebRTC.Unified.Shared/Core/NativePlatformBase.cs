@@ -15,6 +15,11 @@ namespace WebRTC.Unified.Core
             NativeObject = nativeObject;
         }
 
+        public NativePlatformBase()
+        {
+
+        }
+
         public object NativeObject { get; protected set; }
 
         public virtual void Dispose()
