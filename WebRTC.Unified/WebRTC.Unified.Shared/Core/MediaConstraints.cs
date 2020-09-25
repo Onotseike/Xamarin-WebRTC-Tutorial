@@ -1,8 +1,5 @@
 ﻿// onotseike@hotmail.comPaula Aliu
-using System;
 using System.Collections.Generic;
-
-using Java.Util;
 
 namespace WebRTC.Unified.Core
 {

@@ -19,12 +19,26 @@ using IceGatheringState = Org.Webrtc.PeerConnection.IceGatheringState;
 using SignalingState = Org.Webrtc.PeerConnection.SignalingState;
 using DataChannel = Org.Webrtc.DataChannel;
 using MediaSource = Org.Webrtc.MediaSource;
-using Org.Webrtc;
+using ScalingType = Org.Webrtc.RendererCommon.ScalingType;
+using FrameType = Org.Webrtc.EncodedImage.FrameType;
+using VideoCodecStatus = Org.Webrtc.VideoCodecStatus;
+using AdapterType = Org.Webrtc.PeerConnection.AdapterType;
+using PortPrunePolicy = Org.Webrtc.PeerConnection.PortPrunePolicy;
+using MediaType = Org.Webrtc.MediaStreamTrack.MediaType;
+using ConnectionType = Org.Webrtc.NetworkMonitorAutoDetect.ConnectionType;
+using TextureBufferType = Org.Webrtc.VideoFrame.TextureBufferType;
+using AudioRecordStartErrorCode = Org.Webrtc.Voiceengine.WebRtcAudioRecord.AudioRecordStartErrorCode;
+using AudioTrackStartErrorCode = Org.Webrtc.Voiceengine.WebRtcAudioTrack.AudioTrackStartErrorCode;
+using RtpTransceiverDirection = Org.Webrtc.RtpTransceiver.RtpTransceiverDirection;
+
 
 namespace WebRTC.Unified.Extensions
 {
     internal static class EnumExtensions
     {
+
+        #region ToPlatformNative
+
         public static IceTransportsType ToPlatformNative(this Enums.IceTransportPolicy nativePort)
         {
             switch (nativePort)
@@ -156,6 +170,8 @@ namespace WebRTC.Unified.Extensions
                     return SessionDescription.Type.Answer;
                 case Enums.SdpType.Offer:
                     return SessionDescription.Type.Offer;
+                case Enums.SdpType.PrAnswer:
+                    return SessionDescription.Type.Pranswer;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(nativePort), nativePort, null);
             }
@@ -271,22 +287,222 @@ namespace WebRTC.Unified.Extensions
             }
         }
 
-        public static RendererCommon.ScalingType ToPlatformNative(this Enums.ScalingType nativePort)
+        public static ScalingType ToPlatformNative(this Enums.ScalingType nativePort)
         {
             switch (nativePort)
             {
                 case Enums.ScalingType.AspectFit:
-                    return RendererCommon.ScalingType.ScaleAspectFit;
+                    return ScalingType.ScaleAspectFit;
                 case Enums.ScalingType.AspectFill:
-                    return RendererCommon.ScalingType.ScaleAspectFill;
+                    return ScalingType.ScaleAspectFill;
                 case Enums.ScalingType.AspectBalanced:
-                    return RendererCommon.ScalingType.ScaleAspectBalanced;
+                    return ScalingType.ScaleAspectBalanced;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(nativePort), nativePort, null);
             }
         }
 
+        public static FrameType ToPlatformNative(this Enums.FrameType nativePort)
+        {
+            switch (nativePort)
+            {
+                case Enums.FrameType.EmptyFrame:
+                    return FrameType.EmptyFrame;
+                case Enums.FrameType.VideoFrameKey:
+                    return FrameType.VideoFrameKey;
+                case Enums.FrameType.VideoFrameDelta:
+                    return FrameType.VideoFrameDelta;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(nativePort), nativePort, null);
+            }
+        }
 
+        public static VideoCodecStatus ToPlatformNative(this Android.Enums.VideoCodecStatus nativePort)
+        {
+            switch (nativePort)
+            {
+                case Android.Enums.VideoCodecStatus.Error:
+                    return VideoCodecStatus.Error;
+                case Android.Enums.VideoCodecStatus.ErrParmater:
+                    return VideoCodecStatus.ErrParameter;
+                case Android.Enums.VideoCodecStatus.ErrRequestSli:
+                    return VideoCodecStatus.ErrRequestSli;
+                case Android.Enums.VideoCodecStatus.ErrSize:
+                    return VideoCodecStatus.ErrSize;
+                case Android.Enums.VideoCodecStatus.FallbackSoftware:
+                    return VideoCodecStatus.FallbackSoftware;
+                case Android.Enums.VideoCodecStatus.LevelExceeded:
+                    return VideoCodecStatus.LevelExceeded;
+                case Android.Enums.VideoCodecStatus.Memory:
+                    return VideoCodecStatus.Memory;
+                case Android.Enums.VideoCodecStatus.NoOutput:
+                    return VideoCodecStatus.NoOutput;
+                case Android.Enums.VideoCodecStatus.Ok:
+                    return VideoCodecStatus.Ok;
+                case Android.Enums.VideoCodecStatus.RequestSli:
+                    return VideoCodecStatus.RequestSli;
+                case Android.Enums.VideoCodecStatus.TargetBitrateOvershoot:
+                    return VideoCodecStatus.TargetBitrateOvershoot;
+                case Android.Enums.VideoCodecStatus.Timeout:
+                    return VideoCodecStatus.Timeout;
+                case Android.Enums.VideoCodecStatus.Uninitialized:
+                    return VideoCodecStatus.Uninitialized;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(nativePort), nativePort, null);
+            }
+        }
+
+        public static AdapterType ToPlatformNative(this Android.Enums.AdapterType nativePort)
+        {
+            switch (nativePort)
+            {
+                case Android.Enums.AdapterType.AdapterTypeAny:
+                    return AdapterType.AdapterTypeAny;
+                case Android.Enums.AdapterType.Cellular:
+                    return AdapterType.Cellular;
+                case Android.Enums.AdapterType.Cellular2g:
+                    return AdapterType.Cellular2g;
+                case Android.Enums.AdapterType.Cellular3g:
+                    return AdapterType.Cellular3g;
+                case Android.Enums.AdapterType.Cellular4g:
+                    return AdapterType.Cellular4g;
+                case Android.Enums.AdapterType.Cellular5g:
+                    return AdapterType.Cellular5g;
+                case Android.Enums.AdapterType.Ethernet:
+                    return AdapterType.Ethernet;
+                case Android.Enums.AdapterType.Loopback:
+                    return AdapterType.Loopback;
+                case Android.Enums.AdapterType.Unknown:
+                    return AdapterType.Unknown;
+                case Android.Enums.AdapterType.Vpn:
+                    return AdapterType.Vpn;
+                case Android.Enums.AdapterType.Wifi:
+                    return AdapterType.Wifi;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(nativePort), nativePort, null);
+            }
+
+        }
+
+        public static PortPrunePolicy ToPlatformNative(this Android.Enums.PortPrunePolicy nativePort)
+        {
+            switch (nativePort)
+            {
+                case Android.Enums.PortPrunePolicy.KeepReadyFirst:
+                    return PortPrunePolicy.KeepFirstReady;
+                case Android.Enums.PortPrunePolicy.NoPrune:
+                    return PortPrunePolicy.NoPrune;
+                case Android.Enums.PortPrunePolicy.PruneBasedOnPriority:
+                    return PortPrunePolicy.PruneBasedOnPriority;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(nativePort), nativePort, null);
+            }
+        }
+
+        public static MediaType ToPlatformNative(this Enums.RtpMediaType nativePort)
+        {
+            switch (nativePort)
+            {
+                case Enums.RtpMediaType.Audio:
+                    return MediaType.MediaTypeAudio;
+                case Enums.RtpMediaType.Video:
+                    return MediaType.MediaTypeVideo;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(nativePort), nativePort, null); ;
+            }
+        }
+
+        public static ConnectionType ToPlatformNative(this Android.Enums.ConnectionType nativePort)
+        {
+            switch (nativePort)
+            {
+                case Android.Enums.ConnectionType.Connection2g:
+                    return ConnectionType.Connection2g;
+                case Android.Enums.ConnectionType.Connection3g:
+                    return ConnectionType.Connection3g;
+                case Android.Enums.ConnectionType.Connection4g:
+                    return ConnectionType.Connection4g;
+                case Android.Enums.ConnectionType.Connection5g:
+                    return ConnectionType.Connection5g;
+                case Android.Enums.ConnectionType.ConnectionBluetooth:
+                    return ConnectionType.ConnectionBluetooth;
+                case Android.Enums.ConnectionType.ConnectionEthernet:
+                    return ConnectionType.ConnectionEthernet;
+                case Android.Enums.ConnectionType.ConnectionNone:
+                    return ConnectionType.ConnectionNone;
+                case Android.Enums.ConnectionType.ConnectionUnknown:
+                    return ConnectionType.ConnectionUnknown;
+                case Android.Enums.ConnectionType.ConnectionUnknownCellular:
+                    return ConnectionType.ConnectionUnknownCellular;
+                case Android.Enums.ConnectionType.ConnectionVpn:
+                    return ConnectionType.ConnectionVpn;
+                case Android.Enums.ConnectionType.ConnectionWifi:
+                    return ConnectionType.ConnectionWifi;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(nativePort), nativePort, null);
+            }
+        }
+
+        public static TextureBufferType ToPlatformNative(this Android.Enums.TextureBufferType nativePort)
+        {
+            switch (nativePort)
+            {
+                case Android.Enums.TextureBufferType.Oes:
+                    return TextureBufferType.Oes;
+                case Android.Enums.TextureBufferType.Rgb:
+                    return TextureBufferType.Rgb;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(nativePort), nativePort, null);
+            }
+        }
+
+        public static AudioRecordStartErrorCode ToPlatformNative(this Android.Enums.AudioRecordStartErrorCode nativePort)
+        {
+            switch (nativePort)
+            {
+                case Android.Enums.AudioRecordStartErrorCode.AudioRecordStartException:
+                    return AudioRecordStartErrorCode.AudioRecordStartException;
+                case Android.Enums.AudioRecordStartErrorCode.AudioRecordStartStateMismatch:
+                    return AudioRecordStartErrorCode.AudioRecordStartStateMismatch;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(nativePort), nativePort, null);
+            }
+        }
+
+        public static AudioTrackStartErrorCode ToNativePlatform(this Android.Enums.AudioTrackStartErrorCode nativePort)
+        {
+            switch (nativePort)
+            {
+                case Android.Enums.AudioTrackStartErrorCode.AudioTrackStartException:
+                    return AudioTrackStartErrorCode.AudioTrackStartException;
+                case Android.Enums.AudioTrackStartErrorCode.AudioTrackStartStateMismatch:
+                    return AudioTrackStartErrorCode.AudioTrackStartStateMismatch;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(nativePort), nativePort, null);
+            }
+        }
+
+        public static RtpTransceiverDirection ToNativePlatform(this Enums.RtpTransceiverDirection nativePort)
+        {
+            switch (nativePort)
+            {
+                case Enums.RtpTransceiverDirection.SendRecv:
+                    return RtpTransceiverDirection.SendRecv;
+                case Enums.RtpTransceiverDirection.SendOnly:
+                    return RtpTransceiverDirection.SendOnly;
+                case Enums.RtpTransceiverDirection.RecvOnly:
+                    return RtpTransceiverDirection.RecvOnly;
+                case Enums.RtpTransceiverDirection.Inactive:
+                    return RtpTransceiverDirection.Inactive;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(nativePort), nativePort, null);
+            }
+        }
+
+        #endregion
+
+
+        #region ToNativePort
 
         public static Enums.SdpType ToNativePort(this SessionDescription.Type platformNative)
         {
@@ -405,17 +621,21 @@ namespace WebRTC.Unified.Extensions
             throw new ArgumentOutOfRangeException(nameof(platformNative), platformNative, null);
         }
 
-        public static Enums.RtpTransceiverDirection ToNativePort(this RtpTransceiver.RtpTransceiverDirection platformNative)
+        public static Enums.RtpTransceiverDirection ToNativePort(this RtpTransceiverDirection platformNative)
         {
-            if (platformNative == RtpTransceiver.RtpTransceiverDirection.Inactive)
+            if (platformNative == RtpTransceiverDirection.Inactive)
                 return Enums.RtpTransceiverDirection.Inactive;
-            if (platformNative == RtpTransceiver.RtpTransceiverDirection.RecvOnly)
+            if (platformNative == RtpTransceiverDirection.RecvOnly)
                 return Enums.RtpTransceiverDirection.RecvOnly;
-            if (platformNative == RtpTransceiver.RtpTransceiverDirection.SendOnly)
+            if (platformNative == RtpTransceiverDirection.SendOnly)
                 return Enums.RtpTransceiverDirection.SendOnly;
-            if (platformNative == RtpTransceiver.RtpTransceiverDirection.SendRecv)
+            if (platformNative == RtpTransceiverDirection.SendRecv)
                 return Enums.RtpTransceiverDirection.SendRecv;
             throw new ArgumentOutOfRangeException(nameof(platformNative), platformNative, null);
         }
+
+
+        #endregion
+
     }
 }

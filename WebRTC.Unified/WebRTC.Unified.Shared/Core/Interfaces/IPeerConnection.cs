@@ -1,7 +1,7 @@
 ﻿// onotseike@hotmail.comPaula Aliu
-using System;
+using WebRTC.Unified.Enums;
 
-using Web.Unified.Enums;
+using static WebRTC.Unified.Core.DataChannel;
 
 namespace WebRTC.Unified.Core.Interfaces
 {
@@ -71,6 +71,6 @@ namespace WebRTC.Unified.Core.Interfaces
 
     public interface IPeerConnectionDataChannel : IPeerConnection
     {
-        IDataChannel DataChannelForLabel(string label, IDataChannelConfiguration configuration);
+        IDataChannel DataChannelForLabel(string label, DataChannelConfiguration configuration);
     }
 }

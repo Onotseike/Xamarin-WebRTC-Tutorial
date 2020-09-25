@@ -7,7 +7,7 @@ namespace WebRTC.Unified.Core.Interfaces
     {
         IAudioSource AudioSourceWithConstraints(MediaConstraints mediaConstraints);
 
-        IAudioTrack AudioTrackWithTrackId(string trackId);
+        // IAudioTrack AudioTrackWithTrackId(string trackId);
         IAudioTrack AudioTrackWithSource(IAudioSource audioSource, string trackId);
 
         IVideoSource VideoSource { get; }
@@ -18,7 +18,7 @@ namespace WebRTC.Unified.Core.Interfaces
 
         IPeerConnection PeerConnectionWithConfiguration(RTCConfiguration configuration, MediaConstraints constraints, IPeerConnectionDelegate peerConnectionDelegate);
 
-        void SetOptions(IPeerConnectionFactoryOptions options);
+        //void SetOptions(IPeerConnectionFactoryOptions options);
 
         bool StartAecDumpWithFilePath(string filePath, long maxSizeInBytes);
         void StopAecDump();

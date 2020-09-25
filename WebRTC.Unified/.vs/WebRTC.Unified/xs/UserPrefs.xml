@@ -2,24 +2,30 @@
   <MonoDevelop.Ide.ItemProperties.WebRTC.Unified.iOS HideGettingStarted="True" />
   <MonoDevelop.Ide.ItemProperties.WebRTC.Unified.Shared FirstBuild="True" HideGettingStarted="True" />
   <MonoDevelop.Ide.ItemProperties.WebRTC.Unified.Android PreferredExecutionTarget="Android.pixel_2_pie_9_0_-_api_28" HideGettingStarted="True" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="WebRTC.Unified.Android/PlatformPeerConnection.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WebRTC.Unified.Android/Extensions/EnumExtensions.cs">
     <Files>
-      <File FileName="WebRTC.Unified.Android/PlatformPeerConnectionFactory.cs" Line="61" Column="92" />
-      <File FileName="WebRTC.Unified.Android/PlatformPeerConnection.cs" Line="63" Column="209" />
+      <File FileName="WebRTC.Unified.iOS/Extensions/EnumExtensions.cs" Line="80" Column="1" />
+      <File FileName="WebRTC.Unified.Android/Extensions/EnumExtensions.cs" Line="516" Column="50" />
+      <File FileName="WebRTC.Unified.Shared/EnumsAndConstants/WebRTCEnums.cs" Line="254" Column="1" NotebookId="1" />
+      <File FileName="WebRTC.Unified.iOS/Enums/WebRTCEnums.cs" Line="77" Column="27" NotebookId="1" />
+      <File FileName="WebRTC.Unified.Android/Enums/WebRTCEnums.cs" Line="74" Column="37" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="WebRTC.Unified" expanded="True">
             <Node name="WebRTC.Unified.Android" expanded="True">
-              <Node name="Extensions" expanded="True" />
-              <Node name="PlatformPeerConnection.cs" selected="True" />
-            </Node>
-            <Node name="WebRTC.Unified.iOS" expanded="True" />
-            <Node name="WebRTC.Unified.Shared" expanded="True">
-              <Node name="Core" expanded="True">
-                <Node name="Interfaces" expanded="True" />
+              <Node name="Enums" expanded="True" />
+              <Node name="Extensions" expanded="True">
+                <Node name="EnumExtensions.cs" selected="True" />
               </Node>
+            </Node>
+            <Node name="WebRTC.Unified.iOS" expanded="True">
+              <Node name="Enums" expanded="True" />
+              <Node name="Extensions" expanded="True" />
+            </Node>
+            <Node name="WebRTC.Unified.Shared" expanded="True">
+              <Node name="EnumsAndConstants" expanded="True" />
             </Node>
           </Node>
         </State>

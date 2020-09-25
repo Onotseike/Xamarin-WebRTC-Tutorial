@@ -36,7 +36,7 @@ namespace WebRTC.Unified.Core
 
         public IAudioTrack AudioTrackWithSource(IAudioSource audioSource, string trackId) => _peerConnectionFactory.AudioTrackWithSource(audioSource, trackId);
 
-        public IAudioTrack AudioTrackWithTrackId(string trackId) => _peerConnectionFactory.AudioTrackWithTrackId(trackId);
+        //public IAudioTrack AudioTrackWithTrackId(string trackId) => _peerConnectionFactory.AudioTrackWithTrackId(trackId);
 
         public void Dispose() => _peerConnectionFactory.Dispose();
 
@@ -44,13 +44,13 @@ namespace WebRTC.Unified.Core
 
         public IPeerConnection PeerConnectionWithConfiguration(RTCConfiguration configuration, MediaConstraints constraints, IPeerConnectionDelegate peerConnectionDelegate) => _peerConnectionFactory.PeerConnectionWithConfiguration(configuration, constraints, peerConnectionDelegate);
 
-        public void SetOptions(IPeerConnectionFactoryOptions options) => _peerConnectionFactory.SetOptions(options);
+        // public void SetOptions(IPeerConnectionFactoryOptions options) => _peerConnectionFactory.SetOptions(options);
 
         public bool StartAecDumpWithFilePath(string filePath, long maxSizeInBytes) => _peerConnectionFactory.StartAecDumpWithFilePath(filePath, maxSizeInBytes);
 
         public void StopAecDump() => _peerConnectionFactory.StopAecDump();
 
-        public IVideoTrack VideoTrackWithSource(IVideoSource videoSource, string trackId) => _peerConnectionFactory.VideoTrackWithSource(videoSource, trackId)
+        public IVideoTrack VideoTrackWithSource(IVideoSource videoSource, string trackId) => _peerConnectionFactory.VideoTrackWithSource(videoSource, trackId);
         #endregion
     }
 }

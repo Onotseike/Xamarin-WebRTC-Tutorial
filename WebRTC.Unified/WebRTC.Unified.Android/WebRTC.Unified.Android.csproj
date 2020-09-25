@@ -69,12 +69,14 @@
     <Compile Include="PlatformRtpReceiver.cs" />
     <Compile Include="PlatformRtpSender.cs" />
     <Compile Include="PlatformRtpTransceiver.cs" />
+    <Compile Include="Enums\WebRTCEnums.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />
+    <Folder Include="Enums\" />
   </ItemGroup>
   <Import Project="..\WebRTC.Unified.Shared\WebRTC.Unified.Shared.projitems" Label="Shared" Condition="Exists('..\WebRTC.Unified.Shared\WebRTC.Unified.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

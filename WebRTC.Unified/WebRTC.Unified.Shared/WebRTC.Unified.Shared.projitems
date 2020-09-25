@@ -49,6 +49,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Core\PeerConnectionFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Interfaces\IVideoEncoderFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\CryptoOptions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Interfaces\AndroidInterfaces.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Interfaces\iOSInterfaces.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)EnumsAndConstants\" />

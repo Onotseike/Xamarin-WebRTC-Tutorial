@@ -63,10 +63,6 @@ namespace WebRTC.Unified.Android
             return new PlatformPeerConnection(_peerConnection, configuration, this);
         }
 
-        public void SetOptions(IPeerConnectionFactoryOptions options)
-        {
-            throw new System.NotImplementedException();
-        }
 
         public bool StartAecDumpWithFilePath(string filePath, long maxSizeInBytes)
         {
@@ -82,6 +78,8 @@ namespace WebRTC.Unified.Android
         {
             throw new System.NotImplementedException();
         }
+
+
     }
 
     internal interface IPeerConnectionFactoryAndroid : Core.Interfaces.IPeerConnectionFactory
