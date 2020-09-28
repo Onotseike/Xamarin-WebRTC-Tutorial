@@ -70,6 +70,8 @@
     <Compile Include="PlatformRtpSender.cs" />
     <Compile Include="PlatformRtpTransceiver.cs" />
     <Compile Include="Enums\WebRTCEnums.cs" />
+    <Compile Include="PlatformBuiltinAudioDecoderFactory.cs" />
+    <Compile Include="PlatformBuiltinAudioEncoderFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

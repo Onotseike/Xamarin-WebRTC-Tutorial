@@ -11,9 +11,6 @@ namespace WebRTC.Unified.Android
 
         public double Volume { get => 0f; set => _audioTrack.SetVolume(value); }
 
-        public PlatformAudioTrack(AudioTrack audioTrack) : base(audioTrack)
-        {
-            _audioTrack = audioTrack;
-        }
+        public PlatformAudioTrack(AudioTrack audioTrack) : base(audioTrack) => _audioTrack = audioTrack;
     }
 }

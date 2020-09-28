@@ -1,8 +1,8 @@
 ﻿// onotseike@hotmail.comPaula Aliu
 using System;
 
-using Org.Webrtc;
-
+using IVideoSink = Org.Webrtc.IVideoSink;
+using VideoTrack = Org.Webrtc.VideoTrack;
 using WebRTC.Unified.Core.Interfaces;
 using WebRTC.Unified.Extensions;
 

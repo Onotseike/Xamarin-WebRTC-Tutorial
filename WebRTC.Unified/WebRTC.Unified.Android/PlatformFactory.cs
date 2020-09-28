@@ -3,6 +3,7 @@ using Android.Content;
 
 using Org.Webrtc;
 
+using WebRTC.Unified.Enums;
 using WebRTC.Unified.Extensions;
 
 namespace WebRTC.Unified.Android
@@ -13,7 +14,7 @@ namespace WebRTC.Unified.Android
 
         public PlatformFactory(Context context) => _context = context;
 
-        public Core.RTCCertificate CreateCertificate(Enums.EncryptionKeyType encryptionKeyType, long expiries) => RtcCertificatePem.GenerateCertificate(encryptionKeyType.ToPlatformNative(), expiries).ToNativePort();
+        public Core.RTCCertificate CreateCertificate(EncryptionKeyType encryptionKeyType, long expiries) => RtcCertificatePem.GenerateCertificate(encryptionKeyType.ToPlatformNative(), expiries).ToNativePort();
 
         public Core.Interfaces.IPeerConnectionFactory CreatePeerConnectionFactory() => new PlatformPeerConnectionFactory(_context);
 

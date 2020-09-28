@@ -98,10 +98,31 @@ namespace WebRTC.Unified.Core
         [JsonProperty("rtcpVideoReportIntervalMs")]
         public int pVideoReportIntervalMs { get; set; }
 
+        [JsonProperty("useMediaTransport")]
         public bool UseMediaTransport { get; internal set; }
+
+        [JsonProperty("useMediaTransportForDataChannels")]
         public bool UseMediaTransportForDataChannels { get; internal set; }
+
+        [JsonProperty("enableDtlsSrtp")]
         public bool EnableDtlsSrtp { get; internal set; }
 
+        [JsonProperty("combinedAudioVideoBwe")]
+        public bool CombinedAudioVideoBwe { get; internal set; }
+
+        [JsonProperty("enableCpuOveruseDetection")]
+        public bool EnableCpuOverUseDetection { get; set; }
+
+        [JsonProperty("enableRtpDataChannel")]
+        public bool EnableRtpDataChannel { get; set; }
+
+        [JsonProperty("iceCheckIntervalStrongConnectivityMs")]
+        public int? IceCheckIntervalStrongConnectivityMs { get; set; }
+
+        [JsonProperty("iceCheckIntervalWeakConnectivityMs")]
+        public int? IceCheckIntervalWeakConnectivityMs { get; set; }
+
+        // TODO: Create all properties in RTCConfig.
         #endregion
     }
 }

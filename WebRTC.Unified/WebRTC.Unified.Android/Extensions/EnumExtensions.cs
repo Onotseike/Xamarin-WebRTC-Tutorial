@@ -1,6 +1,4 @@
-﻿// onotseike@hotmail.comPaula Aliu
-using System;
-
+﻿using System;
 
 using IceTransportsType = Org.Webrtc.PeerConnection.IceTransportsType;
 using BundlePolicy = Org.Webrtc.PeerConnection.BundlePolicy;
@@ -30,7 +28,7 @@ using TextureBufferType = Org.Webrtc.VideoFrame.TextureBufferType;
 using AudioRecordStartErrorCode = Org.Webrtc.Voiceengine.WebRtcAudioRecord.AudioRecordStartErrorCode;
 using AudioTrackStartErrorCode = Org.Webrtc.Voiceengine.WebRtcAudioTrack.AudioTrackStartErrorCode;
 using RtpTransceiverDirection = Org.Webrtc.RtpTransceiver.RtpTransceiverDirection;
-
+using Java.Security;
 
 namespace WebRTC.Unified.Extensions
 {
@@ -501,101 +499,195 @@ namespace WebRTC.Unified.Extensions
 
         #endregion
 
-
         #region ToNativePort
+
+        public static Enums.IceTransportPolicy ToNativePort(this IceTransportsType platformNative)
+        {
+            if (platformNative == IceTransportsType.None) return Enums.IceTransportPolicy.None;
+            if (platformNative == IceTransportsType.Relay) return Enums.IceTransportPolicy.Relay;
+            if (platformNative == IceTransportsType.Nohost) return Enums.IceTransportPolicy.NoHost;
+            if (platformNative == IceTransportsType.All) return Enums.IceTransportPolicy.All;
+            throw new ArgumentOutOfRangeException(nameof(platformNative), platformNative, null);
+        }
+
+        public static Enums.BundlePolicy ToNativePort(this BundlePolicy platformNative)
+        {
+            if (platformNative == BundlePolicy.Balanced) return Enums.BundlePolicy.Balanced;
+            if (platformNative == BundlePolicy.Maxcompat) return Enums.BundlePolicy.MaxCompat;
+            if (platformNative == BundlePolicy.Maxbundle) return Enums.BundlePolicy.MaxBundle;
+            throw new ArgumentOutOfRangeException(nameof(platformNative), platformNative, null);
+        }
+
+        public static Enums.RtcpMuxPolicy ToNativePort(this RtcpMuxPolicy platformNative)
+        {
+            if (platformNative == RtcpMuxPolicy.Negotiate) return Enums.RtcpMuxPolicy.Negotiate;
+            if (platformNative == RtcpMuxPolicy.Require) return Enums.RtcpMuxPolicy.Require;
+            throw new ArgumentOutOfRangeException(nameof(platformNative), platformNative, null);
+        }
+
+        public static Enums.TcpCandidatePolicy ToNativePort(this TcpCandidatePolicy platformNative)
+        {
+            if (platformNative == TcpCandidatePolicy.Enabled) return Enums.TcpCandidatePolicy.Enabled;
+            if (platformNative == TcpCandidatePolicy.Disabled) return Enums.TcpCandidatePolicy.Disabled;
+            throw new ArgumentOutOfRangeException(nameof(platformNative), platformNative, null);
+        }
+
+        public static Enums.CandidateNetworkPolicy ToNativePort(this CandidateNetworkPolicy platformNative)
+        {
+            if (platformNative == CandidateNetworkPolicy.All) return Enums.CandidateNetworkPolicy.All;
+            if (platformNative == CandidateNetworkPolicy.LowCost) return Enums.CandidateNetworkPolicy.LowCost;
+            throw new ArgumentOutOfRangeException(nameof(platformNative), platformNative, null);
+        }
+
+        public static Enums.ContinualGatheringPolicy ToNativePort(this ContinualGatheringPolicy platformNative)
+        {
+            if (platformNative == ContinualGatheringPolicy.GatherOnce) return Enums.ContinualGatheringPolicy.Once;
+            if (platformNative == ContinualGatheringPolicy.GatherContinually) return Enums.ContinualGatheringPolicy.Continually;
+            throw new ArgumentOutOfRangeException(nameof(platformNative), platformNative, null);
+        }
+
+        public static Enums.EncryptionKeyType ToNativePort(this KeyType platformNative)
+        {
+            if (platformNative == KeyType.Rsa) return Enums.EncryptionKeyType.Rsa;
+            if (platformNative == KeyType.Ecdsa) return Enums.EncryptionKeyType.Ecdsa;
+            throw new ArgumentOutOfRangeException(nameof(platformNative), platformNative, null);
+        }
+
+        public static Enums.SdpSemantics ToNativePort(this SdpSemantics platformNative)
+        {
+            if (platformNative == SdpSemantics.PlanB) return Enums.SdpSemantics.PlanB;
+            if (platformNative == SdpSemantics.UnifiedPlan) return Enums.SdpSemantics.UnifiedPlan;
+            throw new ArgumentOutOfRangeException(nameof(platformNative), platformNative, null);
+        }
+
+        public static Enums.TlsCertPolicy ToNativePort(this TlsCertPolicy platformNative)
+        {
+            if (platformNative == TlsCertPolicy.TlsCertPolicySecure) return Enums.TlsCertPolicy.Secure;
+            if (platformNative == TlsCertPolicy.TlsCertPolicyInsecureNoCheck) return Enums.TlsCertPolicy.InsecureNoCheck;
+            throw new ArgumentOutOfRangeException(nameof(platformNative), platformNative, null);
+        }
 
         public static Enums.SdpType ToNativePort(this SessionDescription.Type platformNative)
         {
-            if (platformNative == SessionDescription.Type.Answer)
-                return Enums.SdpType.Answer;
-            if (platformNative == SessionDescription.Type.Offer)
-                return Enums.SdpType.Offer;
-            throw new ArgumentOutOfRangeException(nameof(platformNative), platformNative, null);
-        }
-
-        public static Enums.MediaStreamTrackState ToNativePort(this MediaStreamTrack.State platformNative)
-        {
-            if (platformNative == MediaStreamTrack.State.Live)
-                return Enums.MediaStreamTrackState.Live;
-            if (platformNative == MediaStreamTrack.State.Ended)
-                return Enums.MediaStreamTrackState.Ended;
-            throw new ArgumentOutOfRangeException(nameof(platformNative), platformNative, null);
-        }
-
-        public static Enums.IceConnectionState ToNativePort(this IceConnectionState platformNative)
-        {
-            if (platformNative == IceConnectionState.Checking)
-                return Enums.IceConnectionState.Checking;
-            if (platformNative == IceConnectionState.Closed)
-                return Enums.IceConnectionState.Closed;
-            if (platformNative == IceConnectionState.Completed)
-                return Enums.IceConnectionState.Completed;
-            if (platformNative == IceConnectionState.Connected)
-                return Enums.IceConnectionState.Connected;
-            if (platformNative == IceConnectionState.Disconnected)
-                return Enums.IceConnectionState.Disconnected;
-            if (platformNative == IceConnectionState.Failed)
-                return Enums.IceConnectionState.Failed;
-            if (platformNative == IceConnectionState.New)
-                return Enums.IceConnectionState.New;
-            throw new ArgumentOutOfRangeException(nameof(platformNative), platformNative, null);
-        }
-
-        public static Enums.IceGatheringState ToNativePort(this IceGatheringState platformNative)
-        {
-            if (platformNative == IceGatheringState.Complete)
-                return Enums.IceGatheringState.Complete;
-            if (platformNative == IceGatheringState.Gathering)
-                return Enums.IceGatheringState.Gathering;
-            if (platformNative == IceGatheringState.New)
-                return Enums.IceGatheringState.New;
-            throw new ArgumentOutOfRangeException(nameof(platformNative), platformNative, null);
-        }
-
-        public static Enums.SignalingState ToNativePort(this SignalingState platformNative)
-        {
-            if (platformNative == SignalingState.Closed)
-                return Enums.SignalingState.Closed;
-            if (platformNative == SignalingState.Stable)
-                return Enums.SignalingState.Stable;
-            if (platformNative == SignalingState.HaveLocalOffer)
-                return Enums.SignalingState.HaveLocalOffer;
-            if (platformNative == SignalingState.HaveLocalPranswer)
-                return Enums.SignalingState.HaveLocalPrAnswer;
-            if (platformNative == SignalingState.HaveRemoteOffer)
-                return Enums.SignalingState.HaveRemoteOffer;
-            if (platformNative == SignalingState.HaveRemotePranswer)
-                return Enums.SignalingState.HaveRemotePrAnswer;
-            throw new ArgumentOutOfRangeException(nameof(platformNative), platformNative, null);
-        }
-
-        public static Enums.DataChannelState ToNativePort(this DataChannel.State platformNative)
-        {
-            if (platformNative == DataChannel.State.Closed)
-                return Enums.DataChannelState.Closed;
-            if (platformNative == DataChannel.State.Closing)
-                return Enums.DataChannelState.Closing;
-            if (platformNative == DataChannel.State.Connecting)
-                return Enums.DataChannelState.Connecting;
-            if (platformNative == DataChannel.State.Open)
-                return Enums.DataChannelState.Open;
+            if (platformNative == SessionDescription.Type.Answer) return Enums.SdpType.Answer;
+            if (platformNative == SessionDescription.Type.Offer) return Enums.SdpType.Offer;
+            if (platformNative == SessionDescription.Type.Pranswer) return Enums.SdpType.PrAnswer;
             throw new ArgumentOutOfRangeException(nameof(platformNative), platformNative, null);
         }
 
         public static Enums.PeerConnectionState ToNativePort(this PeerConnectionState platformNative)
         {
-            if (platformNative == PeerConnectionState.Closed)
-                return Enums.PeerConnectionState.Closed;
-            if (platformNative == PeerConnectionState.Connected)
-                return Enums.PeerConnectionState.Connected;
-            if (platformNative == PeerConnectionState.Connecting)
-                return Enums.PeerConnectionState.Connecting;
-            if (platformNative == PeerConnectionState.Disconnected)
-                return Enums.PeerConnectionState.Disconnected;
-            if (platformNative == PeerConnectionState.Failed)
-                return Enums.PeerConnectionState.Failed;
-            if (platformNative == PeerConnectionState.New)
-                return Enums.PeerConnectionState.New;
+            if (platformNative == PeerConnectionState.Closed) return Enums.PeerConnectionState.Closed;
+            if (platformNative == PeerConnectionState.Connected) return Enums.PeerConnectionState.Connected;
+            if (platformNative == PeerConnectionState.Connecting) return Enums.PeerConnectionState.Connecting;
+            if (platformNative == PeerConnectionState.Disconnected) return Enums.PeerConnectionState.Disconnected;
+            if (platformNative == PeerConnectionState.Failed) return Enums.PeerConnectionState.Failed;
+            if (platformNative == PeerConnectionState.New) return Enums.PeerConnectionState.New;
+            throw new ArgumentOutOfRangeException(nameof(platformNative), platformNative, null);
+        }
+
+        public static Enums.IceConnectionState ToNativePort(this IceConnectionState platformNative)
+        {
+            if (platformNative == IceConnectionState.Checking) return Enums.IceConnectionState.Checking;
+            if (platformNative == IceConnectionState.Closed) return Enums.IceConnectionState.Closed;
+            if (platformNative == IceConnectionState.Completed) return Enums.IceConnectionState.Completed;
+            if (platformNative == IceConnectionState.Connected) return Enums.IceConnectionState.Connected;
+            if (platformNative == IceConnectionState.Disconnected) return Enums.IceConnectionState.Disconnected;
+            if (platformNative == IceConnectionState.Failed) return Enums.IceConnectionState.Failed;
+            if (platformNative == IceConnectionState.New) return Enums.IceConnectionState.New;
+            throw new ArgumentOutOfRangeException(nameof(platformNative), platformNative, null);
+        }
+
+        public static Enums.IceGatheringState ToNativePort(this IceGatheringState platformNative)
+        {
+            if (platformNative == IceGatheringState.Complete) return Enums.IceGatheringState.Complete;
+            if (platformNative == IceGatheringState.Gathering) return Enums.IceGatheringState.Gathering;
+            if (platformNative == IceGatheringState.New) return Enums.IceGatheringState.New;
+            throw new ArgumentOutOfRangeException(nameof(platformNative), platformNative, null);
+        }
+
+        public static Enums.SignalingState ToNativePort(this SignalingState platformNative)
+        {
+            if (platformNative == SignalingState.Closed) return Enums.SignalingState.Closed;
+            if (platformNative == SignalingState.Stable) return Enums.SignalingState.Stable;
+            if (platformNative == SignalingState.HaveLocalOffer) return Enums.SignalingState.HaveLocalOffer;
+            if (platformNative == SignalingState.HaveLocalPranswer) return Enums.SignalingState.HaveLocalPrAnswer;
+            if (platformNative == SignalingState.HaveRemoteOffer) return Enums.SignalingState.HaveRemoteOffer;
+            if (platformNative == SignalingState.HaveRemotePranswer) return Enums.SignalingState.HaveRemotePrAnswer;
+            throw new ArgumentOutOfRangeException(nameof(platformNative), platformNative, null);
+        }
+
+        public static Enums.MediaStreamTrackState ToNativePort(this MediaStreamTrack.State platformNative)
+        {
+            if (platformNative == MediaStreamTrack.State.Live) return Enums.MediaStreamTrackState.Live;
+            if (platformNative == MediaStreamTrack.State.Ended) return Enums.MediaStreamTrackState.Ended;
+            throw new ArgumentOutOfRangeException(nameof(platformNative), platformNative, null);
+        }
+
+        public static Enums.DataChannelState ToNativePort(this DataChannel.State platformNative)
+        {
+            if (platformNative == DataChannel.State.Closed) return Enums.DataChannelState.Closed;
+            if (platformNative == DataChannel.State.Closing) return Enums.DataChannelState.Closing;
+            if (platformNative == DataChannel.State.Connecting) return Enums.DataChannelState.Connecting;
+            if (platformNative == DataChannel.State.Open) return Enums.DataChannelState.Open;
+            throw new ArgumentOutOfRangeException(nameof(platformNative), platformNative, null);
+        }
+
+        public static Enums.ScalingType ToNativePort(this ScalingType platformNative)
+        {
+            if (platformNative == ScalingType.ScaleAspectFit) return Enums.ScalingType.AspectFit;
+            if (platformNative == ScalingType.ScaleAspectFill) return Enums.ScalingType.AspectFill;
+            if (platformNative == ScalingType.ScaleAspectBalanced) return Enums.ScalingType.AspectBalanced;
+            throw new ArgumentOutOfRangeException(nameof(platformNative), platformNative, null);
+        }
+
+        public static Enums.FrameType ToNativePort(this FrameType platformNative)
+        {
+            if (platformNative == FrameType.EmptyFrame) return Enums.FrameType.EmptyFrame;
+            if (platformNative == FrameType.VideoFrameDelta) return Enums.FrameType.VideoFrameDelta;
+            if (platformNative == FrameType.VideoFrameKey) return Enums.FrameType.VideoFrameKey;
+            throw new ArgumentOutOfRangeException(nameof(platformNative), platformNative, null);
+        }
+
+        public static Android.Enums.VideoCodecStatus ToNativePort(this VideoCodecStatus platformNative)
+        {
+            if (platformNative == VideoCodecStatus.Error) return Android.Enums.VideoCodecStatus.Error;
+            if (platformNative == VideoCodecStatus.ErrParameter) return Android.Enums.VideoCodecStatus.ErrParmater;
+            if (platformNative == VideoCodecStatus.ErrRequestSli) return Android.Enums.VideoCodecStatus.ErrRequestSli;
+            if (platformNative == VideoCodecStatus.ErrSize) return Android.Enums.VideoCodecStatus.ErrSize;
+            if (platformNative == VideoCodecStatus.FallbackSoftware) return Android.Enums.VideoCodecStatus.FallbackSoftware;
+            if (platformNative == VideoCodecStatus.LevelExceeded) return Android.Enums.VideoCodecStatus.LevelExceeded;
+            if (platformNative == VideoCodecStatus.Memory) return Android.Enums.VideoCodecStatus.Memory;
+            if (platformNative == VideoCodecStatus.NoOutput) return Android.Enums.VideoCodecStatus.NoOutput;
+            if (platformNative == VideoCodecStatus.Ok) return Android.Enums.VideoCodecStatus.Ok;
+            if (platformNative == VideoCodecStatus.RequestSli) return Android.Enums.VideoCodecStatus.RequestSli;
+            if (platformNative == VideoCodecStatus.TargetBitrateOvershoot) return Android.Enums.VideoCodecStatus.TargetBitrateOvershoot;
+            if (platformNative == VideoCodecStatus.Timeout) return Android.Enums.VideoCodecStatus.Timeout;
+            if (platformNative == VideoCodecStatus.Uninitialized) return Android.Enums.VideoCodecStatus.Uninitialized;
+            throw new ArgumentOutOfRangeException(nameof(platformNative), platformNative, null);
+        }
+
+        public static Android.Enums.AdapterType ToNativePort(this AdapterType platformNative)
+        {
+            if (platformNative == AdapterType.AdapterTypeAny) return Android.Enums.AdapterType.AdapterTypeAny;
+            if (platformNative == AdapterType.Cellular) return Android.Enums.AdapterType.Cellular;
+            if (platformNative == AdapterType.Cellular2g) return Android.Enums.AdapterType.Cellular2g;
+            if (platformNative == AdapterType.Cellular3g) return Android.Enums.AdapterType.Cellular3g;
+            if (platformNative == AdapterType.Cellular4g) return Android.Enums.AdapterType.Cellular4g;
+            if (platformNative == AdapterType.Cellular5g) return Android.Enums.AdapterType.Cellular5g;
+            if (platformNative == AdapterType.Ethernet) return Android.Enums.AdapterType.Ethernet;
+            if (platformNative == AdapterType.Loopback) return Android.Enums.AdapterType.Loopback;
+            if (platformNative == AdapterType.Unknown) return Android.Enums.AdapterType.Unknown;
+            if (platformNative == AdapterType.Vpn) return Android.Enums.AdapterType.Vpn;
+            if (platformNative == AdapterType.Wifi) return Android.Enums.AdapterType.Wifi;
+            throw new ArgumentOutOfRangeException(nameof(platformNative), platformNative, null);
+        }
+
+        public static Android.Enums.PortPrunePolicy ToNativePort(this PortPrunePolicy platformNative)
+        {
+            if (platformNative == PortPrunePolicy.KeepFirstReady) return Android.Enums.PortPrunePolicy.KeepReadyFirst;
+            if (platformNative == PortPrunePolicy.NoPrune) return Android.Enums.PortPrunePolicy.NoPrune;
+            if (platformNative == PortPrunePolicy.PruneBasedOnPriority) return Android.Enums.PortPrunePolicy.PruneBasedOnPriority;
             throw new ArgumentOutOfRangeException(nameof(platformNative), platformNative, null);
         }
 
@@ -612,25 +704,58 @@ namespace WebRTC.Unified.Extensions
             throw new ArgumentOutOfRangeException(nameof(platformNative), platformNative, null);
         }
 
-        public static Enums.RtpMediaType ToNativePort(this MediaStreamTrack.MediaType platformNative)
+        public static Enums.RtpMediaType ToNativePort(this MediaType platformNative)
         {
-            if (platformNative == MediaStreamTrack.MediaType.MediaTypeAudio)
+            if (platformNative == MediaType.MediaTypeAudio)
                 return Enums.RtpMediaType.Audio;
-            if (platformNative == MediaStreamTrack.MediaType.MediaTypeVideo)
+            if (platformNative == MediaType.MediaTypeVideo)
                 return Enums.RtpMediaType.Video;
+            throw new ArgumentOutOfRangeException(nameof(platformNative), platformNative, null);
+        }
+
+        public static Android.Enums.ConnectionType ToNativePort(this ConnectionType platformNative)
+        {
+            if (platformNative == ConnectionType.Connection2g) return Android.Enums.ConnectionType.Connection2g;
+            if (platformNative == ConnectionType.Connection3g) return Android.Enums.ConnectionType.Connection3g;
+            if (platformNative == ConnectionType.Connection4g) return Android.Enums.ConnectionType.Connection4g;
+            if (platformNative == ConnectionType.Connection5g) return Android.Enums.ConnectionType.Connection5g;
+            if (platformNative == ConnectionType.ConnectionBluetooth) return Android.Enums.ConnectionType.ConnectionBluetooth;
+            if (platformNative == ConnectionType.ConnectionEthernet) return Android.Enums.ConnectionType.ConnectionEthernet;
+            if (platformNative == ConnectionType.ConnectionNone) return Android.Enums.ConnectionType.ConnectionNone;
+            if (platformNative == ConnectionType.ConnectionUnknown) return Android.Enums.ConnectionType.ConnectionUnknown;
+            if (platformNative == ConnectionType.ConnectionUnknownCellular) return Android.Enums.ConnectionType.ConnectionUnknownCellular;
+            if (platformNative == ConnectionType.ConnectionVpn) return Android.Enums.ConnectionType.ConnectionVpn;
+            if (platformNative == ConnectionType.ConnectionWifi) return Android.Enums.ConnectionType.ConnectionWifi;
+            throw new ArgumentOutOfRangeException(nameof(platformNative), platformNative, null);
+        }
+
+        public static Android.Enums.TextureBufferType ToNativePort(this TextureBufferType platformNative)
+        {
+            if (platformNative == TextureBufferType.Oes) return Android.Enums.TextureBufferType.Oes;
+            if (platformNative == TextureBufferType.Rgb) return Android.Enums.TextureBufferType.Rgb;
+            throw new ArgumentOutOfRangeException(nameof(platformNative), platformNative, null);
+        }
+
+        public static Android.Enums.AudioRecordStartErrorCode ToNativePort(this AudioRecordStartErrorCode platformNative)
+        {
+            if (platformNative == AudioRecordStartErrorCode.AudioRecordStartException) return Android.Enums.AudioRecordStartErrorCode.AudioRecordStartException;
+            if (platformNative == AudioRecordStartErrorCode.AudioRecordStartStateMismatch) return Android.Enums.AudioRecordStartErrorCode.AudioRecordStartStateMismatch;
+            throw new ArgumentOutOfRangeException(nameof(platformNative), platformNative, null);
+        }
+
+        public static Android.Enums.AudioTrackStartErrorCode ToNativePort(this AudioTrackStartErrorCode platformNative)
+        {
+            if (platformNative == AudioTrackStartErrorCode.AudioTrackStartException) return Android.Enums.AudioTrackStartErrorCode.AudioTrackStartException;
+            if (platformNative == AudioTrackStartErrorCode.AudioTrackStartStateMismatch) return Android.Enums.AudioTrackStartErrorCode.AudioTrackStartStateMismatch;
             throw new ArgumentOutOfRangeException(nameof(platformNative), platformNative, null);
         }
 
         public static Enums.RtpTransceiverDirection ToNativePort(this RtpTransceiverDirection platformNative)
         {
-            if (platformNative == RtpTransceiverDirection.Inactive)
-                return Enums.RtpTransceiverDirection.Inactive;
-            if (platformNative == RtpTransceiverDirection.RecvOnly)
-                return Enums.RtpTransceiverDirection.RecvOnly;
-            if (platformNative == RtpTransceiverDirection.SendOnly)
-                return Enums.RtpTransceiverDirection.SendOnly;
-            if (platformNative == RtpTransceiverDirection.SendRecv)
-                return Enums.RtpTransceiverDirection.SendRecv;
+            if (platformNative == RtpTransceiverDirection.Inactive) return Enums.RtpTransceiverDirection.Inactive;
+            if (platformNative == RtpTransceiverDirection.RecvOnly) return Enums.RtpTransceiverDirection.RecvOnly;
+            if (platformNative == RtpTransceiverDirection.SendOnly) return Enums.RtpTransceiverDirection.SendOnly;
+            if (platformNative == RtpTransceiverDirection.SendRecv) return Enums.RtpTransceiverDirection.SendRecv;
             throw new ArgumentOutOfRangeException(nameof(platformNative), platformNative, null);
         }
 

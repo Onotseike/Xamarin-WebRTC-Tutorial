@@ -27,5 +27,6 @@ namespace WebRTC.Unified.Android
         }
 
         public MediaStreamTrackState ReadyState => _mediaStreamTrack.InvokeState().ToNativePort();
+
     }
 }

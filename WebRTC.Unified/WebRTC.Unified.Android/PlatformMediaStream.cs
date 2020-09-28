@@ -12,7 +12,7 @@ using WebRTC.Unified.Extensions;
 
 namespace WebRTC.Unified.Android
 {
-    internal class PlatformMediaStream : NativePlatformBase, Core.Interfaces.IMediaStream
+    internal class PlatformMediaStream : NativePlatformBase, IMediaStream
     {
         private readonly MediaStream _mediaStream;
         public PlatformMediaStream(MediaStream mediaStream) : base(mediaStream) => _mediaStream = mediaStream;

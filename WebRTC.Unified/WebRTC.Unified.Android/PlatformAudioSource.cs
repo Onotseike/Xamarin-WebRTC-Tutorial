@@ -12,10 +12,7 @@ namespace WebRTC.Unified.Android
         private readonly AudioSource _audioSource;
         private double _volume;
 
-        public PlatformAudioSource(AudioSource audioSource) : base(audioSource)
-        {
-            _audioSource = audioSource;
-        }
+        public PlatformAudioSource(AudioSource audioSource) : base(audioSource) => _audioSource = audioSource;
 
         public double Volume { get => 0f; set => _volume = value; }
     }

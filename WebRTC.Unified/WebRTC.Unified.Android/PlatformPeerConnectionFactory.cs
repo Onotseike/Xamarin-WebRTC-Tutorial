@@ -1,5 +1,10 @@
 ﻿// onotseike@hotmail.comPaula Aliu
+using System;
+
 using Android.Content;
+using Android.OS;
+
+using Java.IO;
 
 using Org.Webrtc;
 
@@ -66,23 +71,34 @@ namespace WebRTC.Unified.Android
 
         public bool StartAecDumpWithFilePath(string filePath, long maxSizeInBytes)
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                ParcelFileDescriptor aecDumpFileDescriptor = ParcelFileDescriptor.Open(new File(filePath),
+                    ParcelFileMode.Create | ParcelFileMode.Truncate | ParcelFileMode.ReadWrite);
+
+                return _peerConnectionfactory.StartAecDump(aecDumpFileDescriptor.DetachFd(), (int)maxSizeInBytes);
+            }
+            catch (Exception exception)
+            {
+
+                return false;
+            }
         }
 
-        public void StopAecDump()
-        {
-            throw new System.NotImplementedException();
-        }
+        public void StopAecDump() => _peerConnectionfactory.StopAecDump();
 
         public IVideoTrack VideoTrackWithSource(IVideoSource videoSource, string trackId)
         {
-            throw new System.NotImplementedException();
+            var videoTrack = _peerConnectionfactory.CreateVideoTrack(trackId, videoSource.ToPlatformNative<VideoSource>());
+            if (videoTrack == null)
+                return null;
+            return new PlatformVideoTrack(videoTrack);
         }
 
 
     }
 
-    internal interface IPeerConnectionFactoryAndroid : Core.Interfaces.IPeerConnectionFactory
+    internal interface IPeerConnectionFactoryAndroid : IPeerConnectionFactory
     {
         IEglBaseContext EglBaseContext { get; }
     }

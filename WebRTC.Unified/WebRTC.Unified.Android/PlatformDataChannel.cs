@@ -40,7 +40,7 @@ namespace WebRTC.Unified.Android
         public long BufferedAmount => _dataChannel.BufferedAmount();
 
         public event EventHandler OnStateChange;
-        public event EventHandler<Core.DataChannel.DataBuffer> OnMessage;
+        public event EventHandler<DataBuffer> OnMessage;
         public event EventHandler<long> OnBufferedAmountChange;
 
         public void Close() => _dataChannel.Close();
@@ -60,20 +60,14 @@ namespace WebRTC.Unified.Android
 
         void DataChannel.IObserver.OnBufferedAmountChange(long previousAmount) => _handler.Post(() => { OnBufferedAmountChange?.Invoke(this, previousAmount); });
 
-        void DataChannel.IObserver.OnMessage(DataChannel.Buffer buffer)
-        {
-            _handler.Post(() =>
-            {
-                var _buffer = new byte[buffer.Data.Remaining()];
-                buffer.Data.Get(_buffer, 0, _buffer.Length);
-                OnMessage?.Invoke(this, new DataBuffer(_buffer, buffer.Binary));
-            });
-        }
+        void DataChannel.IObserver.OnMessage(DataChannel.Buffer buffer) => _handler.Post(() =>
+                                                                         {
+                                                                             var _buffer = new byte[buffer.Data.Remaining()];
+                                                                             buffer.Data.Get(_buffer, 0, _buffer.Length);
+                                                                             OnMessage?.Invoke(this, new DataBuffer(_buffer, buffer.Binary));
+                                                                         });
 
-        void DataChannel.IObserver.OnStateChange()
-        {
-            _handler.Post(() => OnStateChange?.Invoke(this, EventArgs.Empty));
-        }
+        void DataChannel.IObserver.OnStateChange() => _handler.Post(() => OnStateChange?.Invoke(this, EventArgs.Empty));
         #endregion
 
     }

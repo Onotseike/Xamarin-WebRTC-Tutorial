@@ -11,10 +11,7 @@ namespace WebRTC.Unified.Android
     {
         private readonly ICameraVideoCapturer _cameraVideoCapturer;
 
-        public PlatformCameraVideoCapturer(Context context, ICameraVideoCapturer cameraVideoCapturer, VideoSource videoSource, IEglBaseContext eglBaseContext) : base(context, videoSource, cameraVideoCapturer, eglBaseContext)
-        {
-            _cameraVideoCapturer = cameraVideoCapturer;
-        }
+        public PlatformCameraVideoCapturer(Context context, ICameraVideoCapturer cameraVideoCapturer, VideoSource videoSource, IEglBaseContext eglBaseContext) : base(context, videoSource, cameraVideoCapturer, eglBaseContext) => _cameraVideoCapturer = cameraVideoCapturer;
 
         #region ICameraVideoCapturer Implements
 
