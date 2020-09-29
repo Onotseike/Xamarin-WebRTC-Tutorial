@@ -1,32 +1,33 @@
 ﻿// onotseike@hotmail.comPaula Aliu
+using System.Linq;
+
 using Org.Webrtc;
 
+using WebRTC.Unified.Core;
 using WebRTC.Unified.Core.Interfaces;
+using WebRTC.Unified.Extensions;
 
 namespace WebRTC.Unified.Android
 {
-    internal class PlatformRtpSender : IRtpSender
+    internal class PlatformRtpSender : NativePlatformBase, IRtpSender
     {
-        private RtpSender sender;
+        private readonly RtpSender _rtpSender;
 
-        public PlatformRtpSender(RtpSender sender)
+        public PlatformRtpSender(RtpSender rtpSender) : base(rtpSender) => _rtpSender = rtpSender;
+
+        public string SenderId => _rtpSender.Id();
+
+        public IRtpParameters Parameters { get => new PlatformRtpParameters(_rtpSender.Parameters); set => _rtpSender.SetParameters(value.ToPlatformNative<RtpParameters>()); }
+
+        public IMediaStreamTrack Track { get => _rtpSender.Track()?.ToNativePort(); set => _rtpSender.SetTrack(value.ToPlatformNative<MediaStreamTrack>(), true); }
+        public string[] StreamIds { get => _rtpSender.Streams.ToArray(); set => _rtpSender.Streams = value; }
+
+        public IDtmfSender DtmfSender => new PlatformDtmfSender(_rtpSender.Dtmf());
+
+        public override void Dispose()
         {
-            this.sender = sender;
-        }
-
-        public string SenderId => throw new System.NotImplementedException();
-
-        public IRtpParameters Parameters { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-        public IMediaStreamTrack Track { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-        public string[] StreamIds { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-
-        public IDtmfSender DtmfSender => throw new System.NotImplementedException();
-
-        public object NativeObject => throw new System.NotImplementedException();
-
-        public void Dispose()
-        {
-            throw new System.NotImplementedException();
+            _rtpSender?.Dispose();
+            base.Dispose();
         }
     }
 }

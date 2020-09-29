@@ -3,19 +3,25 @@ using System;
 
 using Android.Content;
 using Android.OS;
+using Android.Util;
 
 using Java.IO;
 
 using Org.Webrtc;
+using Org.Webrtc.Audio;
 
 using WebRTC.Unified.Core.Interfaces;
 using WebRTC.Unified.Extensions;
+
+using ICameraEnumerator = Org.Webrtc.ICameraEnumerator;
 
 namespace WebRTC.Unified.Android
 {
 
     internal class PlatformPeerConnectionFactory : Core.NativePlatformBase, IPeerConnectionFactoryAndroid
     {
+        private const string TAG = nameof(PlatformPeerConnectionFactory);
+
         private readonly Context _context;
         private readonly PeerConnectionFactory _peerConnectionfactory;
 
@@ -31,22 +37,77 @@ namespace WebRTC.Unified.Android
 
         private static PeerConnectionFactory CreatePeerConnectionFactory(Context context, IEglBaseContext eglBaseContext)
         {
-            var adm = CreateJavaAudioDevice(context);
+            var audioDeviceModule = CreateAudioDeviceModule(context);
 
             var encoderFactory = new DefaultVideoEncoderFactory(eglBaseContext, true, true);
             var decoderFactory = new DefaultVideoDecoderFactory(eglBaseContext);
             var factory = PeerConnectionFactory.InvokeBuilder()
-                .SetAudioDeviceModule(adm)
+                .SetAudioDeviceModule(audioDeviceModule)
                 .SetVideoEncoderFactory(encoderFactory)
                 .SetVideoDecoderFactory(decoderFactory)
                 .CreatePeerConnectionFactory();
 
-            adm.Release();
+            audioDeviceModule.Release();
 
             return factory;
         }
 
+        private static IAudioDeviceModule CreateAudioDeviceModule(Context context)
+        {
+            var audioErrorCallbacks = new AudioErrorCallbacks();
+            return JavaAudioDeviceModule.InvokeBuilder(context)
+                .SetAudioRecordErrorCallback(audioErrorCallbacks)
+                .SetAudioRecordStateCallback(audioErrorCallbacks)
+                .SetAudioTrackErrorCallback(audioErrorCallbacks)
+                .SetAudioTrackStateCallback(audioErrorCallbacks)
+                .CreateAudioDeviceModule();
+        }
+
+        private Core.Interfaces.ICameraVideoCapturer CreateCameraVideoCapturer(VideoSource videoSource, bool frontCamera)
+        {
+            Org.Webrtc.ICameraVideoCapturer videoCapturer;
+
+            videoCapturer = UseCamera2()
+                ? CreateCameraCapturer(new Camera2Enumerator(_context), frontCamera)
+                : CreateCameraCapturer(new Camera1Enumerator(false), frontCamera);
+
+            if (videoCapturer == null)
+                return null;
+
+
+            return new PlatformCameraVideoCapturer(_context, videoCapturer, videoSource, EglBaseContext);
+        }
+
+        private Org.Webrtc.ICameraVideoCapturer CreateCameraCapturer(ICameraEnumerator cameraEnumerator,
+            bool frontCamera)
+        {
+            var devicesNames = cameraEnumerator.GetDeviceNames();
+            foreach (var devicesName in devicesNames)
+            {
+                if (cameraEnumerator.IsFrontFacing(devicesName) && frontCamera)
+                {
+                    var videoCapturer = cameraEnumerator.CreateCapturer(devicesName, null);
+                    if (videoCapturer != null)
+                        return videoCapturer;
+                }
+            }
+
+            foreach (var devicesName in devicesNames)
+            {
+                var videoCapturer = cameraEnumerator.CreateCapturer(devicesName, null);
+                if (videoCapturer != null)
+                    return videoCapturer;
+            }
+
+            return null;
+        }
+
+        private bool UseCamera2() => Camera2Enumerator.IsSupported(_context);
+
+
         #endregion
+
+        #region IPeerConnectionFactoryAndroid
 
         public IEglBaseContext EglBaseContext { get; }
 
@@ -80,7 +141,7 @@ namespace WebRTC.Unified.Android
             }
             catch (Exception exception)
             {
-
+                Log.Error(TAG, $"An Exception has occured :  {exception.Message}");
                 return false;
             }
         }
@@ -95,6 +156,80 @@ namespace WebRTC.Unified.Android
             return new PlatformVideoTrack(videoTrack);
         }
 
+        #endregion
+
+        #region Additional Methods
+
+        public Core.Interfaces.ICameraVideoCapturer CreateCameraCapturer(IVideoSource videoSource, bool frontCamera) =>
+           CreateCameraVideoCapturer(videoSource.ToPlatformNative<VideoSource>(), frontCamera);
+
+        public IFileVideoCapturer CreateFileCapturer(IVideoSource videoSource, string file)
+        {
+            var fileVideoCapturer = new FileVideoCapturer(file);
+            return new PlatformFileVideoCapturer(_context, fileVideoCapturer, videoSource.ToPlatformNative<VideoSource>(),
+                EglBaseContext);
+        }
+
+        #endregion
+
+
+        private class AudioErrorCallbacks : Java.Lang.Object,
+            JavaAudioDeviceModule.IAudioRecordErrorCallback,
+            JavaAudioDeviceModule.IAudioRecordStateCallback,
+            JavaAudioDeviceModule.IAudioTrackErrorCallback,
+            JavaAudioDeviceModule.IAudioTrackStateCallback
+
+        {
+            public void OnWebRtcAudioRecordError(string errorCode)
+            {
+                Log.Error(TAG, $"OnWebRtcAudioRecordError: {errorCode}");
+            }
+
+            public void OnWebRtcAudioRecordInitError(string errorCode)
+            {
+                Log.Error(TAG, $"OnWebRtcAudioRecordInitError: {errorCode}");
+            }
+
+            public void OnWebRtcAudioRecordStartError(JavaAudioDeviceModule.AudioRecordStartErrorCode errorCode, string errorMessage)
+            {
+                Log.Error(TAG, $"OnWebRtcAudioRecordStartError: errorCode {errorCode} {errorMessage}");
+            }
+
+            public void OnWebRtcAudioTrackError(string errorCode)
+            {
+                Log.Error(TAG, $"OnWebRtcAudioTrackError: errorCode {errorCode}");
+            }
+
+            public void OnWebRtcAudioTrackInitError(string errorCode)
+            {
+                Log.Error(TAG, $"OnWebRtcAudioTrackInitError: errorCode {errorCode}");
+            }
+
+            public void OnWebRtcAudioTrackStartError(JavaAudioDeviceModule.AudioTrackStartErrorCode errorCode, string errorMessage)
+            {
+                Log.Error(TAG, $"OnWebRtcAudioTrackStartError: errorCode {errorCode} {errorMessage}");
+            }
+
+            public void OnWebRtcAudioRecordStart()
+            {
+                Log.Info(TAG, "Audio recording starts");
+            }
+
+            public void OnWebRtcAudioRecordStop()
+            {
+                Log.Info(TAG, "Audio recording stops");
+            }
+
+            public void OnWebRtcAudioTrackStart()
+            {
+                Log.Info(TAG, "Audio playout starts");
+            }
+
+            public void OnWebRtcAudioTrackStop()
+            {
+                Log.Info(TAG, "Audio playout stops");
+            }
+        }
 
     }
 

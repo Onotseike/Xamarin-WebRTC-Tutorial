@@ -2,6 +2,22 @@
 using System;
 namespace WebRTC.Unified.Android.Enums
 {
+    public enum AudioDevice
+    {
+        SpeakerPhone,
+        WiredHeadset,
+        Earpiece,
+        Bluetooth,
+        None
+    }
+
+    public enum AudioManagerState
+    {
+        Uninitialized,
+        PreInitialized,
+        Running
+    }
+
     public enum VideoCodecStatus
     {
         Error,

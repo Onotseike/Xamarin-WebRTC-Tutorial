@@ -34,7 +34,7 @@ namespace WebRTC.Unified.Extensions
             };
         }
 
-        public static Core.DataChannel.DataChannelConfiguration TONativePort(this DataChannel.Init platformNative)
+        public static Core.DataChannel.DataChannelConfiguration ToNativePort(this DataChannel.Init platformNative)
         {
             return new Core.DataChannel.DataChannelConfiguration
             {

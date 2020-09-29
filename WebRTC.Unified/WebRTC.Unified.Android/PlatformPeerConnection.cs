@@ -2,6 +2,12 @@
 using System;
 using System.Linq;
 
+using Android.OS;
+using Android.Util;
+
+using Java.IO;
+using Java.Lang;
+
 using Org.Webrtc;
 
 using WebRTC.Unified.Core.Interfaces;
@@ -48,7 +54,7 @@ namespace WebRTC.Unified.Android
             get
             {
                 if (Configuration.SdpSemantics != SdpSemantics.UnifiedPlan) throw new InvalidOperationException(
-                        "GETTRANSCEIVERS is only supported with Unified Plan SdpSemantics.");
+                        "GET TRANSCEIVERS is only supported with Unified Plan SdpSemantics.");
                 return _peerConnection.Transceivers.Select(transceiver => new PlatformRtpTransceiver(transceiver)).Cast<IRtpTransceiver>()
                     .ToArray();
             }
@@ -62,81 +68,51 @@ namespace WebRTC.Unified.Android
 
         public IRtpSender AddTrack(IMediaStreamTrack mediaStreamTrack, string[] streamIds) => new PlatformRtpSender(_peerConnection.AddTrack(mediaStreamTrack.ToPlatformNative<MediaStreamTrack>(), streamIds));
 
-        public IRtpTransceiver AddTransceiverOfType(RtpMediaType rtpMediaType) => throw new System.NotImplementedException();
+        public IRtpTransceiver AddTransceiverOfType(RtpMediaType rtpMediaType) => new PlatformRtpTransceiver(_peerConnection.AddTransceiver(rtpMediaType.ToPlatformNative()));
 
-        public IRtpTransceiver AddTransceiverOfType(RtpMediaType rtpMediaType, IRtpTransceiverInit transceiverInit)
-        {
-            throw new System.NotImplementedException();
-        }
+        public IRtpTransceiver AddTransceiverOfType(RtpMediaType rtpMediaType, IRtpTransceiverInit transceiverInit) => new PlatformRtpTransceiver(
+            _peerConnection.AddTransceiver(rtpMediaType.ToPlatformNative(), transceiverInit.ToPlatformNative<RtpTransceiver.RtpTransceiverInit>()));
 
-        public IRtpTransceiver AddTransceiverWithTrack(IMediaStreamTrack mediaStreamTrack)
-        {
-            throw new System.NotImplementedException();
-        }
+        public IRtpTransceiver AddTransceiverWithTrack(IMediaStreamTrack mediaStreamTrack) => new PlatformRtpTransceiver(_peerConnection.AddTransceiver(mediaStreamTrack.ToPlatformNative<MediaStreamTrack>()));
 
-        public IRtpTransceiver AddTransceiverWithTrack(IMediaStreamTrack mediaStreamTrack, IRtpTransceiverInit transceiverInit)
-        {
-            throw new System.NotImplementedException();
-        }
+        public IRtpTransceiver AddTransceiverWithTrack(IMediaStreamTrack mediaStreamTrack, IRtpTransceiverInit transceiverInit) => new PlatformRtpTransceiver(_peerConnection.AddTransceiver(mediaStreamTrack.ToPlatformNative<MediaStreamTrack>(), transceiverInit.ToPlatformNative<RtpTransceiver.RtpTransceiverInit>()));
 
-        public void AnswerForConstraints(Core.MediaConstraints mediaConstraints, Core.Interfaces.ISdpObserver sdpObserver)
-        {
-            throw new System.NotImplementedException();
-        }
+        public void AnswerForConstraints(Core.MediaConstraints mediaConstraints, Core.Interfaces.ISdpObserver sdpObserver) => _peerConnection.CreateAnswer(new PlatformSdpObserver(sdpObserver), mediaConstraints.ToPlatformNative());
 
-        public void Close()
-        {
-            throw new System.NotImplementedException();
-        }
+        public void Close() => _peerConnection.Close();
 
-        public void OfferForConstraints(Core.MediaConstraints mediaConstraints, Core.Interfaces.ISdpObserver sdpObserver)
-        {
-            throw new System.NotImplementedException();
-        }
+        public void OfferForConstraints(Core.MediaConstraints mediaConstraints, Core.Interfaces.ISdpObserver sdpObserver) => _peerConnection.CreateOffer(new PlatformSdpObserver(sdpObserver), mediaConstraints.ToPlatformNative());
 
-        public void RemoveIceCandidates(Core.IceCandidate[] iceCandidates)
-        {
-            throw new System.NotImplementedException();
-        }
+        public void RemoveIceCandidates(Core.IceCandidate[] iceCandidates) => _peerConnection.RemoveIceCandidates(iceCandidates.ToPlatformNative().ToArray());
 
-        public void RemoveStream(IMediaStream mediaStream)
-        {
-            throw new System.NotImplementedException();
-        }
+        public void RemoveStream(IMediaStream mediaStream) => _peerConnection.RemoveStream(mediaStream.ToPlatformNative<MediaStream>());
 
-        public bool RemoveTrack(IRtpSender rtpSender)
-        {
-            throw new System.NotImplementedException();
-        }
+        public bool RemoveTrack(IRtpSender rtpSender) => _peerConnection.RemoveTrack(rtpSender.ToPlatformNative<RtpSender>());
 
-        public bool SetBweMinBitrateBps(int minBitrateBps, int currentBitrateBps, int maxBitrateBps)
-        {
-            throw new System.NotImplementedException();
-        }
+        public bool SetBweMinBitrateBps(int minBitrateBps, int currentBitrateBps, int maxBitrateBps) => _peerConnection.SetBitrate(min: new Integer(minBitrateBps), current: new Integer(currentBitrateBps), max: new Integer(maxBitrateBps));
 
-        public bool SetConfiguration(Core.RTCConfiguration configuration)
-        {
-            throw new System.NotImplementedException();
-        }
+        public bool SetConfiguration(Core.RTCConfiguration configuration) => _peerConnection.SetConfiguration(config: configuration.ToPlatformNative());
 
-        public void SetLocalDescription(Core.SessionDescription sessionDescription, Core.Interfaces.ISdpObserver sdpObserver)
-        {
-            throw new System.NotImplementedException();
-        }
+        public void SetLocalDescription(Core.SessionDescription sessionDescription, Core.Interfaces.ISdpObserver sdpObserver) => _peerConnection.SetLocalDescription(new PlatformSdpObserver(sdpObserver), sessionDescription.ToPlatformNative());
 
-        public void SetRemoteDescription(Core.SessionDescription sessionDescription, Core.Interfaces.ISdpObserver sdpObserver)
-        {
-            throw new System.NotImplementedException();
-        }
+        public void SetRemoteDescription(Core.SessionDescription sessionDescription, Core.Interfaces.ISdpObserver sdpObserver) => _peerConnection.SetRemoteDescription(new PlatformSdpObserver(sdpObserver), sessionDescription.ToPlatformNative());
 
         public bool StartRtcEventLogWithFilePath(string filePath, long maxSizeInBytes)
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                ParcelFileDescriptor rtcEventLog = ParcelFileDescriptor.Open(new File(filePath),
+                    ParcelFileMode.Create | ParcelFileMode.Truncate | ParcelFileMode.ReadWrite);
+
+                return _peerConnection.StartRtcEventLog(rtcEventLog.DetachFd(), (int)maxSizeInBytes);
+            }
+            catch (System.Exception exception)
+            {
+                Log.Error("PlatformPeerConnection", $"Could not Start RTCEvent logging {exception.Message}");
+                return false;
+            }
         }
 
-        public void StopRtcEventLog()
-        {
-            throw new System.NotImplementedException();
-        }
+        public void StopRtcEventLog() => _peerConnection.StopRtcEventLog();
     }
 }

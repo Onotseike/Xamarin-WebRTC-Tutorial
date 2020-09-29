@@ -81,71 +81,71 @@ namespace WebRTC.Unified.iOS.Extensions
 
         #region ToNativePort
 
-        public static SourceState ToPlatformNative(this RTCSourceState platformNative) => (SourceState)platformNative;
+        public static SourceState ToNativePort(this RTCSourceState platformNative) => (SourceState)platformNative;
 
-        public static MediaStreamTrackState ToPlatformNative(this RTCMediaStreamTrackState platformNative) => (MediaStreamTrackState)platformNative;
+        public static MediaStreamTrackState ToNativePort(this RTCMediaStreamTrackState platformNative) => (MediaStreamTrackState)platformNative;
 
-        public static IceTransportPolicy ToPlatformNative(this RTCIceTransportPolicy platformNative) => (IceTransportPolicy)platformNative;
+        public static IceTransportPolicy ToNativePort(this RTCIceTransportPolicy platformNative) => (IceTransportPolicy)platformNative;
 
-        public static BundlePolicy ToPlatformNative(this RTCBundlePolicy platformNative) => (BundlePolicy)platformNative;
+        public static BundlePolicy ToNativePort(this RTCBundlePolicy platformNative) => (BundlePolicy)platformNative;
 
-        public static RtcpMuxPolicy ToPlatformNative(this RTCRtcpMuxPolicy platformNative) => (RtcpMuxPolicy)platformNative;
+        public static RtcpMuxPolicy ToNativePort(this RTCRtcpMuxPolicy platformNative) => (RtcpMuxPolicy)platformNative;
 
-        public static TcpCandidatePolicy ToPlatformNative(this RTCTcpCandidatePolicy platformNative) => (TcpCandidatePolicy)platformNative;
+        public static TcpCandidatePolicy ToNativePort(this RTCTcpCandidatePolicy platformNative) => (TcpCandidatePolicy)platformNative;
 
-        public static CandidateNetworkPolicy ToPlatformNative(this RTCCandidateNetworkPolicy platformNative) => (CandidateNetworkPolicy)platformNative;
+        public static CandidateNetworkPolicy ToNativePort(this RTCCandidateNetworkPolicy platformNative) => (CandidateNetworkPolicy)platformNative;
 
-        public static ContinualGatheringPolicy ToPlatformNative(this RTCContinualGatheringPolicy platformNative) => (ContinualGatheringPolicy)platformNative;
+        public static ContinualGatheringPolicy ToNativePort(this RTCContinualGatheringPolicy platformNative) => (ContinualGatheringPolicy)platformNative;
 
-        public static EncryptionKeyType ToPlatformNative(this RTCEncryptionKeyType platformNative) => (EncryptionKeyType)platformNative;
+        public static EncryptionKeyType ToNativePort(this RTCEncryptionKeyType platformNative) => (EncryptionKeyType)platformNative;
 
-        public static SdpSemantics ToPlatformNative(this RTCSdpSemantics platformNative) => (SdpSemantics)platformNative;
+        public static SdpSemantics ToNativePort(this RTCSdpSemantics platformNative) => (SdpSemantics)platformNative;
 
-        public static DataChannelState ToPlatformNative(this RTCDataChannelState platformNative) => (DataChannelState)platformNative;
+        public static DataChannelState ToNativePort(this RTCDataChannelState platformNative) => (DataChannelState)platformNative;
 
-        public static TlsCertPolicy ToPlatformNative(this RTCTlsCertPolicy platformNative) => (TlsCertPolicy)platformNative;
+        public static TlsCertPolicy ToNativePort(this RTCTlsCertPolicy platformNative) => (TlsCertPolicy)platformNative;
 
-        public static SignalingState ToPlatformNative(this RTCSignalingState platformNative) => (SignalingState)platformNative;
+        public static SignalingState ToNativePort(this RTCSignalingState platformNative) => (SignalingState)platformNative;
 
-        public static IceConnectionState ToPlatformNative(this RTCIceConnectionState platformNative) => (IceConnectionState)platformNative;
+        public static IceConnectionState ToNativePort(this RTCIceConnectionState platformNative) => (IceConnectionState)platformNative;
 
-        public static PeerConnectionState ToPlatformNative(this RTCPeerConnectionState platformNative) => (PeerConnectionState)platformNative;
+        public static PeerConnectionState ToNativePort(this RTCPeerConnectionState platformNative) => (PeerConnectionState)platformNative;
 
-        public static IceGatheringState ToPlatformNative(this RTCIceGatheringState platformNative) => (IceGatheringState)platformNative;
+        public static IceGatheringState ToNativePort(this RTCIceGatheringState platformNative) => (IceGatheringState)platformNative;
 
-        public static StatsOutputLevel ToPlatformNative(this RTCStatsOutputLevel platformNative) => (StatsOutputLevel)platformNative;
+        public static StatsOutputLevel ToNativePort(this RTCStatsOutputLevel platformNative) => (StatsOutputLevel)platformNative;
 
-        public static RtpMediaType ToPlatformNative(this RTCRtpMediaType platformNative) => (RtpMediaType)platformNative;
+        public static RtpMediaType ToNativePort(this RTCRtpMediaType platformNative) => (RtpMediaType)platformNative;
 
-        public static RtpTransceiverDirection ToPlatformNative(this RTCRtpTransceiverDirection platformNative) => (RtpTransceiverDirection)platformNative;
+        public static RtpTransceiverDirection ToNativePort(this RTCRtpTransceiverDirection platformNative) => (RtpTransceiverDirection)platformNative;
 
-        public static SdpType ToPlatformNative(this RTCSdpType platformNative) => (SdpType)platformNative;
+        public static SdpType ToNativePort(this RTCSdpType platformNative) => (SdpType)platformNative;
 
-        public static FileLoggerSeverity ToPlatformNative(this RTCFileLoggerSeverity platformNative) => (FileLoggerSeverity)platformNative;
+        public static FileLoggerSeverity ToNativePort(this RTCFileLoggerSeverity platformNative) => (FileLoggerSeverity)platformNative;
 
-        public static DeviceType ToPlatformNative(this RTCDeviceType platformNative) => (DeviceType)platformNative;
+        public static DeviceType ToNativePort(this RTCDeviceType platformNative) => (DeviceType)platformNative;
 
-        public static H264Level ToPlatformNative(this RTCH264Level platformNative) => (H264Level)platformNative;
+        public static H264Level ToNativePort(this RTCH264Level platformNative) => (H264Level)platformNative;
 
-        public static DispatcherQueueType ToPlatformNative(this RTCDispatcherQueueType platformNative) => (DispatcherQueueType)platformNative;
+        public static DispatcherQueueType ToNativePort(this RTCDispatcherQueueType platformNative) => (DispatcherQueueType)platformNative;
 
-        public static FrameType ToPlatformNative(this RTCFrameType platformNative) => (FrameType)platformNative;
+        public static FrameType ToNativePort(this RTCFrameType platformNative) => (FrameType)platformNative;
 
-        public static VideoRotation ToPlatformNative(this RTCVideoRotation platformNative) => (VideoRotation)platformNative;
+        public static VideoRotation ToNativePort(this RTCVideoRotation platformNative) => (VideoRotation)platformNative;
 
-        public static VideoContentType ToPlatformNative(this RTCVideoContentType platformNative) => (VideoContentType)platformNative;
+        public static VideoContentType ToNativePort(this RTCVideoContentType platformNative) => (VideoContentType)platformNative;
 
-        public static VideoCodecMode ToPlatformNative(this RTCVideoCodecMode platformNative) => (VideoCodecMode)platformNative;
+        public static VideoCodecMode ToNativePort(this RTCVideoCodecMode platformNative) => (VideoCodecMode)platformNative;
 
-        public static DegradationPreference ToPlatformNative(this RTCDegradationPreference platformNative) => (DegradationPreference)platformNative;
+        public static DegradationPreference ToNativePort(this RTCDegradationPreference platformNative) => (DegradationPreference)platformNative;
 
-        public static FileLoggerRotationType ToPlatformNative(this RTCFileLoggerRotationType platformNative) => (FileLoggerRotationType)platformNative;
+        public static FileLoggerRotationType ToNativePort(this RTCFileLoggerRotationType platformNative) => (FileLoggerRotationType)platformNative;
 
-        public static H264PacketizationMode ToPlatformNative(this RTCH264PacketizationMode platformNative) => (H264PacketizationMode)platformNative;
+        public static H264PacketizationMode ToNativePort(this RTCH264PacketizationMode platformNative) => (H264PacketizationMode)platformNative;
 
-        public static H264Profile ToPlatformNative(this RTCH264Profile platformNative) => (H264Profile)platformNative;
+        public static H264Profile ToNativePort(this RTCH264Profile platformNative) => (H264Profile)platformNative;
 
-        public static Priority ToPlatformNative(this RTCPriority platformNative) => (Priority)platformNative;
+        public static Priority ToNativePort(this RTCPriority platformNative) => (Priority)platformNative;
 
         #endregion
 

@@ -40,6 +40,7 @@ namespace WebRTC.Unified.Android
 
         public void OnIceConnectionReceivingChange(bool isReceivingChange)
         {
+            // _peerConnectionDelegate.onice
             //throw new System.NotImplementedException();
         }
 

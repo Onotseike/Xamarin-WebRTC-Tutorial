@@ -72,6 +72,10 @@
     <Compile Include="Enums\WebRTCEnums.cs" />
     <Compile Include="PlatformBuiltinAudioDecoderFactory.cs" />
     <Compile Include="PlatformBuiltinAudioEncoderFactory.cs" />
+    <Compile Include="PlatformSdpObserver.cs" />
+    <Compile Include="Platform.cs" />
+    <Compile Include="PlatformRtpParameters.cs" />
+    <Compile Include="PlatformVideoRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

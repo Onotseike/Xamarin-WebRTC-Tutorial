@@ -54,6 +54,7 @@
     <Compile Include="PlatformDataChannel.cs" />
     <Compile Include="Enums\WebRTCEnums.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
+    <Compile Include="Extensions\CoreExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

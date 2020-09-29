@@ -29,6 +29,12 @@ namespace WebRTC.Unified.Android
         public void StartCapture(int videoWidth, int videoHeight, int fps) => _videoCapturer.StartCapture(videoWidth, videoHeight, fps);
         public void StopCapture() => _videoCapturer.StopCapture();
 
+        public override void Dispose()
+        {
+            _videoCapturer?.Dispose();
+            base.Dispose();
+        }
+
         #endregion
 
     }

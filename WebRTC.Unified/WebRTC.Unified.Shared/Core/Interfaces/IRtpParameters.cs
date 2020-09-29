@@ -4,5 +4,6 @@ namespace WebRTC.Unified.Core.Interfaces
 {
     public interface IRtpParameters : INativeObject
     {
+
     }
 }

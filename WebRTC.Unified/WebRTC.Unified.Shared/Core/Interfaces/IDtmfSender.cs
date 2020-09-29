@@ -2,7 +2,7 @@
 using System;
 namespace WebRTC.Unified.Core.Interfaces
 {
-    public interface IDtmfSender : IDisposable
+    public interface IDtmfSender : INativeObject
     {
         bool CanInsertDtmf { get; }
 

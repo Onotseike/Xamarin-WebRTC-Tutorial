@@ -1,5 +1,5 @@
 ﻿// onotseike@hotmail.comPaula Aliu
-using Web.Unified.Enums;
+using WebRTC.Unified.Enums;
 
 namespace WebRTC.Unified.Core.Interfaces
 {
@@ -15,7 +15,8 @@ namespace WebRTC.Unified.Core.Interfaces
 
         bool IsStopped { get; }
 
-        RtpTransceiverDirection Direction { get; }
+        RtpTransceiverDirection Direction { get; set; }
+        RtpTransceiverDirection CurrentDirection { get; }
 
         void StopInternal();
 

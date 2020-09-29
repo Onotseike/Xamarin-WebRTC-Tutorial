@@ -1,0 +1,2 @@
+/Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.Unified/WebRTC.Unified.NuGet/obj/Debug/WebRTC.Unified.NuGet.nuprojAssemblyReference.cache
+/Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.Unified/WebRTC.Unified.NuGet/obj/Debug/WebRTC.Unified.NuGet.nuproj.CoreCompileInputs.cache
