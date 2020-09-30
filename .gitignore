@@ -20,3 +20,6 @@ WebRTC.Unified/.vs/WebRTC.Unified/xs/project-cache/WebRTC.Unified.Android-Debug.
 WebRTC.Unified/.vs/WebRTC.Unified/xs/project-cache/WebRTC.Unified.Android-Debug.json
 WebRTC.Unified/.vs/WebRTC.Unified/xs/project-cache/WebRTC.Unified.iOS-Debug.json
 WebRTC.Unified/WebRTC.Unified.Android/obj/Debug/WebRTC.Unified.Android.csprojAssemblyReference.cache
+WebRTC.Signalling.Server/obj/
+WebRTC.Signalling.Server/.vs/
+WebRTC.Signalling.Server/bin/
