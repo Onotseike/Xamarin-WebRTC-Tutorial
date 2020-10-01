@@ -1026,7 +1026,7 @@ namespace WebRTC.iOS.Bindings
 
         // -(instancetype _Nonnull)initWithDelegate:(id<RTCVideoCapturerDelegate> _Nonnull)delegate;
         [Export("initWithDelegate:")]
-        IntPtr InitWithDelegate(RTCVideoCapturerDelegate @delegate);
+        IntPtr Constructor(RTCVideoCapturerDelegate @delegate);
     }
 
 
@@ -1055,13 +1055,14 @@ namespace WebRTC.iOS.Bindings
     #region RTCEAGLVideoView
 
     // @interface RTCEAGLVideoView : UIView <RTCVideoRenderer>
-    [Unavailable(PlatformName.iOS)]
+    //[Unavailable(PlatformName.iOS)]
+    [Introduced(PlatformName.iOS, PlatformArchitecture.Arch32)]
     [BaseType(typeof(UIView))]
     interface RTCEAGLVideoView : RTCVideoRenderer
     {
         [Wrap("WeakDelegate")]
         [NullAllowed]
-        RTCVideoViewDelegate Delegate { get; set; }
+        IRTCVideoViewDelegate Delegate { get; set; }
 
         // @property (nonatomic, weak) id<RTCVideoViewDelegate> _Nullable delegate;
         [NullAllowed, Export("delegate", ArgumentSemantic.Weak)]
@@ -1070,12 +1071,12 @@ namespace WebRTC.iOS.Bindings
         // -(instancetype _Nonnull)initWithFrame:(CGRect)frame shader:(id<RTCVideoViewShading> _Nonnull)shader __attribute__((objc_designated_initializer));
         [Export("initWithFrame:shader:")]
         [DesignatedInitializer]
-        IntPtr InitWithFrame(CGRect frame, RTCVideoViewShading shader);
+        IntPtr Constructor(CGRect frame, RTCVideoViewShading shader);
 
         // -(instancetype _Nonnull)initWithCoder:(NSCoder * _Nonnull)aDecoder shader:(id<RTCVideoViewShading> _Nonnull)shader __attribute__((objc_designated_initializer));
         [Export("initWithCoder:shader:")]
         [DesignatedInitializer]
-        IntPtr InitWithCoder(NSCoder aDecoder, RTCVideoViewShading shader);
+        IntPtr Constructor(NSCoder aDecoder, RTCVideoViewShading shader);
 
         // @property (nonatomic) NSValue * _Nullable rotationOverride;
         [NullAllowed, Export("rotationOverride", ArgumentSemantic.Assign)]
@@ -1569,7 +1570,7 @@ namespace WebRTC.iOS.Bindings
         // -(instancetype _Nonnull)initWithSdp:(NSString * _Nonnull)sdp sdpMLineIndex:(int)sdpMLineIndex sdpMid:(NSString * _Nullable)sdpMid __attribute__((objc_designated_initializer));
         [Export("initWithSdp:sdpMLineIndex:sdpMid:")]
         [DesignatedInitializer]
-        IntPtr InitWithSdp(string sdp, int sdpMLineIndex, [NullAllowed] string sdpMid);
+        IntPtr Constructor(string sdp, int sdpMLineIndex, [NullAllowed] string sdpMid);
     }
 
 
@@ -1612,28 +1613,28 @@ namespace WebRTC.iOS.Bindings
 
         // -(instancetype _Nonnull)initWithURLStrings:(NSArray<NSString *> * _Nonnull)urlStrings;
         [Export("initWithURLStrings:")]
-        IntPtr InitWithURLStrings(string[] urlStrings);
+        IntPtr Constructor(string[] urlStrings);
 
         // -(instancetype _Nonnull)initWithURLStrings:(NSArray<NSString *> * _Nonnull)urlStrings username:(NSString * _Nullable)username credential:(NSString * _Nullable)credential;
         [Export("initWithURLStrings:username:credential:")]
-        IntPtr InitWithURLStrings(string[] urlStrings, [NullAllowed] string username, [NullAllowed] string credential);
+        IntPtr Constructor(string[] urlStrings, [NullAllowed] string username, [NullAllowed] string credential);
 
         // -(instancetype _Nonnull)initWithURLStrings:(NSArray<NSString *> * _Nonnull)urlStrings username:(NSString * _Nullable)username credential:(NSString * _Nullable)credential tlsCertPolicy:(RTCTlsCertPolicy)tlsCertPolicy;
         [Export("initWithURLStrings:username:credential:tlsCertPolicy:")]
-        IntPtr InitWithURLStrings(string[] urlStrings, [NullAllowed] string username, [NullAllowed] string credential, RTCTlsCertPolicy tlsCertPolicy);
+        IntPtr Constructor(string[] urlStrings, [NullAllowed] string username, [NullAllowed] string credential, RTCTlsCertPolicy tlsCertPolicy);
 
         // -(instancetype _Nonnull)initWithURLStrings:(NSArray<NSString *> * _Nonnull)urlStrings username:(NSString * _Nullable)username credential:(NSString * _Nullable)credential tlsCertPolicy:(RTCTlsCertPolicy)tlsCertPolicy hostname:(NSString * _Nullable)hostname;
         [Export("initWithURLStrings:username:credential:tlsCertPolicy:hostname:")]
-        IntPtr InitWithURLStrings(string[] urlStrings, [NullAllowed] string username, [NullAllowed] string credential, RTCTlsCertPolicy tlsCertPolicy, [NullAllowed] string hostname);
+        IntPtr Constructor(string[] urlStrings, [NullAllowed] string username, [NullAllowed] string credential, RTCTlsCertPolicy tlsCertPolicy, [NullAllowed] string hostname);
 
         // -(instancetype _Nonnull)initWithURLStrings:(NSArray<NSString *> * _Nonnull)urlStrings username:(NSString * _Nullable)username credential:(NSString * _Nullable)credential tlsCertPolicy:(RTCTlsCertPolicy)tlsCertPolicy hostname:(NSString * _Nullable)hostname tlsAlpnProtocols:(NSArray<NSString *> * _Nonnull)tlsAlpnProtocols;
         [Export("initWithURLStrings:username:credential:tlsCertPolicy:hostname:tlsAlpnProtocols:")]
-        IntPtr InitWithURLStrings(string[] urlStrings, [NullAllowed] string username, [NullAllowed] string credential, RTCTlsCertPolicy tlsCertPolicy, [NullAllowed] string hostname, string[] tlsAlpnProtocols);
+        IntPtr Constructor(string[] urlStrings, [NullAllowed] string username, [NullAllowed] string credential, RTCTlsCertPolicy tlsCertPolicy, [NullAllowed] string hostname, string[] tlsAlpnProtocols);
 
         // -(instancetype _Nonnull)initWithURLStrings:(NSArray<NSString *> * _Nonnull)urlStrings username:(NSString * _Nullable)username credential:(NSString * _Nullable)credential tlsCertPolicy:(RTCTlsCertPolicy)tlsCertPolicy hostname:(NSString * _Nullable)hostname tlsAlpnProtocols:(NSArray<NSString *> * _Nullable)tlsAlpnProtocols tlsEllipticCurves:(NSArray<NSString *> * _Nullable)tlsEllipticCurves __attribute__((objc_designated_initializer));
         [Export("initWithURLStrings:username:credential:tlsCertPolicy:hostname:tlsAlpnProtocols:tlsEllipticCurves:")]
         [DesignatedInitializer]
-        IntPtr InitWithURLStrings(string[] urlStrings, [NullAllowed] string username, [NullAllowed] string credential, RTCTlsCertPolicy tlsCertPolicy, [NullAllowed] string hostname, [NullAllowed] string[] tlsAlpnProtocols, [NullAllowed] string[] tlsEllipticCurves);
+        IntPtr Constructor(string[] urlStrings, [NullAllowed] string username, [NullAllowed] string credential, RTCTlsCertPolicy tlsCertPolicy, [NullAllowed] string hostname, [NullAllowed] string[] tlsAlpnProtocols, [NullAllowed] string[] tlsEllipticCurves);
     }
 
 
@@ -1922,7 +1923,7 @@ namespace WebRTC.iOS.Bindings
 
         // -(BOOL)removeTrack:(RTCRtpSender * _Nonnull)sender;
         [Export("removeTrack:")]
-        bool RemoveTrack(RTCRtpSender sender);
+        bool RemoveTrack(IRTCRtpSender sender);
 
         // -(RTCRtpTransceiver * _Nonnull)addTransceiverWithTrack:(RTCMediaStreamTrack * _Nonnull)track;
         [Export("addTransceiverWithTrack:")]
@@ -2482,7 +2483,7 @@ namespace WebRTC.iOS.Bindings
 
         // -(RTCPeerConnection * _Nonnull)peerConnectionWithConfiguration:(RTCConfiguration * _Nonnull)configuration constraints:(RTCMediaConstraints * _Nonnull)constraints delegate:(id<RTCPeerConnectionDelegate> _Nullable)delegate;
         [Export("peerConnectionWithConfiguration:constraints:delegate:")]
-        RTCPeerConnection PeerConnectionWithConfiguration(RTCConfiguration configuration, RTCMediaConstraints constraints, [NullAllowed] RTCPeerConnectionDelegate @delegate);
+        RTCPeerConnection PeerConnectionWithConfiguration(RTCConfiguration configuration, RTCMediaConstraints constraints, [NullAllowed] IRTCPeerConnectionDelegate @delegate);
 
         // -(void)setOptions:(RTCPeerConnectionFactoryOptions * _Nonnull)options;
         [Export("setOptions:")]
@@ -2744,25 +2745,25 @@ namespace WebRTC.iOS.Bindings
     public interface IRTCRtpReceiver { }
 
     // @protocol RTCRtpReceiver <NSObject>
-    [Protocol]
+    [Protocol, Model]
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface RTCRtpReceiver
     {
-        //// @required @property (readonly, nonatomic) NSString * _Nonnull receiverId;
-        ////[Abstract]
-        //[Export("receiverId")]
-        //string ReceiverId { get; }
+        // @required @property (readonly, nonatomic) NSString * _Nonnull receiverId;
+        [Abstract]
+        [Export("receiverId")]
+        string ReceiverId { get; }
 
         //// @required @property (readonly, nonatomic) RTCRtpParameters * _Nonnull parameters;
         ////[Abstract]
         //[Export("parameters")]
         //RTCRtpParameters Parameters { get; }
 
-        //// @required @property (readonly, nonatomic) RTCMediaStreamTrack * _Nullable track;
-        ////[Abstract]
-        //[NullAllowed, Export("track")]
-        //RTCMediaStreamTrack Track { get; }
+        // @required @property (readonly, nonatomic) RTCMediaStreamTrack * _Nullable track;
+        [Abstract]
+        [NullAllowed, Export("track")]
+        RTCMediaStreamTrack Track { get; }
 
         //[Wrap("WeakDelegate"), Abstract]
         //[NullAllowed]
@@ -3000,11 +3001,11 @@ namespace WebRTC.iOS.Bindings
 
         // -(void)addRenderer:(id<RTCVideoRenderer> _Nonnull)renderer;
         [Export("addRenderer:")]
-        void AddRenderer(RTCVideoRenderer renderer);
+        void AddRenderer(IRTCVideoRenderer renderer);
 
         // -(void)removeRenderer:(id<RTCVideoRenderer> _Nonnull)renderer;
         [Export("removeRenderer:")]
-        void RemoveRenderer(RTCVideoRenderer renderer);
+        void RemoveRenderer(IRTCVideoRenderer renderer);
     }
 
 
