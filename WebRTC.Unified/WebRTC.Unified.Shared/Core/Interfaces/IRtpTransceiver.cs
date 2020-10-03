@@ -15,8 +15,8 @@ namespace WebRTC.Unified.Core.Interfaces
 
         bool IsStopped { get; }
 
-        RtpTransceiverDirection Direction { get; set; }
-        RtpTransceiverDirection CurrentDirection { get; }
+        RtpTransceiverDirection Direction { get; }
+        //RtpTransceiverDirection CurrentDirection { get; }
 
         void StopInternal();
 

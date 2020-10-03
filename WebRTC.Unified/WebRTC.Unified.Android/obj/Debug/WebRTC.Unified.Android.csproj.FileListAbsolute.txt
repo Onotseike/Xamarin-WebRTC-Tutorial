@@ -12,6 +12,7 @@
 /Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.Unified/WebRTC.Unified.Android/obj/Debug/MonoAndroid,Version=v11.0.AssemblyAttributes.cs
 /Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.Unified/WebRTC.Unified.Android/obj/Debug/build.props
 /Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.Unified/WebRTC.Unified.Android/obj/Debug/adb.props
+/Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.Unified/WebRTC.Unified.Android/obj/Debug/WebRTC.Unified.Android.csprojAssemblyReference.cache
 /Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.Unified/WebRTC.Unified.Android/obj/Debug/stamp/_BuildLibraryImportsCache.stamp
 /Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.Unified/WebRTC.Unified.Android/obj/Debug/res.flag
 /Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.Unified/WebRTC.Unified.Android/obj/Debug/R.cs.flag

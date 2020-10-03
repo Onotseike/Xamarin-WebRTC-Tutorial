@@ -229,6 +229,7 @@ namespace WebRTC.iOS.Bindings
 
     #region RTCDefaultVideoEncoderFactory
 
+
     // @interface RTCDefaultVideoEncoderFactory : NSObject <RTCVideoEncoderFactory>
     [BaseType(typeof(NSObject))]
     interface RTCDefaultVideoEncoderFactory : RTCVideoEncoderFactory
@@ -270,7 +271,7 @@ namespace WebRTC.iOS.Bindings
         // -(instancetype _Nonnull)initWithName:(NSString * _Nonnull)name parameters:(NSDictionary<NSString *,NSString *> * _Nullable)parameters __attribute__((objc_designated_initializer));
         [Export("initWithName:parameters:")]
         [DesignatedInitializer]
-        IntPtr InitWithName(string name, [NullAllowed] NSDictionary<NSString, NSString> parameters);
+        IntPtr Constructor(string name, [NullAllowed] NSDictionary<NSString, NSString> parameters);
 
         // -(BOOL)isEqualToCodecInfo:(RTCVideoCodecInfo * _Nonnull)info;
         [Export("isEqualToCodecInfo:")]
@@ -1026,6 +1027,7 @@ namespace WebRTC.iOS.Bindings
 
         // -(instancetype _Nonnull)initWithDelegate:(id<RTCVideoCapturerDelegate> _Nonnull)delegate;
         [Export("initWithDelegate:")]
+        //[DesignatedInitializer]
         IntPtr Constructor(RTCVideoCapturerDelegate @delegate);
     }
 
@@ -1166,6 +1168,9 @@ namespace WebRTC.iOS.Bindings
     [BaseType(typeof(RTCVideoCapturer))]
     interface RTCFileVideoCapturer
     {
+        [Export("initWithDelegate:")]
+        IntPtr Constructor(IRTCVideoCapturerDelegate @delegate);
+
         // -(void)startCapturingFromFileNamed:(NSString * _Nonnull)nameOfFile onError:(RTCFileVideoCapturerErrorBlock _Nullable)errorBlock;
         [Export("startCapturingFromFileNamed:onError:")]
         void StartCapturingFromFileNamed(string nameOfFile, [NullAllowed] RTCFileVideoCapturerErrorBlock errorBlock);
@@ -1247,7 +1252,7 @@ namespace WebRTC.iOS.Bindings
         // -(instancetype _Nonnull)initWithSrtpEnableGcmCryptoSuites:(BOOL)srtpEnableGcmCryptoSuites srtpEnableAes128Sha1_32CryptoCipher:(BOOL)srtpEnableAes128Sha1_32CryptoCipher srtpEnableEncryptedRtpHeaderExtensions:(BOOL)srtpEnableEncryptedRtpHeaderExtensions sframeRequireFrameEncryption:(BOOL)sframeRequireFrameEncryption __attribute__((objc_designated_initializer));
         [Export("initWithSrtpEnableGcmCryptoSuites:srtpEnableAes128Sha1_32CryptoCipher:srtpEnableEncryptedRtpHeaderExtensions:sframeRequireFrameEncryption:")]
         [DesignatedInitializer]
-        IntPtr InitWithSrtpEnableGcmCryptoSuites(bool srtpEnableGcmCryptoSuites, bool srtpEnableAes128Sha1_32CryptoCipher, bool srtpEnableEncryptedRtpHeaderExtensions, bool sframeRequireFrameEncryption);
+        IntPtr Constructor(bool srtpEnableGcmCryptoSuites, bool srtpEnableAes128Sha1_32CryptoCipher, bool srtpEnableEncryptedRtpHeaderExtensions, bool sframeRequireFrameEncryption);
     }
 
 
@@ -2455,7 +2460,7 @@ namespace WebRTC.iOS.Bindings
     {
         // -(instancetype _Nonnull)initWithEncoderFactory:(id<RTCVideoEncoderFactory> _Nullable)encoderFactory decoderFactory:(id<RTCVideoDecoderFactory> _Nullable)decoderFactory;
         [Export("initWithEncoderFactory:decoderFactory:")]
-        IntPtr Constructor([NullAllowed] RTCVideoEncoderFactory encoderFactory, [NullAllowed] RTCVideoDecoderFactory decoderFactory);
+        IntPtr Constructor([NullAllowed] IRTCVideoEncoderFactory encoderFactory, [NullAllowed] IRTCVideoDecoderFactory decoderFactory);
 
         // -(RTCAudioSource * _Nonnull)audioSourceWithConstraints:(RTCMediaConstraints * _Nullable)constraints;
         [Export("audioSourceWithConstraints:")]

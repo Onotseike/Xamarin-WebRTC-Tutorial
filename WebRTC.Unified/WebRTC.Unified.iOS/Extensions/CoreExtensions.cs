@@ -7,6 +7,7 @@ using System.Linq;
 using Foundation;
 
 using WebRTC.iOS.Bindings;
+using WebRTC.Unified.Extensions;
 
 namespace WebRTC.Unified.iOS.Extensions
 {
@@ -71,11 +72,11 @@ namespace WebRTC.Unified.iOS.Extensions
 
     internal static class IceCandidateExtension
     {
-        //public static RTCIceCandidate ToPlatformNative(this Core.IceCandidate nativePort) => new RTCIceCandidate(nativePort.Sdp, nativePort.SdpMLineIndex, nativePort.SdpMid);
+        public static RTCIceCandidate ToPlatformNative(this Core.IceCandidate nativePort) => new RTCIceCandidate(nativePort.Sdp, nativePort.SdpMLineIndex, nativePort.SdpMid);
 
         public static Core.IceCandidate ToNativePort(this RTCIceCandidate platformNative) => new Core.IceCandidate(platformNative.SdpMid, platformNative.SdpMLineIndex, platformNative.Sdp);
 
-        //public static IEnumerable<RTCIceCandidate> ToPlatformNative(this IEnumerable<Core.IceCandidate> nativePort) => nativePort.Select(ToPlatformNative);
+        public static IEnumerable<RTCIceCandidate> ToPlatformNative(this IEnumerable<Core.IceCandidate> nativePort) => nativePort.Select(ToPlatformNative);
 
         public static IEnumerable<Core.IceCandidate> ToNativePort(this IEnumerable<RTCIceCandidate> platformNative) => platformNative.Select(ToNativePort);
     }
@@ -93,25 +94,13 @@ namespace WebRTC.Unified.iOS.Extensions
         public static IEnumerable<RTCIceServer> ToPlatformNative(this IEnumerable<Core.IceServer> nativePort) => nativePort.Select(ToPlatformNative);
 
         public static IEnumerable<Core.IceServer> ToNativePort(this IEnumerable<RTCIceServer> platformNative) => platformNative.Select(ToNativePort);
-
-        #region Helper Methods
-        private static string[] ToStringArray(this IList iListObject)
-        {
-            var arrayObject = new string[iListObject.Count];
-            foreach (var item in iListObject) arrayObject.Append(item);
-            return arrayObject;
-        }
-        #endregion
-
     }
 
     internal static class MediaConstraintsExtension
     {
         public static RTCMediaConstraints ToPlatformNative(this Core.MediaConstraints nativePort) => new RTCMediaConstraints(mandatory: nativePort.Mandatory.ToPlatformNative(), optional: nativePort.Optional.ToPlatformNative());
 
-
-        // public static Core.MediaConstraints ToNativePort(this RTCMediaConstraints platformNative) => platformNative.ToNativePort();
-
+        public static Core.MediaConstraints ToNativePort(this RTCMediaConstraints platformNative) => platformNative.ToNativePort();
 
     }
 

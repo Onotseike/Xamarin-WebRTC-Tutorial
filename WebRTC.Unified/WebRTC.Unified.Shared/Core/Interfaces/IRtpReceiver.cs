@@ -8,6 +8,6 @@ namespace WebRTC.Unified.Core.Interfaces
 
         IMediaStreamTrack Track { get; }
 
-        IRtpParameters Parameters { get; }
+        //IRtpParameters Parameters { get; }
     }
 }

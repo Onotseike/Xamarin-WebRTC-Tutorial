@@ -31,8 +31,6 @@ namespace WebRTC.Unified.Android
 
         public RtpTransceiverDirection CurrentDirection => _transceiver.CurrentDirection.ToNativePort();
 
-        RtpTransceiverDirection IRtpTransceiver.Direction { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-
         public void SetDirection(RtpTransceiverDirection direction) => _transceiver.Direction = direction.ToNativePlatform();
 
         public void StopInternal() => _transceiver.Stop();

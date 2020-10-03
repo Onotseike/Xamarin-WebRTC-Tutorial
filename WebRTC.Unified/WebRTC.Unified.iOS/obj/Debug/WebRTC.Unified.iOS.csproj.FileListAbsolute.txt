@@ -2,11 +2,10 @@
 /Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.Unified/WebRTC.Unified.iOS/bin/Debug/WebRTC.Unified.pdb
 /Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.Unified/WebRTC.Unified.iOS/bin/Debug/Newtonsoft.Json.dll
 /Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.Unified/WebRTC.Unified.iOS/bin/Debug/WebRTC.iOS.Bindings.dll
-/Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.Unified/WebRTC.Unified.iOS/bin/Debug/WebRTC.iOS.Bindings.pdb
 /Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.Unified/WebRTC.Unified.iOS/bin/Debug/Newtonsoft.Json.xml
+/Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.Unified/WebRTC.Unified.iOS/bin/Debug/WebRTC.iOS.Bindings.pdb
 /Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.Unified/WebRTC.Unified.iOS/obj/Debug/optimized/
 /Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.Unified/WebRTC.Unified.iOS/obj/Debug/WebRTC.Unified.iOS.csproj.CoreCompileInputs.cache
 /Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.Unified/WebRTC.Unified.iOS/obj/Debug/WebRTC.Unified.iOS.csproj.CopyComplete
 /Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.Unified/WebRTC.Unified.iOS/obj/Debug/WebRTC.Unified.dll
 /Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.Unified/WebRTC.Unified.iOS/obj/Debug/WebRTC.Unified.pdb
-/Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.Unified/WebRTC.Unified.iOS/obj/Debug/WebRTC.Unified.iOS.csprojAssemblyReference.cache

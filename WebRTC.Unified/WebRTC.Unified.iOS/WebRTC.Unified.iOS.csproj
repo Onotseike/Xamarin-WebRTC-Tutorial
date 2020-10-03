@@ -42,11 +42,11 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
-    <Reference Include="WebRTC.iOS.Bindings">
-      <HintPath>..\..\WebRTC.iOS.Bindings\WebRTC.iOS.Bindings\bin\Debug\WebRTC.iOS.Bindings.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebRTC.iOS.Bindings">
+      <HintPath>..\..\WebRTC.iOS.Bindings\WebRTC.iOS.Bindings\bin\Release\WebRTC.iOS.Bindings.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -55,6 +55,26 @@
     <Compile Include="Enums\WebRTCEnums.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Extensions\CoreExtensions.cs" />
+    <Compile Include="PlatformAudioSource.cs" />
+    <Compile Include="PlatformMediaSource.cs" />
+    <Compile Include="PlatformAudioTrack.cs" />
+    <Compile Include="PlatformMediaStreamTrack.cs" />
+    <Compile Include="PlatformCameraVideoCapturer.cs" />
+    <Compile Include="PlatformFileVideoCapturer.cs" />
+    <Compile Include="PlatformMediaStream.cs" />
+    <Compile Include="PlatformFactory.cs" />
+    <Compile Include="PlatformPeerConnectionFactory.cs" />
+    <Compile Include="PlatformVideoSource.cs" />
+    <Compile Include="PlatformPeerConnectionDelegate.cs" />
+    <Compile Include="PlatformPeerConnection.cs" />
+    <Compile Include="PlatformVideoTrack.cs" />
+    <Compile Include="PlatformRtpSender.cs" />
+    <Compile Include="PlatformRtpReceiver.cs" />
+    <Compile Include="PlatformTransceiver.cs" />
+    <Compile Include="Platform.cs" />
+    <Compile Include="PlatformRtpParameter.cs" />
+    <Compile Include="PlatformDtmfSender.cs" />
+    <Compile Include="PlatformVideoRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

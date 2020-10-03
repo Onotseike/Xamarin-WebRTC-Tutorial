@@ -5,6 +5,7 @@ using Foundation;
 
 using WebRTC.iOS.Bindings;
 using WebRTC.Unified.Enums;
+using WebRTC.Unified.iOS.Extensions;
 
 using static WebRTC.Unified.Core.DataChannel;
 
@@ -26,7 +27,7 @@ namespace WebRTC.Unified.iOS
 
         public int ChannelId => _dataChannel.ChannelId;
 
-        public DataChannelState ReadyState => DataChannelState.Open; //_dataChannel.ReadyState.ToPlatformNative();
+        public DataChannelState ReadyState => _dataChannel.ReadyState.ToNativePort();
 
         public long BufferedAmount => (long)_dataChannel.BufferedAmount;
 
@@ -51,8 +52,6 @@ namespace WebRTC.Unified.iOS
         public void DataChannelDidChangeState(RTCDataChannel dataChannel) => OnStateChange?.Invoke(this, EventArgs.Empty);
 
         public void DataChannel(RTCDataChannel dataChannel, RTCDataBuffer buffer) => OnMessage?.Invoke(this, new DataBuffer(buffer.Data.ToArray(), buffer.IsBinary));
-
-
 
         #endregion
     }

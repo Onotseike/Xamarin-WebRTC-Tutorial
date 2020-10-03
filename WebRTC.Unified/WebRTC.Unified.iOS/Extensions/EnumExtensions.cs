@@ -1,4 +1,8 @@
 ﻿// onotseike@hotmail.comPaula Aliu
+using System;
+
+using Foundation;
+
 using WebRTC.iOS.Bindings;
 using WebRTC.Unified.Enums;
 using WebRTC.Unified.iOS.Enums;
@@ -75,6 +79,19 @@ namespace WebRTC.Unified.iOS.Extensions
         public static RTCH264Profile ToPlatformNative(this H264Profile nativePort) => (RTCH264Profile)nativePort;
 
         public static RTCPriority ToPlatformNative(this Priority nativePort) => (RTCPriority)nativePort;
+
+        public static NSString ToStringNative(this EncryptionKeyType self)
+        {
+            switch (self)
+            {
+                case EncryptionKeyType.Rsa:
+                    return new NSString("RSASSA-PKCS1-v1_5");
+                case EncryptionKeyType.Ecdsa:
+                    return new NSString("ECDSA");
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(self), self, null);
+            }
+        }
 
         #endregion
 
