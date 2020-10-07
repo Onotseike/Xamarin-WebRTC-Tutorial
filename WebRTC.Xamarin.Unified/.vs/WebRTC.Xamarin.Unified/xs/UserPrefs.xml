@@ -1,0 +1,23 @@
+﻿<Properties StartupConfiguration="{C43E5EDB-24EF-434A-A9BE-875F5386B7E9}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WebRTC.Xamarin.Unified.iOS/PlatformAudioTrack.cs">
+    <Files>
+      <File FileName="WebRTC.Xamarin.Unified.iOS/PlatformAudioTrack.cs" Line="21" Column="21" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="WebRTC.Xamarin.Unified" expanded="True">
+            <Node name="WebRTC.Xamarin.Unified.iOS" expanded="True" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.WebRTC.Xamarin.Unified.Android PreferredExecutionTarget="Android.pixel_2_pie_9_0_-_api_28" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

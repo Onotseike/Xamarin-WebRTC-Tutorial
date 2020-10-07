@@ -105,7 +105,7 @@ namespace WebRTC.Unified.Core
         public bool UseMediaTransportForDataChannels { get; internal set; }
 
         [JsonProperty("enableDtlsSrtp")]
-        public bool EnableDtlsSrtp { get; internal set; }
+        public bool EnableDtlsSrtp { get; set; }
 
         [JsonProperty("combinedAudioVideoBwe")]
         public bool CombinedAudioVideoBwe { get; internal set; }

@@ -1,0 +1,17 @@
+/Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.DemoApp/WebRTC.DemoApp/bin/Debug/netstandard2.1/WebRTC.DemoApp.deps.json
+/Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.DemoApp/WebRTC.DemoApp/bin/Debug/netstandard2.1/WebRTC.DemoApp.dll
+/Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.DemoApp/WebRTC.DemoApp/bin/Debug/netstandard2.1/ref/WebRTC.DemoApp.dll
+/Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.DemoApp/WebRTC.DemoApp/bin/Debug/netstandard2.1/WebRTC.DemoApp.pdb
+/Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.DemoApp/WebRTC.DemoApp/bin/Debug/netstandard2.1/WebRTC.Xamarin.Unified.dll
+/Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.DemoApp/WebRTC.DemoApp/bin/Debug/netstandard2.1/WebRTC.Xamarin.Unified.pdb
+/Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.DemoApp/WebRTC.DemoApp/obj/Debug/netstandard2.1/WebRTC.DemoApp.csprojAssemblyReference.cache
+/Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.DemoApp/WebRTC.DemoApp/obj/Debug/netstandard2.1/App.xaml.g.cs
+/Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.DemoApp/WebRTC.DemoApp/obj/Debug/netstandard2.1/MainPage.xaml.g.cs
+/Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.DemoApp/WebRTC.DemoApp/obj/Debug/netstandard2.1/WebRTC.DemoApp.AssemblyInfoInputs.cache
+/Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.DemoApp/WebRTC.DemoApp/obj/Debug/netstandard2.1/WebRTC.DemoApp.AssemblyInfo.cs
+/Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.DemoApp/WebRTC.DemoApp/obj/Debug/netstandard2.1/WebRTC.DemoApp.csproj.CoreCompileInputs.cache
+/Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.DemoApp/WebRTC.DemoApp/obj/Debug/netstandard2.1/XamlC.stamp
+/Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.DemoApp/WebRTC.DemoApp/obj/Debug/netstandard2.1/WebRTC.DemoApp.csproj.CopyComplete
+/Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.DemoApp/WebRTC.DemoApp/obj/Debug/netstandard2.1/WebRTC.DemoApp.dll
+/Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.DemoApp/WebRTC.DemoApp/obj/Debug/netstandard2.1/ref/WebRTC.DemoApp.dll
+/Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.DemoApp/WebRTC.DemoApp/obj/Debug/netstandard2.1/WebRTC.DemoApp.pdb

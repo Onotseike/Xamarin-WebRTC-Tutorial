@@ -1,0 +1,6 @@
+/Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.DemoApp/WebRTC.DemoApp/obj/Debug/netstandard2.0/WebRTC.DemoApp.csprojAssemblyReference.cache
+/Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.DemoApp/WebRTC.DemoApp/obj/Debug/netstandard2.0/App.xaml.g.cs
+/Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.DemoApp/WebRTC.DemoApp/obj/Debug/netstandard2.0/MainPage.xaml.g.cs
+/Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.DemoApp/WebRTC.DemoApp/obj/Debug/netstandard2.0/WebRTC.DemoApp.AssemblyInfoInputs.cache
+/Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.DemoApp/WebRTC.DemoApp/obj/Debug/netstandard2.0/WebRTC.DemoApp.AssemblyInfo.cs
+/Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.DemoApp/WebRTC.DemoApp/obj/Debug/netstandard2.0/WebRTC.DemoApp.csproj.CoreCompileInputs.cache

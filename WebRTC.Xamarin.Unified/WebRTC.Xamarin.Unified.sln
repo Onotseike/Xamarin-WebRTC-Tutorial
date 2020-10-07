@@ -1,0 +1,29 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebRTC.Xamarin.Unified", "WebRTC.Xamarin.Unified\WebRTC.Xamarin.Unified.csproj", "{F9A542DE-9DFC-4B3F-B63F-3AC3D1B3DD3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebRTC.Xamarin.Unified.Android", "WebRTC.Xamarin.Unified.Android\WebRTC.Xamarin.Unified.Android.csproj", "{C43E5EDB-24EF-434A-A9BE-875F5386B7E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebRTC.Xamarin.Unified.iOS", "WebRTC.Xamarin.Unified.iOS\WebRTC.Xamarin.Unified.iOS.csproj", "{C25C5C76-0727-4C8D-B99C-4C45854729A6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F9A542DE-9DFC-4B3F-B63F-3AC3D1B3DD3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9A542DE-9DFC-4B3F-B63F-3AC3D1B3DD3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9A542DE-9DFC-4B3F-B63F-3AC3D1B3DD3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9A542DE-9DFC-4B3F-B63F-3AC3D1B3DD3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C43E5EDB-24EF-434A-A9BE-875F5386B7E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C43E5EDB-24EF-434A-A9BE-875F5386B7E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C43E5EDB-24EF-434A-A9BE-875F5386B7E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C43E5EDB-24EF-434A-A9BE-875F5386B7E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C25C5C76-0727-4C8D-B99C-4C45854729A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C25C5C76-0727-4C8D-B99C-4C45854729A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C25C5C76-0727-4C8D-B99C-4C45854729A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C25C5C76-0727-4C8D-B99C-4C45854729A6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

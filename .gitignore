@@ -42,3 +42,15 @@ WebRTC.Unified/WebRTC.Unified.iOS/obj/Debug/WebRTC.Unified.iOS.csproj.FileListAb
 WebRTC.Unified/WebRTC.Unified.iOS/obj/Debug/WebRTC.Unified.iOS.csprojAssemblyReference.cache
 WebRTC.Unified/WebRTC.Unified.NuGet/bin/Debug/WebRTC.Unified.1.0.0.nupkg
 WebRTC.Unified/WebRTC.Unified.NuGet/obj/Debug/WebRTC.Unified.NuGet.nuprojAssemblyReference.cache
+WebRTC.DemoApp/.vs/WebRTC.DemoApp/xs/
+*.json
+WebRTC.DemoApp/WebRTC.DemoApp.Android/bin/
+WebRTC.DemoApp/WebRTC.DemoApp.Android/obj/
+WebRTC.DemoApp/WebRTC.DemoApp.iOS/bin/
+WebRTC.DemoApp/WebRTC.DemoApp.iOS/obj/
+WebRTC.Xamarin.Unified/WebRTC.Xamarin.Unified/obj/
+WebRTC.Xamarin.Unified/WebRTC.Xamarin.Unified/bin/
+WebRTC.Xamarin.Unified/WebRTC.Xamarin.Unified.iOS/bin/
+WebRTC.Xamarin.Unified/WebRTC.Xamarin.Unified.iOS/obj/
+WebRTC.Xamarin.Unified/WebRTC.Xamarin.Unified.Android/bin/
+WebRTC.Xamarin.Unified/WebRTC.Xamarin.Unified.Android/obj/

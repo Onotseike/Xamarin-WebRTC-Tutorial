@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="3.1.8" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Helper\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="SignalRClient\" />
+    <Folder Include="SignalRClient\Abstractions\" />
+    <Folder Include="SignalRClient\Responses\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="WebRTC.Xamarin.Unified">
+      <HintPath>..\..\WebRTC.Xamarin.Unified\WebRTC.Xamarin.Unified\bin\Release\netstandard2.1\WebRTC.Xamarin.Unified.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
