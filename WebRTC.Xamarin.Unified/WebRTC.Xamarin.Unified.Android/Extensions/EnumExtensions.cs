@@ -467,7 +467,7 @@ namespace WebRTC.Unified.Extensions
             }
         }
 
-        public static AudioTrackStartErrorCode ToNativePlatform(this Android.Enums.AudioTrackStartErrorCode nativePort)
+        public static AudioTrackStartErrorCode ToPlatformNative(this Android.Enums.AudioTrackStartErrorCode nativePort)
         {
             switch (nativePort)
             {
@@ -480,7 +480,7 @@ namespace WebRTC.Unified.Extensions
             }
         }
 
-        public static RtpTransceiverDirection ToNativePlatform(this Enums.RtpTransceiverDirection nativePort)
+        public static RtpTransceiverDirection ToPlatformNative(this Enums.RtpTransceiverDirection nativePort)
         {
             switch (nativePort)
             {
@@ -496,7 +496,6 @@ namespace WebRTC.Unified.Extensions
                     throw new ArgumentOutOfRangeException(nameof(nativePort), nativePort, null);
             }
         }
-
         #endregion
 
         #region ToNativePort

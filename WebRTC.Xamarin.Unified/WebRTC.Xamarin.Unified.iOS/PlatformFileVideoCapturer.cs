@@ -9,7 +9,7 @@ using WebRTC.Unified.Extensions;
 
 namespace WebRTC.Unified.iOS
 {
-    internal class PlatformFileVideoCapturer : NativePlatformBase, IFileVideoCapturer
+    public class PlatformFileVideoCapturer : NativePlatformBase, IFileVideoCapturer
     {
         private readonly RTCFileVideoCapturer _fileVideoCapturer;
         private readonly string _file;

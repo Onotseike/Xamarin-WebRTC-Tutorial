@@ -233,7 +233,7 @@ namespace WebRTC.Unified.Android
 
     }
 
-    internal interface IPeerConnectionFactoryAndroid : IPeerConnectionFactory
+    public interface IPeerConnectionFactoryAndroid : IPeerConnectionFactory
     {
         IEglBaseContext EglBaseContext { get; }
     }

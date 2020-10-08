@@ -1,13 +1,18 @@
 ﻿<Properties StartupConfiguration="{C43E5EDB-24EF-434A-A9BE-875F5386B7E9}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WebRTC.Xamarin.Unified.iOS/PlatformAudioTrack.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WebRTC.Xamarin.Unified.iOS/PlatformFileVideoCapturer.cs">
     <Files>
-      <File FileName="WebRTC.Xamarin.Unified.iOS/PlatformAudioTrack.cs" Line="21" Column="21" />
+      <File FileName="WebRTC.Xamarin.Unified.iOS/PlatformPeerConnectionFactory.cs" Line="50" Column="49" />
+      <File FileName="WebRTC.Xamarin.Unified.iOS/PlatformFileVideoCapturer.cs" Line="12" Column="11" />
+      <File FileName="WebRTC.Xamarin.Unified.Android/Extensions/EnumExtensions.cs" Line="288" Column="75" />
+      <File FileName="WebRTC.Xamarin.Unified.Android/PlatformRtpTransceiver.cs" Line="34" Column="123" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="WebRTC.Xamarin.Unified" expanded="True">
-            <Node name="WebRTC.Xamarin.Unified.iOS" expanded="True" selected="True" />
+          <Node name="WebRTC.Xamarin.Unified" expanded="True" selected="True">
+            <Node name="WebRTC.Xamarin.Unified.iOS" expanded="True">
+              <Node name="Extensions" expanded="True" />
+            </Node>
           </Node>
         </State>
       </Pad>

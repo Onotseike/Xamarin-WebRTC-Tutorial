@@ -18,6 +18,10 @@ namespace WebRTC.Unified.Core.Interfaces
 
         IPeerConnection PeerConnectionWithConfiguration(RTCConfiguration configuration, MediaConstraints constraints, IPeerConnectionDelegate peerConnectionDelegate);
 
+        ICameraVideoCapturer CreateCameraCapturer(IVideoSource videoSource, bool frontCamera);
+
+        IFileVideoCapturer CreateFileCapturer(IVideoSource videoSource, string file);
+
         //void SetOptions(IPeerConnectionFactoryOptions options);
 
         bool StartAecDumpWithFilePath(string filePath, long maxSizeInBytes);

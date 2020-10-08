@@ -11,6 +11,7 @@ using WebRTC.Unified.iOS.Extensions;
 
 namespace WebRTC.Unified.iOS
 {
+
     internal class PlatformPeerConnectionFactory : NativePlatformBase, IPeerConnectionFactory
     {
         private readonly RTCPeerConnectionFactory _peerConnectionFactory;
@@ -35,6 +36,18 @@ namespace WebRTC.Unified.iOS
         {
             var audioTrack = _peerConnectionFactory.AudioTrackWithSource(audioSource.ToPlatformNative<RTCAudioSource>(), trackId);
             return audioSource == null ? null : new PlatformAudioTrack(audioTrack);
+        }
+
+        public ICameraVideoCapturer CreateCameraCapturer(IVideoSource videoSource, bool frontCamera)
+        {
+            var capturer = new RTCCameraVideoCapturer();
+            capturer.WeakDelegate = videoSource.ToPlatformNative<RTCVideoSource>();
+            return new PlatformCameraVideoCapturer(capturer, frontCamera);
+        }
+
+        public IFileVideoCapturer CreateFileCapturer(IVideoSource videoSource, string file)
+        {
+            return new PlatformFileVideoCapturer(videoSource, file);
         }
 
         public IMediaStream MediaStreamWithStreamId(string streamId) => new PlatformMediaStream(_peerConnectionFactory.MediaStreamWithStreamId(streamId));

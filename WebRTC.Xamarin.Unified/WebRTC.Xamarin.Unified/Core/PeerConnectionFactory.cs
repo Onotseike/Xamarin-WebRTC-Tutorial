@@ -57,6 +57,10 @@ namespace WebRTC.Unified.Core
         public void StopAecDump() => _peerConnectionFactory.StopAecDump();
 
         public IVideoTrack VideoTrackWithSource(IVideoSource videoSource, string trackId) => _peerConnectionFactory.VideoTrackWithSource(videoSource, trackId);
+
+        public ICameraVideoCapturer CreateCameraCapturer(IVideoSource videoSource, bool frontCamera) => _peerConnectionFactory.CreateCameraCapturer(videoSource, frontCamera);
+
+        public IFileVideoCapturer CreateFileCapturer(IVideoSource videoSource, string file) => _peerConnectionFactory.CreateFileCapturer(videoSource, file);
         #endregion
     }
 }
