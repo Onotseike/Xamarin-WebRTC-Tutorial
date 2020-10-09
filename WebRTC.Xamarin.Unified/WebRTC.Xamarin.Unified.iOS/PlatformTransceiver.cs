@@ -11,9 +11,9 @@ namespace WebRTC.Unified.iOS
 {
     internal class PlatformTransceiver : NativePlatformBase, IRtpTransceiver
     {
-        private RTCRtpTransceiver _rtpTransceiver;
+        private IRTCRtpTransceiver _rtpTransceiver;
 
-        public PlatformTransceiver(RTCRtpTransceiver transceiver) : base(transceiver) => _rtpTransceiver = transceiver;
+        public PlatformTransceiver(IRTCRtpTransceiver transceiver) : base(transceiver) => _rtpTransceiver = transceiver;
 
         public RtpMediaType MediaType => _rtpTransceiver.MediaType.ToNativePort();
 
@@ -29,6 +29,7 @@ namespace WebRTC.Unified.iOS
 
         public void SetDirection(RtpTransceiverDirection direction)
         {
+            //_rtpTransceiver.Direction = direction.ToPlatformNative();
             NSError error;
             _rtpTransceiver.SetDirection(direction.ToPlatformNative(), out error);
         }

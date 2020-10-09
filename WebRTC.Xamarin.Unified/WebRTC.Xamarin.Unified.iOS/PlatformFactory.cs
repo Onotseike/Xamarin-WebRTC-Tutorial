@@ -3,6 +3,7 @@ using System;
 
 using Foundation;
 
+
 using WebRTC.iOS.Bindings;
 using WebRTC.Unified.Core.Interfaces;
 using WebRTC.Unified.Enums;
@@ -19,10 +20,10 @@ namespace WebRTC.Unified.iOS
 
         public IPeerConnectionFactory CreatePeerConnectionFactory() => new PlatformPeerConnectionFactory();
 
-        public void ShutDownInternalTracer() => RTCTracing.RTCShutdownInternalTracer();
+        public void ShutDownInternalTracer() { }//=> RTCTracing.RTCShutdownInternalTracer();
 
-        public bool StartInternalCapture(string filePath) => RTCTracing.RTCStartInternalCapture(filePath);
+        public bool StartInternalCapture(string filePath) { return false; }// => RTCTracing.RTCStartInternalCapture(filePath);
 
-        public void StopInternalTracingCapture() => RTCTracing.RTCStopInternalCapture();
+        public void StopInternalTracingCapture() { }// => RTCTracing.RTCStopInternalCapture();
     }
 }

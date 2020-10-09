@@ -20,15 +20,14 @@ namespace WebRTC.Unified.iOS
             {
                 //RTCTracing.RTCStartInternalCapture("log.cs");
             }
-
-            RTCSSLAdapter.RTCInitializeSSL();
+            //RTCSSLAdapter.RTCInitializeSSL();
             Core.NativeFactory.Initalize(new PlatformFactory());
         }
 
         public static void Cleanup()
         {
-            RTCTracing.RTCShutdownInternalTracer();
-            RTCSSLAdapter.RTCCleanupSSL();
+            //RTCTracing.RTCShutdownInternalTracer();
+            //RTCSSLAdapter.RTCCleanupSSL();
         }
     }
 }

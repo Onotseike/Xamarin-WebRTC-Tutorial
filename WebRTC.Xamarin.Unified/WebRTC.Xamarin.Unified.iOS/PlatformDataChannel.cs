@@ -53,6 +53,12 @@ namespace WebRTC.Unified.iOS
 
         public void DataChannel(RTCDataChannel dataChannel, RTCDataBuffer buffer) => OnMessage?.Invoke(this, new DataBuffer(buffer.Data.ToArray(), buffer.IsBinary));
 
+        public void DidReceiveMessageWithBuffer(RTCDataChannel dataChannel, RTCDataBuffer buffer)
+        {
+            var netBuffer = new DataBuffer(buffer.Data.ToArray(), buffer.IsBinary);
+            OnMessage?.Invoke(this, netBuffer);
+        }
+
         #endregion
     }
 }
