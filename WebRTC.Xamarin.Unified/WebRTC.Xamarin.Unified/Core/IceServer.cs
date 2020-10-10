@@ -13,29 +13,37 @@ namespace WebRTC.Unified.Core
         #region Properties
 
         [JsonProperty("urlStrings")]
-        public string[] UrlStrings { get; }
+        public string[] UrlStrings { get; set; }
 
         [JsonProperty("username")]
-        public string Username { get; }
+        public string Username { get; set; }
 
         [JsonProperty("credential")]
-        public string Credential { get; }
+        public string Credential { get; set; }
 
         [JsonProperty("tlsCertPolicy")]
-        public TlsCertPolicy TlsCertPolicy { get; }
+        public TlsCertPolicy TlsCertPolicy { get; set; }
 
         [JsonProperty("hostname")]
-        public string Hostname { get; }
+        public string Hostname { get; set; }
 
         [JsonProperty("tlsAlpnProtocols")]
-        public string[] TlsAlpnProtocols { get; }
+        public string[] TlsAlpnProtocols { get; set; }
 
         [JsonProperty("tlsEllipticCurves")]
-        public string[] TlsEllipticCurves { get; }
+        public string[] TlsEllipticCurves { get; set; }
 
         #endregion
 
         #region Constructor(s)
+
+        public IceServer()
+        {
+
+        }
+        public IceServer(string uri, string username = "", string password = "", TlsCertPolicy tlsCertPolicy = TlsCertPolicy.Secure) : this(new[] { uri }, username, password, tlsCertPolicy)
+        {
+        }
 
         public IceServer(string[] urlStrings, string username = null, string credential = null)
         {

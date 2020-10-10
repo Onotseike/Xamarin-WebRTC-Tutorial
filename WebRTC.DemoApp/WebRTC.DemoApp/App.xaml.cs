@@ -32,11 +32,11 @@ namespace WebRTC.DemoApp
             SdpAnswerRecieved = DependencyService.Get<ISdpAnswerRecieved>();
             if (DeviceInfo.Platform == DevicePlatform.Android)
             {
-                HubConnection = new HubConnectionBuilder().WithUrl("http://10.0.2.2:28022/WebRTCHub").WithAutomaticReconnect().Build();
+                HubConnection = new HubConnectionBuilder().WithUrl("http://10.0.2.2:5004/webrtchub").WithAutomaticReconnect().Build();
             }
             else
             {
-                HubConnection = new HubConnectionBuilder().WithUrl("http://localhost:28022/WebRTCHub").WithAutomaticReconnect().Build();
+                HubConnection = new HubConnectionBuilder().WithUrl("http://localhost:5001/webrtchub").WithAutomaticReconnect().Build();
             }
 
             LoadAllClientSideFunctions();

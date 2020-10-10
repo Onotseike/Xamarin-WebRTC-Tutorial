@@ -73,6 +73,7 @@ namespace WebRTC.DemoApp.SignalRClient.Abstractions
                         {
                             Console.WriteLine("Executing job - {0}", _tag);
                             job();
+                            Console.WriteLine($"Job {_tag} has been executed");
                         }
                     }
                 }

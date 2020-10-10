@@ -7,9 +7,9 @@ using Android.Widget;
 
 using Org.Webrtc;
 
-
+using WebRTC.DemoApp;
 using WebRTC.DemoApp.Droid.Fragments;
-
+using WebRTC.DemoApp.Droid.Renderers;
 using WebRTC.DemoApp.SignalRClient;
 using WebRTC.DemoApp.SignalRClient.Abstractions;
 using WebRTC.Unified.Android;
@@ -23,6 +23,7 @@ using Xamarin.Forms.Platform.Android;
 using FragmentTransaction = Android.Support.V4.App.FragmentTransaction;
 using View = Android.Views.View;
 
+[assembly: ExportRenderer(typeof(CallPage), typeof(CallPageRenderer))]
 namespace WebRTC.DemoApp.Droid.Renderers
 {
     public class CallPageRenderer : PageRenderer, ICallPageRenderer<RoomConnectionParameters, SignalingParameters, SRTCController>

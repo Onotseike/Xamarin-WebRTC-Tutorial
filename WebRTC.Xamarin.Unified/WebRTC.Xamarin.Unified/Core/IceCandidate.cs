@@ -25,5 +25,10 @@ namespace WebRTC.Unified.Core
             SdpMid = sdpMid;
             SdpMLineIndex = sdpMLineIndex;
         }
+
+        public IceCandidate()
+        {
+
+        }
     }
 }

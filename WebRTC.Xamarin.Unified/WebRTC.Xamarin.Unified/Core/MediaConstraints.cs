@@ -13,5 +13,8 @@ namespace WebRTC.Unified.Core
             Mandatory = mandatory;
             Optional = optional;
         }
+        public MediaConstraints() : this(null, null)
+        {
+        }
     }
 }

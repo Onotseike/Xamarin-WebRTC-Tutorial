@@ -234,8 +234,11 @@ namespace WebRTC.DemoApp.SignalRClient.Abstractions
 
             _executor.Execute(() =>
             {
+                _logger.Debug(TAG, "Starting PeerConnectionFactory creation");
                 _factory = new PeerConnectionFactory();
+                _logger.Debug(TAG, "PeerConnectionFactory created");
                 _peerConnectionEvents.OnPeerFactoryCreated(_factory);
+                _logger.Debug(TAG, "PeerConnectionFactory OnCreated");
             });
         }
 

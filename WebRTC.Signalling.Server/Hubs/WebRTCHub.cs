@@ -382,7 +382,7 @@ namespace WebRTC.Signalling.Server.Hubs
                 var addClientResponse = AddClientToRoom(Context.ConnectionId, _roomId, true);
                 if (addClientResponse.Item1)
                 {
-                    var _turnClient = new TURNClient(_turnBaseUrl, "api key");
+                    var _turnClient = new TURNClient(_turnBaseUrl, "Onotseike:37aac6f4-cf3d-11ea-9990-0242ac150003");
                     var roomParameters = new RoomParameters
                     {
                         RoomId = addClientResponse.Item2,
@@ -397,7 +397,8 @@ namespace WebRTC.Signalling.Server.Hubs
                     var _iceServers = await _turnClient.RequestServersAsync();
                     roomParameters.IceServers = _iceServers;
                     //roomParameters.OfferSdp = new SessionDescription(SessionDescription.GetSdpTypeFromString("offer"), "offer");
-                    return JObject.FromObject(roomParameters).ToString();
+                    var response = JObject.FromObject(roomParameters).ToString();
+                    return response;
                 }
             }
             else
@@ -406,7 +407,7 @@ namespace WebRTC.Signalling.Server.Hubs
                 var addClientResponse = AddClientToRoom(Context.ConnectionId, _roomId, false);
                 if (addClientResponse.Item1)
                 {
-                    var _turnClient = new TURNClient(_turnBaseUrl, "api key");
+                    var _turnClient = new TURNClient(_turnBaseUrl, "Onotseike:37aac6f4-cf3d-11ea-9990-0242ac150003");
                     var roomParameters = new RoomParameters
                     {
                         RoomId = addClientResponse.Item2,

@@ -34,5 +34,26 @@ namespace WebRTC.Signalling.Server.Models.Complex
         [JsonProperty("password")] public string Password { get; set; }
         [JsonProperty("tlsCertPolicy")] public TlsCertPolicy TlsCertPolicy { get; }
 
+        //[JsonProperty("urlStrings")]
+        //public string[] UrlStrings { get; set; }
+
+        //[JsonProperty("username")]
+        //public string Username { get; set; }
+
+        //[JsonProperty("credential")]
+        //public string Credential { get; set; }
+
+        //[JsonProperty("tlsCertPolicy")]
+        //public TlsCertPolicy TlsCertPolicy { get; set; }
+
+        //[JsonProperty("hostname")]
+        //public string Hostname { get; set; }
+
+        //[JsonProperty("tlsAlpnProtocols")]
+        //public string[] TlsAlpnProtocols { get; set; }
+
+        //[JsonProperty("tlsEllipticCurves")]
+        //public string[] TlsEllipticCurves { get; set; }
+
     }
 }

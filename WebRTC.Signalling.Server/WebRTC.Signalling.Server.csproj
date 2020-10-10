@@ -5,6 +5,9 @@
     <StartupObject>WebRTC.Signalling.Server.Program</StartupObject>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
+    <ExternalConsole>true</ExternalConsole>
+  </PropertyGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
   </ItemGroup>
@@ -14,4 +17,9 @@
   </ItemGroup>
 
 
+  <ItemGroup>
+    <Reference Include="WebRTC.Xamarin.Unified">
+      <HintPath>..\WebRTC.Xamarin.Unified\WebRTC.Xamarin.Unified\bin\Release\netstandard2.1\WebRTC.Xamarin.Unified.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>

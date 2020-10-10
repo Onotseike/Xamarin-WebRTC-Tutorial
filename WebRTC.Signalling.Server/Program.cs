@@ -1,12 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Net;
 
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+
+using WebRTC.Signalling.Server.Hubs;
 
 namespace WebRTC.Signalling.Server
 {
@@ -22,6 +20,13 @@ namespace WebRTC.Signalling.Server
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                    webBuilder.UseKestrel(opts =>
+                    {
+                        opts.Listen(IPAddress.Loopback, port: 5002);
+                        opts.ListenAnyIP(5004);
+                        opts.ListenLocalhost(5001, opts => opts.UseHub<WebRTCHub>());
+                        opts.ListenLocalhost(5000, opts => opts.UseHttps());
+                    });
                 });
     }
 }

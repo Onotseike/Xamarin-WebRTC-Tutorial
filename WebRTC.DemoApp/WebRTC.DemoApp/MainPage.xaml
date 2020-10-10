@@ -3,7 +3,7 @@
     <StackLayout>
         <!-- Place new controls here -->
         <Entry x:Name="RoomIdEntry"
-               Placeholder="Please enter a 6 digit room id"/>
+               Placeholder="Please enter a guid as a room id"/>
         <StackLayout Orientation="Horizontal">
             <Button x:Name="StartCall"
                 BackgroundColor="BlanchedAlmond"

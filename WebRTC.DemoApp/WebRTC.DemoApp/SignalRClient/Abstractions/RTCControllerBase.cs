@@ -93,6 +93,7 @@ namespace WebRTC.DemoApp.SignalRClient.Abstractions
         {
             Executor.Execute(() =>
             {
+                Logger.Debug(TAG, $"VideoCall starting, CreatePeerConnection witl local and remote video renderers");
                 PeerConnectionClient.CreatePeerConnection(localRenderer, remoteRenderer);
                 OnChannelConnectedInternal(_signalingParameters);
             });
