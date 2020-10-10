@@ -8,16 +8,15 @@
       <File FileName="WebRTC.Xamarin.Unified.iOS/PlatformPeerConnection.cs" Line="51" Column="125" />
       <File FileName="WebRTC.Xamarin.Unified.iOS/Extensions/CoreExtensions.cs" Line="160" Column="13" />
       <File FileName="WebRTC.Xamarin.Unified.iOS/Platform.cs" Line="30" Column="15" />
-      <File FileName="WebRTC.Xamarin.Unified.iOS/PlatformFactory.cs" Line="23" Column="48" />
+      <File FileName="WebRTC.Xamarin.Unified.iOS/PlatformFactory.cs" Line="25" Column="74" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="WebRTC.Xamarin.Unified" expanded="True">
+          <Node name="WebRTC.Xamarin.Unified" expanded="True" selected="True">
             <Node name="WebRTC.Xamarin.Unified.iOS" expanded="True">
               <Node name="References" expanded="True" />
               <Node name="Extensions" expanded="True" />
-              <Node name="PlatformFactory.cs" selected="True" />
             </Node>
           </Node>
         </State>
