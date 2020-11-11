@@ -24,7 +24,7 @@ namespace WebRTC.Signalling.Server
                     {
                         opts.Listen(IPAddress.Loopback, port: 5002);
                         opts.ListenAnyIP(5004);
-                        opts.ListenLocalhost(5001, opts => opts.UseHub<WebRTCHub>());
+                        opts.ListenLocalhost(5001);
                         opts.ListenLocalhost(5000, opts => opts.UseHttps());
                     });
                 });

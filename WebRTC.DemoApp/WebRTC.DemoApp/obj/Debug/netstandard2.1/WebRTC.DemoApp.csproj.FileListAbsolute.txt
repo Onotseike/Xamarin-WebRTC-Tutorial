@@ -14,3 +14,4 @@
 /Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.DemoApp/WebRTC.DemoApp/obj/Debug/netstandard2.1/WebRTC.DemoApp.dll
 /Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.DemoApp/WebRTC.DemoApp/obj/Debug/netstandard2.1/ref/WebRTC.DemoApp.dll
 /Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.DemoApp/WebRTC.DemoApp/obj/Debug/netstandard2.1/WebRTC.DemoApp.pdb
+/Users/onotseike/Documents/GitHub/Xamarin-WebRTC-Tutorial/WebRTC.DemoApp/WebRTC.DemoApp/obj/Debug/netstandard2.1/WebRTC.DemoApp.csprojAssemblyReference.cache
